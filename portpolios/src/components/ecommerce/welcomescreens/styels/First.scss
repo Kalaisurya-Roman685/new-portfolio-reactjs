@@ -1,0 +1,51 @@
+@use "../../../../scss/abstract/" as *;
+
+.main-ecommerce {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding-top: 5%;
+    .persons {
+        width: 55%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        object-fit: cover;
+    }
+    .et {
+        width: 50%;
+        margin: 0% auto;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 20px;
+        .et1 {
+            line-height: 2;
+            font-size: 22px;
+        }
+    }
+    .btns {
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding-top: 20px;
+        .nexts {
+            width: 50%;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            background-color: orange;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            border: none;
+            outline: none;
+        }
+    }
+}

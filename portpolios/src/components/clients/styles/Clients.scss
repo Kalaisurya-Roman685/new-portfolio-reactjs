@@ -1,0 +1,289 @@
+@use "../../../scss/abstract/" as *;
+
+.mian-section6 {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    @include xsBreakPoint {
+        height: auto;
+    }
+    .inside-section6 {
+        width: 100%;
+        height: 100%;
+        .top-section6 {
+            width: 100%;
+            height: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            @include xsBreakPoint {
+                height: 100%;
+            }
+            .our {
+                font-size: 2.5rem;
+                font-weight: 600;
+                padding-top: 2%;
+                color: orangered;
+                @include xsBreakPoint {
+                    font-size: 1.7rem;
+                    padding-top: 5%;
+                }
+                @include lgBreakPoint {
+                    font-size: 1.8rem;
+                    padding-top: 10%;
+                }
+                @include xlBreakPoint {
+                    font-size: 2rem;
+                    padding-top: 15%;
+                }
+                @include xxlBreakPoint {
+                    padding-top: 10%;
+                }
+            }
+            .create {
+                width: 40%;
+                text-align: center;
+                font-size: 1.2rem;
+                padding-top: 1%;
+                @include xsBreakPoint {
+                    font-size: 1rem;
+                    width: 80%;
+                    padding-bottom: 5%;
+                    padding-top: 5%;
+                }
+                @include lgBreakPoint {
+                    font-size: 1.4rem;
+                    width: 80%;
+                    padding-bottom: 5%;
+                    padding-top: 2%;
+                }
+                @include xlBreakPoint {
+                    font-size: 1.4rem;
+                    width: 80%;
+                    padding-bottom: 5%;
+                    padding-top: 2%;
+                }
+                @include xxlBreakPoint {
+                    width: 45%;
+                }
+            }
+        }
+        .body-section6 {
+            width: 100%;
+            height: 80%;
+            @include xsBreakPoint {
+                height: 100%;
+            }
+
+            .body-inside-section6 {
+                width: 80%;
+                margin: 0 auto;
+                display: flex;
+                height: 100%;
+                gap: 40px;
+                align-items: center;
+                justify-content: center;
+                @include xsBreakPoint {
+                    flex-direction: column;
+                    padding-bottom: 10%;
+                }
+                .box1-section6 {
+                    width: 30%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    @include xsBreakPoint {
+                        width: 100%;
+                    }
+                    .images {
+                        width: 300px;
+                        height: 300px;
+                        background-color: #ffe57c;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+                        @include xsBreakPoint {
+                            width: 250px;
+                            height: 250px;
+                        }
+                        @include lgBreakPoint {
+                            width: 220px;
+                            height: 220px;
+                        }
+                        @include xlBreakPoint {
+                            width: 250px;
+                            height: 250px;
+                        }
+
+                        .img-section6 {
+                            width: 500px;
+                            // height:300px;
+
+                            object-fit: cover;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding-top: 15vh;
+                        }
+                    }
+                    .images:hover {
+                        cursor: pointer;
+                        opacity: 0.5;
+                    }
+                    .name-edit {
+                        font-size: 2rem;
+                        font-weight: 600;
+                        padding-top: 3%;
+                        @include xsBreakPoint {
+                            font-size: 1.5rem;
+                        }
+                        @include lgBreakPoint {
+                            font-size: 1.3rem;
+                        }
+                        @include xlBreakPoint {
+                            font-size: 1.6rem;
+                        }
+                    }
+                    .subject {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        padding-top: 2%;
+                    }
+                }
+                .box2-section6 {
+                    width: 30%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    @include xsBreakPoint {
+                        width: 100%;
+                    }
+                    .images {
+                        width: 300px;
+                        height: 300px;
+                        background-color: #89cff0;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+                        @include xsBreakPoint {
+                            width: 250px;
+                            height: 250px;
+                        }
+                        @include lgBreakPoint {
+                            width: 220px;
+                            height: 220px;
+                        }
+                        @include xlBreakPoint {
+                            width: 250px;
+                            height: 250px;
+                        }
+                        .img-section6 {
+                            width: 500px;
+                            // height:300px;
+                            object-fit: cover;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding-top: 15vh;
+                        }
+                    }
+                    .images:hover {
+                        cursor: pointer;
+                        opacity: 0.5;
+                    }
+                    .name-edit {
+                        font-size: 2rem;
+                        font-weight: 600;
+                        padding-top: 3%;
+                        @include xsBreakPoint {
+                            font-size: 1.5rem;
+                        }
+                        @include lgBreakPoint {
+                            font-size: 1.3rem;
+                        }
+                        @include xlBreakPoint {
+                            font-size: 1.6rem;
+                        }
+                    }
+                    .subject {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        padding-top: 2%;
+                    }
+                }
+                .box3-section6 {
+                    width: 30%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    @include xsBreakPoint {
+                        width: 100%;
+                    }
+                    .images {
+                        width: 300px;
+                        height: 300px;
+                        background-color: #e9a4cb;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+                        @include xsBreakPoint {
+                            width: 250px;
+                            height: 250px;
+                        }
+                        @include lgBreakPoint {
+                            width: 220px;
+                            height: 220px;
+                        }
+                        @include xlBreakPoint {
+                            width: 250px;
+                            height: 250px;
+                        }
+
+                        .img-section6 {
+                            width: 500px;
+                            // height:300px;
+                            object-fit: cover;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding-top: 15vh;
+                        }
+                    }
+                    .images:hover {
+                        cursor: pointer;
+                        opacity: 0.5;
+                    }
+                    .name-edit {
+                        font-size: 2rem;
+                        font-weight: 600;
+                        padding-top: 3%;
+                        @include xsBreakPoint {
+                            font-size: 1.5rem;
+                        }
+                        @include lgBreakPoint {
+                            font-size: 1.3rem;
+                        }
+                        @include xlBreakPoint {
+                            font-size: 1.6rem;
+                        }
+                    }
+                    .subject {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        padding-top: 2%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,232 @@
+@use "../../../scss/abstract/" as *;
+@import "https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css";
+
+.main-section5 {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    @include xsBreakPoint {
+        height: auto;
+    }
+    .inside-section5 {
+        width: 100%;
+        height: 100%;
+        .top-section5 {
+            width: 50%;
+            height: 20%;
+            display: flex;
+            flex-direction: column;
+            padding-top: 1.3%;
+            padding-left: 5%;
+            @include xsBreakPoint {
+                width: 100%;
+                height: 100%;
+            }
+
+            .recent {
+                font-size: 2.5rem;
+                font-weight: 700;
+                @include xsBreakPoint {
+                    font-size: 1.7rem;
+                    width: 60%;
+                }
+            }
+            .create {
+                font-size: 1.4rem;
+                padding-top: 2%;
+                @include xsBreakPoint {
+                    padding-top: 3%;
+                    font-size: 1rem;
+                    line-height: 2;
+                }
+            }
+        }
+        .bottom-section5 {
+            width: 100%;
+            height: 80%;
+            position: relative;
+            padding-top: 3.89%;
+            // border: 2px solid red;
+            @include xsBreakPoint {
+                height: 100%;
+                padding-top: 30%;
+            }
+            .inside-section5-slide {
+                width: 82%;
+                // margin: 0 auto;
+                // border: 2px solid red;
+                padding-left: 3rem;
+                @include xsBreakPoint {
+                    width: 100%;
+                    height: 100%;
+                    padding-bottom: 25%;
+                }
+                .reds {
+                    width: 10px;
+                    gap: 20px;
+                    // border: 2px solid blue;
+                    text-align: center;
+                    .redss {
+                        width: 85%;
+                        border: 1px solid grey;
+                        margin: 0 auto;
+                        height: 435px;
+                        border-radius: 20px;
+                        @include xsBreakPoint {
+                            width: 80%;
+                        }
+                        @include lgBreakPoint {
+                            width: 80%;
+                        }
+                        @include xlBreakPoint {
+                            width: 80%;
+                        }
+                        @include xxlBreakPoint {
+                            width: 80%;
+                        }
+                    }
+                    .coursename {
+                        font-size: 1.4rem;
+                        font-weight: 600;
+                        padding-top: 2%;
+                        padding-bottom: 2%;
+                        @include xsBreakPoint {
+                            font-size: 1.2rem;
+                            padding-top: 4%;
+                            padding-bottom: 3%;
+                        }
+                    }
+                    .description {
+                        font-size: 0.89879rem;
+                        padding-bottom: 3%;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        @include xsBreakPoint {
+                            padding-bottom: 6%;
+                        }
+                    }
+                    .btns {
+                        padding-top: 2%;
+                        padding-bottom: 2%;
+                    }
+                    .buttons {
+                        width: 40%;
+                        padding: 10px;
+                        border: none;
+                        outline: none;
+                        background-color: orangered;
+                        color: white;
+                        cursor: pointer;
+                        border-radius: 10px;
+                        font-weight: 600;
+                    }
+                    .img-section5 {
+                        width: 100%;
+                        border-radius: 20px;
+                    }
+                    .img-section5:hover {
+                        opacity: 0.5;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .slide-pre::before {
+                content: none !important;
+                width: 50px !important;
+                height: 50px !important;
+                border-radius: 50% !important;
+                // background-color: #2b2f60 !important;
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                font-family: "Font Awesome 6 Pro" !important;
+                font-weight: 500 !important;
+                font-size: 1.5rem !important;
+                content: "\f061" !important;
+                padding: 10px 12px 10px 12px !important;
+                border: 4px solid orange !important;
+                color: orangered;
+                font-weight: 700;
+
+                margin-left: -30px !important;
+                z-index: 2 !important;
+                // position: relative !important;
+                // display: none;
+                position: absolute !important;
+                top: -280px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include xsBreakPoint {
+                    left: -5rem;
+                }
+                @include lgBreakPoint {
+                    left: -5rem;
+                }
+                @include xlBreakPoint {
+                    left: -5rem;
+                }
+                @include xxlBreakPoint {
+                    left: -8rem;
+                }
+            }
+
+            .slide-next::before {
+                content: none !important;
+                width: 50px !important;
+                height: 50px !important;
+                border-radius: 50% !important;
+
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                font-family: "Font Awesome 6 Pro" !important;
+                font-weight: 500 !important;
+                font-size: 1.5rem !important;
+
+                content: "\f060" !important;
+                padding: 10px 12px 10px 12px !important;
+                position: absolute !important;
+                top: -278px !important;
+                right: -54rem !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 4px solid orange !important;
+                color: orangered;
+                font-weight: 700;
+
+                // display: none;
+                @include xsBreakPoint {
+                    left: 13rem;
+                    top: -5rem;
+                }
+                @include lgBreakPoint {
+                    left: 38rem;
+                    top: -5rem;
+                }
+                @include xlBreakPoint {
+                    left: 48rem;
+                    top: -5rem;
+                }
+                @include xxlBreakPoint {
+                    left: 64rem;
+                    top: -5rem;
+                }
+            }
+        }
+        .slick-dots li button:before {
+            color: orangered;
+            font-size: 10px;
+            padding-top: 5vh;
+            @include xsBreakPoint {
+                padding-top: 2rem;
+                font-size: 1rem;
+            }
+        }
+    }
+}

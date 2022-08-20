@@ -1,0 +1,189 @@
+@use "../../../scss/abstract/" as *;
+
+.profile-main {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+    .inside-section-profile {
+        width: 100%;
+        height: 100%;
+        .profile-section {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 2%;
+            .box {
+                .kalaiprofile {
+                    width: 240px;
+                    height: 240px;
+                    border-radius: 50%;
+                    // padding-top: 20%;
+                    object-fit: cover;
+                    border: 5px solid orangered;
+                    // position: relative;
+                }
+                .kalaiprofile:hover {
+                    opacity: 0.5;
+                    cursor: pointer;
+                    display: block;
+                    z-index: 2000000000;
+                }
+                .kalaisurya {
+                    position: absolute;
+                    top: 19%;
+                    margin-left: 4%;
+                    font-size: 1.7rem;
+                    align-items: center;
+                    justify-content: center;
+                    color: orangered;
+                    display: none;
+                }
+            }
+            .box1 {
+                text-align: center;
+                .loreams {
+                    width: 50%;
+                    margin: 0 auto;
+                    text-align: center;
+                    line-height: 1.7;
+                }
+            }
+            .follows {
+                display: flex;
+                gap: 50px;
+                padding-top: 2%;
+                .following {
+                    text-align: center;
+                    cursor: pointer;
+                    .text-follow {
+                        font-size: 20px;
+                        color: orangered;
+                        font-weight: bold;
+                    }
+                }
+            }
+            .card-section {
+                display: flex;
+                width: 80%;
+                gap: 10%;
+                margin: 0 auto;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                .card-section1 {
+                    // border: 2px solid red;
+                    border-radius: 20px;
+                    padding: 10px;
+                    width: 25%;
+                    text-align: center;
+
+                    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                    .e-commerces {
+                        border-radius: 20px !important;
+                        border: 2px solid orangered;
+                    }
+                }
+            }
+        }
+    }
+}
+.carousels-sections {
+    // border: 2px solid red;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+    gap: 20px;
+    .left-carousel-section {
+        width: 20%;
+        // border: 2px solid red;
+        height: 700px;
+    }
+    .middle-carousel-section {
+        width: 60%;
+        // border: 2px solid red;
+        padding: 15px;
+        height: 100%;
+        overflow-y: scroll;
+        .img-profile-name {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-left: 10px;
+            padding-bottom: 20px;
+        }
+        .kalai-card {
+            // border: 2px solid blue;
+            width: 100%;
+            padding-top: 20px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            border-radius: 30px;
+            padding: 15px;
+        }
+        .share-cuttons {
+            display: flex;
+            border-top: 1px solid grey;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 20px;
+            padding-top: 20px;
+
+            .left-shres {
+                width: 30%;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                gap: 10px;
+                cursor: pointer;
+            }
+            .middle-shres {
+                width: 30%;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                gap: 10px;
+                cursor: pointer;
+            }
+            .right-shres {
+                width: 39%;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                gap: 10px;
+                cursor: pointer;
+            }
+            .showmodals {
+                // border: 2px solid red;
+            }
+        }
+    }
+    .right-carousel-section {
+        width: 20%;
+        // border: 2px solid red;
+        height: 700px;
+    }
+}
+.cards {
+    border: 2px solid orangered;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    background-color: $back_export_color-black;
+    .cards-left {
+        width: 30%;
+    }
+    .cards-right {
+        .names {
+            font-weight: bold;
+        }
+    }
+    .modal-bodys {
+        display: flex;
+        gap: 20px;
+        border: 3px solid blue !important;
+    }
+}

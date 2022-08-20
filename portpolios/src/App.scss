@@ -1,0 +1,67 @@
+@use "scss" as *;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.port-polio {
+    width: 100vw;
+    height: 100vh;
+    z-index: 200000000;
+    overflow: hidden;
+    // position: relative;
+    @include themed() {
+        background: t($background);
+        // background: t($background-liner-sets);
+        color: t($text);
+    }
+}
+
+.settings {
+    position: relative;
+    // position: absolute;
+
+    .moves {
+        position: absolute;
+        // right: 10px;
+        // top:10px;
+        animation: alls 2s esase-in-out infinite;
+    }
+    .fa-solid {
+        font-size: 1.4rem;
+        align-items: center;
+        justify-content: center;
+        // position: relative;
+        animation: alls 2s esase-in-out infinite;
+    }
+    .divs {
+        width: 20px;
+        border: 2px solid red;
+    }
+    .hts {
+        display: flex;
+        border: 2px solid blue;
+        flex-direction: row;
+    }
+    .card {
+        // width:10%;
+        border: none;
+        outline: none;
+        display: flex;
+        gap: 100px;
+    }
+}
+
+@keyframes alls {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(250deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
