@@ -17,6 +17,7 @@ function Signup() {
     const usehistory = useHistory();
     const [email, SetEmail] = useState("");
     const [password, SetPassword] = useState("");
+    const [name, SetName] = useState("");
     const [show, SetShow] = useState(false);
 
 
@@ -26,10 +27,10 @@ function Signup() {
 
     const submits = async (e) => {
         e.preventDefault();
-        if (email.length == 0 || password.length == 0) {
+        if (email.length == 0 || password.length == 0 || name.length == 0) {
             setError(true);
         }
-        if (email && password) {
+        if (email && password && name) {
             try {
                 const result = await auth.createUserWithEmailAndPassword(
                     email,
@@ -39,11 +40,10 @@ function Signup() {
                 setTimeout(() => {
                     usehistory.push(`/login`);
                 }, 2000);
-                console.log("received", result.user.email);
-                console.log("result token", result.user.uid);
+
                 localStorage.setItem(
-                    "token new users",
-                    JSON.stringify(result.user.uid)
+                    "username",
+                    JSON.stringify(name)
                 );
 
             } catch (err) {
@@ -76,7 +76,7 @@ function Signup() {
     };
     return (
         <div className="login-screeen">
-            <ToastContainer/>
+            <ToastContainer />
             <div className="login-inside">
                 <div className="login-left">
                     <img src={p2} className="cars" />
@@ -85,12 +85,17 @@ function Signup() {
 
                     <form>
                         <h1 className="mb-5" style={{ color: "orangered" }}>SignUp</h1>
-                        <div class="mb-3  col-lg-12 col-xl-6 col-xxl-12">
+                        <div class="mb-3  col-lg-12 col-xl-12 col-xxl-12">
+                            <label for="exampleInputName1" class="form-label">User Name</label>
+                            <input type="text" class="form-control" id="exampleInputName1" aria-describedby="emailHelp" onChange={(e) => SetName(e.target.value)} name="name" value={name} />
+                            {error && name.length <= 0 ? <div id="emailHelp" class="form-text" style={{ color: "red" }}>Name Field is empty</div> : ""}
+                        </div>
+                        <div class="mb-3  col-lg-12 col-xl-12 col-xxl-12">
                             <label for="exampleInputEmail1" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e) => SetEmail(e.target.value)} name="email" value={email} />
                             {error && email.length <= 0 ? <div id="emailHelp" class="form-text" style={{ color: "red" }}>Email Field is empty</div> : ""}
                         </div>
-                        <div class="mb-3 col-lg-4 col-xl-6 col-xxl-12">
+                        <div class="mb-3 col-lg-12 col-xl-12 col-xxl-12">
                             <label for="exampleInputPassword1" class="form-label">Password</label>
                             <input type="password" class="form-control" id="exampleInputPassword1" onChange={(e) => SetPassword(e.target.value)} name="password" value={password} />
                             {error && password.length <= 0 ? <div id="emailHelp" class="form-text" style={{ color: "red" }}>password Field is empty</div> : ""}

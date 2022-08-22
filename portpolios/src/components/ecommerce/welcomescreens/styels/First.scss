@@ -12,6 +12,12 @@
         align-items: center;
         justify-content: center;
         object-fit: cover;
+        @include lgBreakPoint {
+            width: 100%;
+        }
+        @include xlBreakPoint {
+            width: 100%;
+        }
     }
     .et {
         width: 50%;
@@ -20,9 +26,21 @@
         justify-content: center;
         text-align: center;
         padding-top: 20px;
+        @include lgBreakPoint {
+            font-size: 20px;
+            width: 85%;
+        }
+        @include xlBreakPoint {
+            font-size: 20px;
+            width: 85%;
+        }
         .et1 {
             line-height: 2;
             font-size: 22px;
+            @include lgBreakPoint {
+                font-size: 20px;
+                width: 100%;
+            }
         }
     }
     .btns {

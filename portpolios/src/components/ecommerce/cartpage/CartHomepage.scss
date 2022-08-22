@@ -1,0 +1,29 @@
+@use "../../../scss/abstract/" as *;
+
+.main-carthome {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+    @include lgBreakPoint
+    {
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+    }
+    .inputs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 40px;
+        z-index: 1000000;
+        position: relative;
+        input {
+            padding: 10px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            border: 2px solid cyan;
+        }
+    }
+}

@@ -16,22 +16,41 @@ import {
   LinkedinShareButton,
   LinkedinIcon,
 } from 'next-share';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Heart from "react-animated-heart";
 function ProfileSettings() {
 
   const [dataget, SetDataGet] = useState([]);
 
+  const [dataslick, setDataLink] = useState();
+
   const [show, SetShow] = useState(false);
+  const [isClick, setClick] = useState(false);
   useEffect(() => {
     const datas = localStorage.getItem("amma");
     SetDataGet(JSON.parse(datas));
-    console.log('====================================');
-    console.log(JSON.parse(datas));
-    console.log('====================================');
+
   }, [])
 
   const history = useHistory();
+
+  let idlike = localStorage.getItem("likeid");
+
+
+  const likesdata = (id) => {
+    dataget.forEach((e, index) => {
+      if (index + 1 === id) {
+        setClick(!isClick);
+        setDataLink(id);
+        localStorage.setItem("likeid", id)
+      }
+    })
+  }
+
   return (
     <div className='profile-main'>
+      <ToastContainer />
       <div className='inside-section-profile'>
         <div className='profile-section'>
           <div className='box' data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -56,8 +75,8 @@ function ProfileSettings() {
               <h3>20</h3>
               <span className="text-follow"> Following</span>
             </div>
-            <div className='following' data-bs-toggle="modal" data-bs-target="#exampleModal1">
-              <h3>20</h3>
+            <div className='following' data-bs-toggle="modal" data-bs-target="#exampleModal685555555555555">
+              <h3>{dataget.length}</h3>
               <span className="text-follow"> Followers</span>
             </div>
 
@@ -72,10 +91,6 @@ function ProfileSettings() {
             </div>
           </div>
 
-          <div>
-
-
-          </div>
         </div>
 
         <div className='carousels-sections'>
@@ -95,32 +110,35 @@ function ProfileSettings() {
                       <h4>{item?.name}</h4>
                       <h6>{item?.date}</h6>
                     </div>
+                    <div>
+
+                    </div>
                   </div>
                   <div className='cards-left'>
-                    {item.image.length > 10 ? <img src={item.image} style={{ width: "100%", height: "100%", borderRadius: "50%" }} /> : <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/05/07/972998-dhonis.jpg" style={{ width: 790, height: "100%" }} />}
+                    {item.image.length > 10 ? <img src={item.image} style={{ width: "100%", height: "100%", borderRadius: "10%" }} alt="no image" /> : <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/05/07/972998-dhonis.jpg" style={{ width: "100%", height: "100%", borderRadius: "20px" }} />}
                   </div>
                   <div className='cards-right'>
-                    <h5 className='names'>{item.name}</h5>
-                    <h4 className='email'>{item.email}</h4>
-                    <h4 className='email'>{item.location}</h4>
+
+                    <h5 className='email mt-2 mb-3'>{item.comments}</h5>
                   </div>
                   <div className='share-cuttons'>
                     <div className='left-shres'>
-                      <i class="fa-solid fa-heart"></i>Like
+                      {/* <Heart  
+                        isClick={dataslick == index + 1 ? isClick : <div></div>}
+                        onClick={() => likesdata(index + 1)}
+                        className="change-heart"
+                      /> */}
+                      <i class={`fa-solid fa-heart ${dataslick == idlike ? "red" : "grey"}`} onClick={() => likesdata(index + 1)}></i>
+                      {dataslick == idlike ? <div className='red'> Like</div> : <div> Like</div>}
                     </div>
-                    <div className='middle-shres'>
+                    <div className='middle-shres'>  
                       <i class="fa-solid fa-message-lines"></i> Comment
                     </div>
                     <div className='right-shres' data-bs-toggle="modal" data-bs-target={`#exampleModal${index + 1}`}>
                       <i class="fa-solid fa-share"></i> Share
                     </div>
 
-
-
-
                     {/* modal share start */}
-
-
                     <div class="modal fade" id={`exampleModal${index + 1}`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
@@ -202,7 +220,7 @@ function ProfileSettings() {
 
       {/* another followrrs modal popup */}
 
-      <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="exampleModal685555555555555" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -214,6 +232,7 @@ function ProfileSettings() {
                 return (
                   <div className='cards mt-2 mb-4'>
                     <div className='cards-left'>
+
                       {item.image.length > 10 ? <img src={item.image} style={{ width: 100, height: 100, borderRadius: "50%" }} /> : <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/05/07/972998-dhonis.jpg" style={{ width: 100, height: 100, borderRadius: "50%" }} />}
                     </div>
                     <div className='cards-right'>

@@ -43,11 +43,22 @@
                 .call {
                     font-weight: 700;
                     padding-bottom: 0.489rem;
+                    @include lgBreakPoint
+                    {
+                        font-size: 1.2rem;
+                    }
                 }
                 .cl {
                     font-size: 2rem;
                     padding-bottom: 1.7rem;
                     color: orange;
+                }
+                .street
+                {
+                    @include lgBreakPoint
+                    {
+                        font-size: 1rem;
+                    }
                 }
             }
         }
@@ -60,6 +71,11 @@
                 justify-content: center;
                 display: flex;
                 gap: 25px;
+                @include lgBreakPoint
+                {
+                    width: 100%;
+                    margin: 0 auto;
+                }
                 .ins {
                     width: 40vw !important;
                     border: 2px solid orange;
@@ -118,6 +134,10 @@
             color: white;
             font-weight: 700;
             @include lgBreakPoint {
+                width: 20%;
+                margin-left: 4.89rem;
+            }
+            @include xlBreakPoint {
                 width: 20%;
                 margin-left: 4.89rem;
             }

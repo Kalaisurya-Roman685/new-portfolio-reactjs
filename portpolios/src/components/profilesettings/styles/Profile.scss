@@ -139,6 +139,12 @@
                 display: flex;
                 gap: 10px;
                 cursor: pointer;
+                .red {
+                    color: red;
+                }
+                .grey {
+                    color: grey;
+                }
             }
             .middle-shres {
                 width: 30%;

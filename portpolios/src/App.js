@@ -16,6 +16,14 @@ import Secondscreen from "./components/ecommerce/welcomescreens/Secondscreen";
 import Login from "./components/ecommerce/login/Login";
 import CartHome from "./components/ecommerce/cartpage/CartHome";
 import Signup from "./components/ecommerce/signup/Signup";
+import Cart from "./components/ecommerce/cart/Cart";
+import Address from "./components/ecommerce/addresspage/Address";
+import OrderDEtails from "./components/ecommerce/OrderDEeatils/OrderDEtails";
+import OrderSuccess from "./components/ecommerce/ordersuccess/OrderSuccess";
+import ForgetPassword from "./components/ecommerce/forgetpassword/ForgetPassword";
+import BottomNavbar from "./mobilecomponents/bottomnavbar/BottomNavbar";
+import HomeMobilesection1 from "./mobilecomponents/section1/HomeMobilesection1";
+
 
 function App() {
     const [cartditems, SetProduct] = useState([]);
@@ -114,7 +122,17 @@ function App() {
                             <Route path="/welcomesecond" component={Secondscreen} />
                             <Route path="/carthome" component={CartHome} />
                             <Route path="/signup" component={Signup} />
+                            <Route path="/cartde" component={Cart} />
+                            <Route path="/address" component={Address} />
+                            <Route path="/orderdetails" component={OrderDEtails} />
+                            <Route path="/success" component={OrderSuccess} />
+                            <Route path="/forgetpassword" component={ForgetPassword} />
                         </Sidebar>
+
+
+                        <BottomNavbar>
+                            <Route path="/" component={HomeMobilesection1} />
+                        </BottomNavbar>
                     </Switch>
                 </Router>
             </div>

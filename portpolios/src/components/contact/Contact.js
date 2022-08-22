@@ -64,7 +64,7 @@ function Contact() {
                             <h4 className='call'>Call Us On</h4>
                         </div>
                         <div>
-                            <h5>+918778377119</h5>
+                            <h5 className='street'>+918778377119</h5>
                         </div>
                     </div>
                     <div className='box1'>
@@ -75,7 +75,7 @@ function Contact() {
                             <h4 className='call'>Office</h4>
                         </div>
                         <div>
-                            <h5>18 Street,chennai</h5>
+                            <h5 className='street'>18 Street,chennai</h5>
                         </div>
                     </div>
                     <div className='box1'>
@@ -86,7 +86,7 @@ function Contact() {
                             <h4 className='call'>Email</h4>
                         </div>
                         <div>
-                            <h5>kalaimca685@gmail.com</h5>
+                            <h5 className='street'>kalaimca685@gmail.com</h5>
                         </div>
                     </div>
                     <div className='box1'>
@@ -97,7 +97,7 @@ function Contact() {
                             <h4 className='call'>Website</h4>
                         </div>
                         <div>
-                            <h5>+918778377119</h5>
+                            <h5 className='street'>kalaiurl</h5>
                         </div>
                     </div>
                 </div>
@@ -109,37 +109,29 @@ function Contact() {
                 </div>
                 <form onSubmit={sendMail}>
 
-                    <div className='forms-section mt-5'>
+                    <div className='forms-section mt-5 '>
 
                         <div className='inputs-box'>
                             <div>
                                 <input type="text" placeholder='Name' className='ins' name="name" required />
-                                {/* <div className='mt-2'>
-                                    <span >{error && name.length <= 1 ? <span style={{ color: "red" }}>name filed is empty</span> : ""}</span>
-                                </div> */}
+
                             </div>
                             <div>
                                 <input type="email" placeholder='Email' className='ins' name="email" required />
-                                {/* <div className='mt-2'>
-                                    <span>{error && email.length <= 0 ? <span style={{ color: "red" }}>email field is empty</span> : ""}</span>
-                                </div> */}
+
                             </div>
                         </div>
                     </div>
 
                     <div className='subjects mt-5'>
                         <input type="text" placeholder='Subject' className='subj' name="subject" required />
-                        {/* <div style={{ paddingLeft: "7rem" }} className="mt-2">
-                            <span>{error && subject.length <= 0 ? <span style={{ color: "red" }}>subject filed is empty</span> : ""}</span>
-                        </div> */}
+
 
                     </div>
 
                     <div className='texts mt-5 mb-4'>
                         <input type="text" placeholder='Message' className='textarea' name="message" required />
-                        {/* <div style={{ paddingLeft: "7rem" }} className="mt-2">
-                            <span>{error && message.length <= 0 ? <span style={{ color: "red" }}>message filed is empty</span> : ""}</span>
-                        </div> */}
+
                     </div>
                     <div>
                         <button className='message' >Send Message</button>

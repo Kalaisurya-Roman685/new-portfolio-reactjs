@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import './styles/Slidebar.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link, NavLink, useHistory } from 'react-router-dom';
-import Section1 from '../../mobilecomponents/section1/Section1';
-import Section2 from '../../mobilecomponents/section2/Section2';
+
 import kalaiimage from '../../assests/whatsappkalai.jpeg';
+import BottomNavbar from '../../mobilecomponents/bottomnavbar/BottomNavbar';
 
 
 const gets = () => {
@@ -37,11 +37,7 @@ function SlideBar({ dark, setdark, children, }) {
 
 
 
-    useEffect(() => {
-        datas.map((items, index) => {
-            return SetCount(index + 1);
-        })
-    }, [])
+
 
 
 
@@ -111,7 +107,7 @@ function SlideBar({ dark, setdark, children, }) {
                                 </div>
                                 <div className='second-follow'>
                                     <div onClick={() => history.push("/addsomething")}>
-                                        <h4 className='count'>{count.length == 0 ? <div>0</div> : <div>{count}</div>}</h4>
+                                        <h4 className='count'>{datas.length}</h4>
                                         <h5 className='flo'>Followers</h5>
                                     </div>
                                 </div>
@@ -168,8 +164,8 @@ function SlideBar({ dark, setdark, children, }) {
                         </motion.main>
                     </motion.div>
                     <div className='d-block d-lg-none'>
-                        <Section1 />
-                        <Section2 />
+                        <BottomNavbar />
+
                     </div>
                 </div>
 
