@@ -8,6 +8,9 @@
     @include xlBreakPoint {
         width: 100%;
     }
+    @include xsBreakPoint {
+        width: 100%;
+    }
     .inside-slide {
         width: 100%;
         height: 100%;
@@ -73,7 +76,7 @@
 
             .slides {
                 background-color: rgb(0, 7, 61);
-              
+
                 .fa-solid {
                     color: orangered;
                     font-size: 1.5rem;
@@ -264,3 +267,128 @@
         }
     }
 }
+
+.main-sidebar-nav {
+    width: 100%;
+    overflow: hidden;
+    overflow-x: hidden;
+    height: 100vh;
+    border: 3px solid red;
+    position: relative;
+    z-index: 90000000000000000000000000000000000000;
+    @include xsBreakPoint {
+        width: 88.2%;
+    }
+    @include smBreakPoint {
+        width: 100%;
+    }
+    @include mdBreakPoint {
+        width: 100%;
+    }
+    .sidebar-mobile {
+        width: 100%;
+        height: 90% !important;
+        // border: 10px solid blue;
+        z-index: -10 !important;
+        overflow: hidden;
+        overflow-y: auto;
+        // display: none;
+    }
+    .side-bottom-section {
+        position: absolute;
+        width: 100%;
+        height: 10%;
+        background-color: rgb(0, 7, 61);
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        z-index: 9000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+        @include xsBreakPoint {
+            width: 100%;
+        }
+        @include mdBreakPoint {
+            width: 100%;
+        }
+        .inside-phone {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-around;
+
+            .icons-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .kalai-circle {
+                width: 58px;
+                height: 58px;
+                border-radius: 50%;
+                border: 2px solid green;
+            }
+        }
+    }
+}
+
+.mobile-bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    color: white;
+    cursor: pointer;
+
+    &__item--active {
+        //dev
+        color: red;
+        cursor: pointer;
+    }
+    .mobile-bottom-nav__item-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    .kalai-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid orange;
+    }
+}
+
+// .mobile-bottom-nav {
+//     position: fixed;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     z-index: 1000;
+
+//     //give nav it's own compsite layer
+//     will-change: transform;
+//     transform: translateZ(0);
+
+//     display: flex;
+
+//     height: 50px;
+
+//     box-shadow: 0 -2px 5px -2px #333;
+//     background-color: #fff;
+
+//     &__item {
+//         flex-grow: 1;
+//         text-align: center;
+//         font-size: 12px;
+
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//     }
+
+//     &__item-content {
+//         display: flex;
+//         flex-direction: column;
+//     }
+// }

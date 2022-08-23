@@ -7,6 +7,7 @@ import kalaiimage from '../../assests/whatsappkalai.jpeg';
 import BottomNavbar from '../../mobilecomponents/bottomnavbar/BottomNavbar';
 
 
+
 const gets = () => {
     let data = localStorage.getItem("amma");
 
@@ -38,6 +39,18 @@ function SlideBar({ dark, setdark, children, }) {
 
 
 
+    useEffect(() => {
+        var navItems = document.querySelectorAll(".mobile-bottom-nav__item");
+        navItems.forEach(function (e, i) {
+            e.addEventListener("click", function (e) {
+                navItems.forEach(function (e2, i2) {
+                    e2.classList.remove("mobile-bottom-nav__item--active");
+                })
+                this.classList.add("mobile-bottom-nav__item--active");
+            });
+        });
+
+    }, [])
 
 
 
@@ -163,10 +176,69 @@ function SlideBar({ dark, setdark, children, }) {
                             {children}
                         </motion.main>
                     </motion.div>
-                    <div className='d-block d-lg-none'>
-                        <BottomNavbar />
+                    <motion.div className='d-block d-lg-none'>
+                        <motion.div className='d-block d-lg-block '>
 
-                    </div>
+
+                            <div className='main-sidebar-nav'>
+                                <div className='sidebar-mobile'>
+                                    <motion.main>
+                                        {children}
+                                    </motion.main>
+                                </div>
+
+                                <div className='side-bottom-section'>
+                                    {/* <div className="mobile-bottom-nav__item--actives" onClick={() => history.push("/success")}>
+                                        kalakal
+                                    </div> */}
+
+                                    <nav class="mobile-bottom-nav">
+                                        <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+                                            <div class="mobile-bottom-nav__item-content" onClick={()=>history.push("/")}>
+                                                <i class="fa-solid fa-house-heart"></i>
+                                                Home
+
+                                            </div>
+                                        </div>
+                                        <div class="mobile-bottom-nav__item">
+                                            <div class="mobile-bottom-nav__item-content" onClick={()=>history.push("/skills")}>
+                                                <i class="fa-solid fa-book-open-cover"></i>
+                                                Skill
+
+                                            </div>
+                                        </div>
+                                        <div class="mobile-bottom-nav__item">
+                                            <div class="mobile-bottom-nav__item-content" onClick={() => history.push("/adduser")}>
+                                                <i class="fa-solid fa-user-plus"></i>
+                                                Adduser
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mobile-bottom-nav__item">
+                                            <div class="mobile-bottom-nav__item-content">
+                                                <i class="fa-solid fa-book-bookmark"></i>
+                                                Projects
+                                            </div>
+                                        </div>
+
+                                        <div class="mobile-bottom-nav__item">
+                                            <div class="mobile-bottom-nav__item-content">
+                                                <span onClick={() => history.push("/profile")} >
+                                                    <img src={kalaiimage} className="kalai-circle" />
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </nav>
+
+                                </div>
+                            </div>
+
+
+                        </motion.div>
+
+                    </motion.div>
                 </div>
 
 

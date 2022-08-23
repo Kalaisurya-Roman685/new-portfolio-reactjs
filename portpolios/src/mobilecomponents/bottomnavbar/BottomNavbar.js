@@ -6,7 +6,10 @@ import { useState } from 'react';
 import HomeMobilesection1 from '../section1/HomeMobilesection1';
 import SkillsMobileSection from '../section2/SkillsMobileSection';
 
-function BottomNavbar() {
+import kalai from '../../assests/whatsappkalai.jpeg';
+import MobileProfileSection from '../mobileprofilesewction/MobileProfileSection';
+
+function BottomNavbar({ dark, setdark }) {
 
     const [index, setIndex] = useState(0);
     return (
@@ -27,45 +30,47 @@ function BottomNavbar() {
                         section4
                     </div>
                     <div hidden={index !== 4}>
-                        section5
+                        <MobileProfileSection dark={dark} setdark={setdark} />
                     </div>
                 </div>
                 <div className='phone-mobile'>
                     <div className='inside-phone'>
                         <div >
                             <span onClick={() => setIndex(0)}>
-                                <div className="icons-section active">
+                                <div className={`icons-section ${index === 0 ? "actives" : "null"} `}>
                                     <i class="fa-solid fa-house-heart"></i>
-                                    home
+                                    Home
                                 </div>
                             </span>
                         </div>
                         <div>
                             <span onClick={() => setIndex(1)}>
-                                <div>
+                                <div className={`icons-section ${index === 1 ? "actives" : "null"} `}>
                                     <i class="fa-solid fa-book-open-cover"></i>
-                                    skill
+                                    Skill
                                 </div>
                             </span>
                         </div>
                         <div>
                             <span onClick={() => setIndex(2)}>
-                                <div>
+                                <div className={`icons-section ${index === 2 ? "actives" : "null"} `}>
                                     <i class="fa-solid fa-user-plus"></i>
-                                    adduser
+                                    Adduser
                                 </div>
                             </span>
                         </div>
                         <div>
                             <span onClick={() => setIndex(3)}>
-                                <div>
+                                <div className={`icons-section ${index === 3 ? "actives" : "null"} `}>
                                     <i class="fa-solid fa-book-bookmark"></i>
-                                    projects
+                                    Projects
                                 </div>
                             </span>
                         </div>
                         <div>
-                            <span onClick={() => setIndex(4)}>section5</span>
+                            <span onClick={() => setIndex(4)} >
+                                <img src={kalai} className={`kalai-circle ${index === 4 ? "greencircle" : "redcircle"} `} />
+                            </span>
                         </div>
 
                     </div>

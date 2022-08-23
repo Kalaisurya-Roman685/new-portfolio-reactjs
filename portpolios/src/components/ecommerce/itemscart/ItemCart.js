@@ -25,10 +25,10 @@ function ItemCart(props) {
         AOS.refresh();
     }, []);
     return (
-        <div className="calls col-lg-5 col-xl-5 col-xxl-4 mx-0 mb-5">
+        <div className="calls col-lg-5 col-xl-5 col-xxl-4 col-xs-4 col-md-4 col-sm-4 mx-0 mb-5">
             <div
                 class="cardss  h-100 "
-               
+
             >
                 <div className="heart">
                     <Heart
@@ -44,7 +44,7 @@ function ItemCart(props) {
                 <div class="card-body">
                     <h5 class="card-title">{props.title}</h5>
                     <p class="card-text">$ {props.price}</p>
-                   
+
                     <button
                         className="btns"
                         onClick={() => {

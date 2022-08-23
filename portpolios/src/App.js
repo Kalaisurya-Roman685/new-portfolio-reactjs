@@ -21,8 +21,11 @@ import Address from "./components/ecommerce/addresspage/Address";
 import OrderDEtails from "./components/ecommerce/OrderDEeatils/OrderDEtails";
 import OrderSuccess from "./components/ecommerce/ordersuccess/OrderSuccess";
 import ForgetPassword from "./components/ecommerce/forgetpassword/ForgetPassword";
-import BottomNavbar from "./mobilecomponents/bottomnavbar/BottomNavbar";
+
 import HomeMobilesection1 from "./mobilecomponents/section1/HomeMobilesection1";
+import MobileProfileSection from "./mobilecomponents/mobileprofilesewction/MobileProfileSection";
+import MobileScreenOne from "./mobilecomponents/mobilewelcomescreen/MobileScreenOne";
+import BottomNavbar from "./mobilecomponents/bottomnavbar/BottomNavbar";
 
 
 function App() {
@@ -129,10 +132,8 @@ function App() {
                             <Route path="/forgetpassword" component={ForgetPassword} />
                         </Sidebar>
 
+                        <Route path="/mobilescreenone" component={MobileScreenOne} />
 
-                        <BottomNavbar>
-                            <Route path="/" component={HomeMobilesection1} />
-                        </BottomNavbar>
                     </Switch>
                 </Router>
             </div>

@@ -20,13 +20,13 @@ function CartHome() {
 
     useEffect(() => {
         getsData();
-    }, [stores])
+    }, [])
 
     const getsData = () => {
         ProductApi().then((res) => {
             console.log('====================================');
             console.log(res.data);
-            SetStores(res.data.products)
+            SetStores(res.data.products,"no data")
             console.log('====================================');
         }).catch((err) => {
             console.log('====================================');

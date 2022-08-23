@@ -1,0 +1,92 @@
+@use "../../../scss/abstract/" as *;
+
+.mobile-profile {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+    .mobile-profile-inside {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        .kalai-image-profile {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid green;
+        }
+        .doots {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            border-radius: 50%;
+            top: 18.7%;
+            left: 58%;
+        }
+        .dep {
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            .re {
+                color: orangered;
+                font-weight: bold;
+            }
+        }
+        .lo {
+            width: 90%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            .lor {
+                line-height: 1.7;
+            }
+        }
+        .followe-mobile {
+            display: flex;
+            gap: 40px;
+            .flo {
+                text-align: center;
+                .counts {
+                    font-weight: bold;
+                }
+            }
+            .flow {
+                text-align: center;
+                .counts {
+                    font-weight: bold;
+                }
+            }
+        }
+        .mobile-box1 {
+            display: flex;
+            gap: 50px;
+            width: 80%;
+            .left-mobile-box1 {
+                border: 2px solid red;
+                width: 40%;
+                background-color: orange;
+                text-align: center;
+                padding: 15px;
+                border-radius: 10px;
+                color: white;
+                .e-commercess {
+                    width: 100%;
+                    border-radius: 10px;
+                    height: 70%;
+                }
+            }
+            .left-mobile-box1:hover {
+                opacity: 0.8;
+                cursor: pointer;
+            }
+        }
+    }
+}

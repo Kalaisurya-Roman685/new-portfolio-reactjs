@@ -19,6 +19,8 @@ import Section13Skill from './compnents/section13/Section13Skill';
 import Section14Skill from './compnents/section14/Section14Skill';
 import Section15Skill from './compnents/section15/Section15Skill';
 import Section16Skill from './compnents/section16/Section16Skill';
+import MobileSection1 from './mobilecomponents/mobilesection1/MobileSection1';
+
 function Skills() {
 
   const [datas, SetDatas] = useState([
@@ -88,7 +90,7 @@ function Skills() {
   ])
   return (
     <div className='main-section1'>
-      <div className='inside-section row'>
+      <div className='inside-section row d-none d-lg-block'>
         <Section1skill />
         <Section2Skill />
         <Section3Skill />
@@ -104,7 +106,11 @@ function Skills() {
         <Section13Skill />
         <Section14Skill />
         <Section15Skill />
-        <Section16Skill/>
+        <Section16Skill />
+      </div>
+      <div className=' classmobile d-block d-lg-block'>
+        <MobileSection1 />
+
       </div>
     </div>
   )
