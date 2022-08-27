@@ -271,20 +271,13 @@
 .main-sidebar-nav {
     width: 100vw;
     overflow: hidden;
-    overflow-x: hidden;
-    height: 100vh;
-    // border: 3px solid red;
-
     z-index: 90000000000000000000000000000000000000;
-
     .sidebar-mobile {
         width: 100%;
         height: 90% !important;
-        // border: 10px solid blue;
         z-index: -10 !important;
         overflow: hidden;
         overflow-y: auto;
-        // display: none;
     }
     .side-bottom-section {
         position: absolute;

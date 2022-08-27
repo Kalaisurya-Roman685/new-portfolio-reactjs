@@ -75,8 +75,8 @@ function AdduserMain() {
     return (
         <div className='maintodo'>
             <ToastContainer />
-            <h1 className='text-center mt-4'>Add User Somethink</h1>
-            <div className='kalai-forms'>
+            <h5 className='text-center mt-2'>Add User Somethink</h5>
+            <div className='kalai-formss mt-5'>
                 <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                     <input type="text" name="name" value={name} onChange={(e) => SetNames(e.target.value)} placeholder="name" />
                     {error && name.length <= 0 ? <span style={{ color: "red" }}>Name Filed Is Empty</span> : ""}
@@ -104,7 +104,7 @@ function AdduserMain() {
             </div>
 
 
-            <div className='mt-5'>
+            <div className='mt-3 ms-3'>
                 <h6 style={{ color: "orangered", fontWeight: "600" }}>Add User Something Message...</h6>
 
                 <div className='serach-input '>
