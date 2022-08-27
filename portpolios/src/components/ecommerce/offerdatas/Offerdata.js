@@ -9,11 +9,48 @@ function Offerdata(props) {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 2000,
+        speed: 3000,
         autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 1440,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true
+                }
+            },
+
+        ]
     };
 
     const [stores, SetStores] = useState([]);
@@ -27,7 +64,7 @@ function Offerdata(props) {
         ProductApi().then((res) => {
             console.log('====================================');
             console.log(res.data);
-            SetStores(res.data.products.slice(0, 10))
+            SetStores(res.data.products.slice(0, 20))
             console.log('====================================');
         }).catch((err) => {
             console.log('====================================');
@@ -43,39 +80,25 @@ function Offerdata(props) {
                         <div className="main-card-slider col-lg-6 col-xl-4">
                             <div className="cardt">
                                 <div className="split_box">
-                                    <div className="left-box1">
-                                        <div className="empty-box">
-                                            <img
-                                                src={items.thumbnail}
-                                                alt={items.title}
-                                                className="mb_sizes"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="right-box">
-                                        <p
-                                            className="text-center"
-                                            style={{
-                                                fontSize: "18px",
-                                                color: "#FFF500",
-                                                fontWeight: "700",
-                                            }}
-                                        >
-                                            {items.title}
-                                        </p>
-                                        <p
-                                            className="text-center"
-                                            style={{
-                                                color: "white",
-                                                fontWeight: "500",
-                                            }}
-                                        >
-                                            {items.description}
-                                        </p>
-                                        <p style={{textAlign:"center"}}>Price: ${items.price}</p>
 
+                                    <div className="mt-2">
+                                        <img
+                                            src={items.thumbnail}
+                                            alt={items.title}
+                                            className="mb_sizes"
+                                        />
                                     </div>
+
+                                    <div className="list-carousels">
+                                        <h6 className="hekalai"> {items.title}</h6>
+                                        <span> {items.description}</span>
+                                        Price: $ {items.price}
+                                    </div>
+
+
                                 </div>
+
+
                             </div>
                         </div>
                     );

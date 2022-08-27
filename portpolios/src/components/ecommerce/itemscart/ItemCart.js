@@ -25,7 +25,7 @@ function ItemCart(props) {
         AOS.refresh();
     }, []);
     return (
-        <div className="calls col-lg-5 col-xl-5 col-xxl-4 col-xs-4 col-md-4 col-sm-4 mx-0 mb-5">
+        <div className="calls col-lg-5 col-xl-5 col-xxl-4 col-xs-6 col-md-6 col-sm-6 mx-0 mb-5">
             <div
                 class="cardss  h-100 "
 
@@ -41,9 +41,9 @@ function ItemCart(props) {
                 <div className="box">
                     <img src={props.image} class="card-img-top" alt="..." />
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">{props.title}</h5>
-                    <p class="card-text">$ {props.price}</p>
+                <div className="mains3 mt-3">
+                    <h6 className="mains1 mb-2">{props.title}</h6>
+                    <p className="main1">$ {props.price}</p>
 
                     <button
                         className="btns"

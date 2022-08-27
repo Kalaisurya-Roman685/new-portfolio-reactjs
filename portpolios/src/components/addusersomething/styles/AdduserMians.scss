@@ -33,14 +33,41 @@
             border: none;
             outline: none;
             border-radius: 10px;
+            @include xsBreakPoint {
+                width: 40%;
+                color: white;
+                cursor: pointer;
+            }
+            @include smBreakPoint {
+                width: 30%;
+                color: white;
+                cursor: pointer;
+            }
+            @include mdBreakPoint {
+                width: 20%;
+                color: white;
+                cursor: pointer;
+            }
         }
     }
     .card {
-        background-color: $back_export_color-white;
+        // background-color: $back_export_color-white;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, orangered 0px 30px 60px -30px,
+            orange 0px -2px 6px 0px inset;
+        background-color: white;
+
         padding: 20px;
         border-radius: 20px;
         align-items: center;
         justify-content: center;
+        @include xsBreakPoint {
+            width: 80%;
+        }
+        .names,
+        .email {
+            color: rgb(0, 7, 61);
+            font-weight: 700;
+        }
         .delete {
             width: 30%;
             padding: 6px;

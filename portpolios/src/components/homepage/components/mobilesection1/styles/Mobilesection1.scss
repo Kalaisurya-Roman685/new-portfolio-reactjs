@@ -10,6 +10,7 @@
     @include xsBreakPoint {
         height: auto;
         padding-bottom: 30px;
+        width: 100%;
     }
     @include smBreakPoint {
         height: auto !important;

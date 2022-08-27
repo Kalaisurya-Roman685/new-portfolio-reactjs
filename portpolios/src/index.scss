@@ -1,1 +1,30 @@
-@use 'scss' as *;
+@use "scss" as *;
+
+body {
+    scrollbar-width: none;
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none !important;
+}
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}

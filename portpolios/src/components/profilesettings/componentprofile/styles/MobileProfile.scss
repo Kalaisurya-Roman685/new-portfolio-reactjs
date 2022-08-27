@@ -1,0 +1,94 @@
+@use "../../../../scss/abstract/" as *;
+
+.mobile-profile {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+    @include xsBreakPoint {
+        width: 100%;
+        overflow-y: auto;
+    }
+    .inside-mobile-profile {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 3%;
+        .kalais {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid green;
+        }
+        .loreams-kalai {
+            width: 100%;
+            padding: 0px 20px;
+            line-height: 1.7;
+        }
+        .follow-list {
+            display: flex;
+            gap: 30px;
+            font-weight: bold;
+        }
+        .follow-list1 {
+            display: flex;
+            gap: 30px;
+            font-weight: bold;
+            .follow-left1 {
+                border: 1px solid orange;
+                padding: 10px;
+                border-radius: 10px;
+                .e-commerces {
+                    width: 140px;
+                }
+            }
+            .follow-left1:hover {
+                cursor: pointer;
+                opacity: 0.4;
+            }
+        }
+
+        .counts {
+            font-weight: bold;
+            color: orangered;
+        }
+    }
+    .main-cardss {
+        width: 80vw;
+        // border: 2px solid red;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, orangered 0px 30px 60px -30px,
+            orange 0px -2px 6px 0px inset;
+        background-color: white;
+
+        .mobile-image-picture {
+            width: 250px;
+            border-radius: 10px;
+            height: 200px;
+            .kalaigap {
+                display: flex;
+                gap: 10px;
+                align-content: center;
+                justify-content: center;
+            }
+            .kalaies {
+                display: flex;
+                gap: 10px;
+                align-content: center;
+                width: 100%;
+                justify-content: center;
+                border: 2px solid blue;
+            }
+        }
+        .likes-sections {
+            display: flex;
+            justify-content: space-around;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    }
+}

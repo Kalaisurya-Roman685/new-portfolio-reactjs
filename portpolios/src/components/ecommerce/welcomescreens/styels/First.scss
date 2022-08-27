@@ -5,6 +5,18 @@
     height: 100vh;
     overflow: hidden;
     padding-top: 5%;
+    @include xsBreakPoint {
+        padding-top: 50%;
+        overflow-y: hidden;
+    }
+    @include smBreakPoint {
+        padding-top: 20%;
+        overflow-y: hidden;
+    }
+    @include mdBreakPoint {
+        padding-top: 20%;
+        overflow-y: hidden;
+    }
     .persons {
         width: 55%;
         margin: 0 auto;
@@ -12,6 +24,15 @@
         align-items: center;
         justify-content: center;
         object-fit: cover;
+        @include xsBreakPoint {
+            width: 80%;
+        }
+        @include smBreakPoint {
+            width: 80%;
+        }
+        @include mdBreakPoint {
+            width: 80%;
+        }
         @include lgBreakPoint {
             width: 100%;
         }
@@ -26,6 +47,18 @@
         justify-content: center;
         text-align: center;
         padding-top: 20px;
+        @include xsBreakPoint {
+            width: 80%;
+            // font-size: 1rem !important;
+        }
+        @include smBreakPoint {
+            width: 80%;
+            // font-size: 18px;
+        }
+        @include mdBreakPoint {
+            width: 80%;
+            // font-size: 18px;
+        }
         @include lgBreakPoint {
             font-size: 20px;
             width: 85%;
@@ -37,6 +70,22 @@
         .et1 {
             line-height: 2;
             font-size: 22px;
+            @include xsBreakPoint {
+                font-size: 17px;
+                width: 100%;
+            }
+            @include smBreakPoint {
+                font-size: 17px;
+                width: 100%;
+            }
+            @include mdBreakPoint {
+                font-size: 17px;
+                width: 100%;
+            }
+            @include lgBreakPoint {
+                font-size: 20px;
+                width: 100%;
+            }
             @include lgBreakPoint {
                 font-size: 20px;
                 width: 100%;
@@ -64,6 +113,18 @@
             font-weight: 600;
             border: none;
             outline: none;
+            @include xsBreakPoint {
+                font-size: 18px;
+                width: 70%;
+            }
+            @include lgBreakPoint {
+                font-size: 20px;
+                width: 100%;
+            }
+            @include lgBreakPoint {
+                font-size: 20px;
+                width: 100%;
+            }
         }
     }
 }

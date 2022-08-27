@@ -85,12 +85,12 @@ function Signup() {
 
                     <form>
                         <h1 className="mb-5" style={{ color: "orangered" }}>SignUp</h1>
-                        <div class="mb-3  col-lg-12 col-xl-12 col-xxl-12">
+                        <div class="mb-3 col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                             <label for="exampleInputName1" class="form-label">User Name</label>
                             <input type="text" class="form-control" id="exampleInputName1" aria-describedby="emailHelp" onChange={(e) => SetName(e.target.value)} name="name" value={name} />
                             {error && name.length <= 0 ? <div id="emailHelp" class="form-text" style={{ color: "red" }}>Name Field is empty</div> : ""}
                         </div>
-                        <div class="mb-3  col-lg-12 col-xl-12 col-xxl-12">
+                        <div class="mb-3 col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                             <label for="exampleInputEmail1" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e) => SetEmail(e.target.value)} name="email" value={email} />
                             {error && email.length <= 0 ? <div id="emailHelp" class="form-text" style={{ color: "red" }}>Email Field is empty</div> : ""}

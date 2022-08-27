@@ -3,15 +3,42 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    @include xsBreakPoint {
+        padding-top: 20%;
+
+        // background-color: blue;
+    }
+    @include smBreakPoint {
+        padding-top: 10%;
+    }
+
     .login-inside {
         width: 100%;
         height: 100%;
         display: flex;
+        @include xsBreakPoint {
+            flex-direction: column;
+        }
+        @include smBreakPoint {
+            flex-direction: column;
+        }
+        @include mdBreakPoint {
+            flex-direction: column;
+        }
         .login-left {
             width: 50%;
             align-items: center;
             justify-content: center;
             display: flex;
+            @include xsBreakPoint {
+                width: 100%;
+            }
+            @include smBreakPoint {
+                width: 100%;
+            }
+            @include mdBreakPoint {
+                width: 100%;
+            }
             @include lgBreakPoint {
                 width: 100%;
             }
@@ -33,6 +60,17 @@
             align-items: center;
             justify-content: center;
             display: flex;
+            @include xsBreakPoint {
+                width: 100%;
+                padding-top: 15%;
+            }
+            @include smBreakPoint {
+                width: 100%;
+                padding-top: 10%;
+            }
+            @include mdBreakPoint {
+                width: 100%;
+            }
             @include lgBreakPoint {
                 width: 100%;
             }

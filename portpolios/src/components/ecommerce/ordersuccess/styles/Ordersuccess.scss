@@ -1,3 +1,5 @@
+@use "../../../../scss/abstract/" as *;
+
 .backtologin {
     width: 15%;
     padding: 10px;
@@ -8,6 +10,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include xsBreakPoint {
+        width: 40%;
+        font-size: 1.2rem;
+        background-color: orangered;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 5%;
+    }
+    @include smBreakPoint {
+        width: 35%;
+        font-size: 1.2rem;
+        background-color: orangered;
+        color: white;
+        cursor: pointer;
+    }
+    @include mdBreakPoint {
+        width: 30%;
+        font-size: 1.6rem;
+        background-color: orangered;
+        color: white;
+        cursor: pointer;
+    }
 }
 .img-order-split {
     display: flex;
@@ -18,4 +43,29 @@
 .success-btn {
     display: flex;
     justify-content: center;
+}
+
+.gifyts {
+    @include xsBreakPoint {
+        width: 100%;
+        padding-top: 10%;
+    }
+    @include smBreakPoint {
+        width: 80%;
+        padding-top: 12%;
+    }
+    @include mdBreakPoint {
+        width: 80%;
+    }
+}
+
+.succs {
+    color: orangered;
+    font-weight: bold;
+}
+
+.thnks {
+    text-align: center;
+    color: rgb(0, 7, 61);
+    font-weight: bold;
 }

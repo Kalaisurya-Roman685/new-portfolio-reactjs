@@ -48,6 +48,7 @@
 //     }
 // }
 
+@use "../../../../scss/abstract/" as *;
 .carts-main {
     width: 100%;
     // background-color: red;
@@ -147,5 +148,85 @@
         outline: none;
         cursor: pointer;
         margin-right: 20px;
+        @include xsBreakPoint {
+            width: 30%;
+        }
+        @include smBreakPoint {
+            width: 30%;
+        }
+    }
+}
+
+.kalai-image-split {
+    width: 95%;
+    // border: 2px solid red;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 10px;
+    // background-color: orange;
+    background-color: white;
+    .left-kalai-image {
+        width: 30%;
+        // border: 3px solid green;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        .img-kalai-width {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            // border: 1px solid orangered;
+            @include smBreakPoint {
+                width: 130px;
+                height: 130px;
+            }
+            @include mdBreakPoint {
+                width: 140px;
+                height: 140px;
+            }
+        }
+    }
+    .right-kalai-image {
+        width: 70%;
+        // border: 3px solid green;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        cursor: pointer;
+        .kalai-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: orangered;
+        }
+        .butts {
+            display: flex;
+            gap: 20px;
+        }
+        .prices {
+            color: rgb(0, 7, 61);
+            font-weight: bold;
+        }
+        .add-users {
+            width: 30px;
+            height: 30px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+            background-color: orangered;
+            padding: 4;
+            border: none;
+            outline: none;
+            border-radius: 50%;
+            color: white;
+            font-weight: bold;
+        }
+        .numbe-count {
+            color: orangered;
+            font-weight: bold;
+        }
     }
 }

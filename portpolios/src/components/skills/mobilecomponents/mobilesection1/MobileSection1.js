@@ -12,9 +12,9 @@ function MobileSection1() {
             <div className='inside-mobile-section row justify-content-center'>
                 {DataProviders.skillData.map((items, index) => {
                     return (
-                        <div className='cardss1 col-xs-4 col-sm-4 col-md-8 mt-3 mb-4'>
+                        <div className='cardss1 col-xs-6 col-sm-6 col-md-8 mt-3 mb-4'>
                             <img src={items.image} alt={items.name} className="img-fluid img-item" />
-                            <h4 className='mt-2'>{items.name}</h4>
+                            <h4 className='mt-3 name'>{items.name}</h4>
                             <div className='mt-2'>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
@@ -22,10 +22,10 @@ function MobileSection1() {
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <span className='mt-2'>
+                            <span className='mt-3 mb-2 names'>
                                 {items.description}
                             </span>
-                            <button className='read-mores mt-2 mb-2'>{items.button}</button>
+                            <button className='read-mores mt-2 mb-4'>{items.button}</button>
 
 
                             <div>

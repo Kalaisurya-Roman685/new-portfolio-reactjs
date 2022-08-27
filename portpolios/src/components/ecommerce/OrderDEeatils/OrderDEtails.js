@@ -38,55 +38,25 @@ function OrderDEtails(props) {
     };
     return (
         <div className="order-scroll-mains">
-            <h1 className="text-center mt-3 mb-3"> Order details</h1>
+            <h1 className="text-center mt-3 mb-3 name-field"> Order details</h1>
             <ToastContainer />
             {local.length === 0 && <div>No Data Found!!</div>}
             {local && (
                 <div className="mt-4 mb-3">
                     {local.map((items, index) => {
                         return (
-                            <div key={index} className="address-lists">
-                                <div className="split-address-orders">
-                                    <div className="left-split-orders-list">
-                                        <h1>
-                                            Name:
-                                            <span className="dt">
-                                                {items.name}
-                                            </span>
-                                        </h1>
-                                        <h1>
-                                            Area:
-                                            <span className="dt">
-                                                {items.area}
-                                            </span>
-                                        </h1>
-                                        <h1>
-                                            Street:
-                                            <span className="dt">
-                                                {items.street}
-                                            </span>
-                                        </h1>
-                                    </div>
-                                    <div className="right-split-orders-list">
-                                        <h1>
-                                            Address:
-                                            <span className="dt">
-                                                {items.address}
-                                            </span>
-                                        </h1>
-                                        <h1>
-                                            City:
-                                            <span className="dt">
-                                                {items.city}
-                                            </span>
-                                        </h1>
-                                        <h1>
-                                            Pincode:
-                                            <span className="dt">
-                                                {items.pincode}
-                                            </span>
-                                        </h1>
-                                    </div>
+
+                            <div className="order-details-main mt-3 mb-4">
+                                <div className="left-orders">
+                                    <span className="name-w">Name:<span className="name-field">{items.name}</span></span>
+                                    <span className="name-w mt-2">Area: <span className="name-field">{items.area}</span></span>
+                                    <span className="name-w mt-2">Street:<span className="name-field">{items.street}</span></span>
+
+                                </div>
+                                <div className="right-orders">
+                                    <span className="name-w">City:<span className="name-field">{items.city}</span></span>
+                                    <span className="name-w mt-2">PinCode:<span className="name-field"> {items.pincode}</span></span>
+                                    <span className="name-w mt-2">Date: <span className="name-field">{items.dates}</span></span>
                                 </div>
                             </div>
                         );
@@ -95,11 +65,11 @@ function OrderDEtails(props) {
             )}
             {images.length === 0 && <div>No Data Found!!</div>}
             {images && (
-                <div>
+                <div className="row justify-content-center">
                     {images.map((it, index) => {
                         return (
                             <>
-                                <div key={index} className="order-box mb-4">
+                                <div key={index} className="order-box mb-4 col-md-5 col-sm-6 col-xs-4">
                                     <span>
                                         {" "}
                                         <img
@@ -108,12 +78,12 @@ function OrderDEtails(props) {
                                             className="order-images"
                                         />
                                         <div className="text-center mt-4">
-                                            <h1>Title:{it.title}</h1>
-                                            <p>Price:{it.price}</p>
-                                            <p>Quantity:{it.quantity}</p>
+                                            <h5 className="name-w">{it.title}</h5>
+                                            <p className="name-field">Price:{it.price}</p>
+                                            <p className="name-field">Quantity:{it.quantity}</p>
                                         </div>
                                     </span>
-                                    <p>{it.itemtotal}</p>
+                                    <p className="name-field">{it.itemtotal}</p>
                                 </div>
 
                                 {/* <button onClick={()=>removes()}>Remove</button> */}
@@ -125,7 +95,7 @@ function OrderDEtails(props) {
             <div className="boxs mb-5 mt-5 text-center">
                 <h1>Toatal Amount:{cartTotal}</h1>
             </div>
-            <div className="buttons-splits mt-5 mb-3">
+            <div className="buttons-splits mt-5 mb-4">
                 <button
                     className="backs"
                     onClick={() => history.push("/cartde")}

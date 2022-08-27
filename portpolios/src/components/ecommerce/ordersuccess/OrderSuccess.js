@@ -14,17 +14,18 @@ function OrderSuccess(props) {
         <>
             <div>
                 <ToastContainer />
-                <h1 className="text-center mt-3 mb-3">Order SuccessFully...</h1>
+                <h1 className="text-center mt-5 mb-5 succs">Order SuccessFully...</h1>
+                <div className="thnks">
+                    Thanks you to Viste My Website😎..😜..😍
+                </div>
                 <div className="img-order-split">
                     <div className="left-success">
-                        <img src="https://i.gifer.com/Q0t0.gif" />
+                        <img src="https://i.gifer.com/Q0t0.gif" className="gifyts" />
                     </div>
-                    <div className="right-success">
-                        <img src="https://c.tenor.com/w-boZxCBeu0AAAAj/career-great-employee.gif" />
-                    </div>
+
                 </div>
             </div>
-            <div className="success-btn">
+            <div className="success-btn mb-4">
                 <button onClick={() => movelogin()} className="backtologin">
                     Back to Login
                 </button>

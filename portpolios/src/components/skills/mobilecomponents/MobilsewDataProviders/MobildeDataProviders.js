@@ -142,7 +142,7 @@ export const DataProviders = {
             id: 1,
             name: "GitLab",
             description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis viverra mollis nisl dole dolorili tincidunt",
-            image: s1,
+            image: s8,
             starts: "",
             button: "ReadMore..."
         },
@@ -150,7 +150,7 @@ export const DataProviders = {
             id: 1,
             name: "FireBase",
             description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis viverra mollis nisl dole dolorili tincidunt",
-            image: s1,
+            image: s5,
             starts: "",
             button: "ReadMore..."
         },

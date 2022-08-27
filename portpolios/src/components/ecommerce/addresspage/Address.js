@@ -17,8 +17,10 @@ function Address(props) {
     const [city, SetCity] = useState("");
     const [street, SetStreet] = useState("");
     const [address, SetAddress] = useState("");
+    const [dates, SetDate] = useState("");
     const [pincode, SetPincode] = useState("");
     const [area, SetArea] = useState("");
+    const [error, SetError] = useState(false);
 
     const [stored, SetStore] = useState(gatData);
     const [OneData, SetOneDataModel] = useState([]);
@@ -26,15 +28,25 @@ function Address(props) {
     const usehistory = useHistory();
     const handlesubmit = (e) => {
         e.preventDefault();
-        let emptydata = {
-            name,
-            city,
-            street,
-            address,
-            pincode,
-            area,
-        };
-        SetStore([...stored, emptydata]);
+
+        if (name.length == 0 || city.length == 0 || street.length == 0 || address.length == 0 | pincode.length == 0 || area.length == 0) {
+            SetError(true);
+        }
+        if (name && city && street && address && pincode && area) {
+            let emptydata = {
+                name,
+                city,
+                street,
+                address,
+                pincode,
+                area,
+                dates
+            };
+            SetStore([...stored, emptydata]);
+            setTimeout(() => {
+                usehistory.push("/orderdetails");
+            }, 2000);
+        }
         SetId("");
         SetName("");
         SetCity("");
@@ -42,9 +54,8 @@ function Address(props) {
         SetPincode("");
         SetArea("");
         SetAddress("");
-        setTimeout(() => {
-            usehistory.push("/orderdetails");
-        }, 2000);
+        SetDate("");
+
     };
     console.log("welcome", stored);
     useEffect(() => {
@@ -88,9 +99,10 @@ function Address(props) {
     };
 
     return (
-        <div className="containers">
-            <div className="col-lg-6 mt-5">
-                <form onSubmit={handlesubmit}>
+        <div className="containes">
+            <div className="col-lg-6 col-md-10 col-sm-10 col-xs-10 mt-5 kalais">
+                <h1 className="adds">Address</h1>
+                <form onSubmit={handlesubmit} className="mt-5">
                     <div class="mb-3">
                         <label for="exampleInputName1" class="form-label">
                             Name
@@ -102,8 +114,9 @@ function Address(props) {
                             aria-describedby="exampleInputName"
                             onChange={(e) => SetName(e.target.value)}
                             value={name}
-                            required
+
                         />
+                        {error && name.length <= 0 ? <span style={{ color: "red" }}>Name Filed Is Empty</span> : ""}
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputCity1" class="form-label">
@@ -115,8 +128,9 @@ function Address(props) {
                             id="exampleInputCity1"
                             onChange={(e) => SetCity(e.target.value)}
                             value={city}
-                            required
+
                         />
+                        {error && city.length <= 0 ? <span style={{ color: "red" }}>city Filed Is Empty</span> : ""}
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputStreet1" class="form-label">
@@ -129,8 +143,9 @@ function Address(props) {
                             aria-describedby="exampleInputStreet1"
                             onChange={(e) => SetStreet(e.target.value)}
                             value={street}
-                            required
+
                         />
+                        {error && street.length <= 0 ? <span style={{ color: "red" }}>street Filed Is Empty</span> : ""}
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPincode1" class="form-label">
@@ -143,8 +158,9 @@ function Address(props) {
                             aria-describedby="exampleInputPincode1"
                             onChange={(e) => SetPincode(e.target.value)}
                             value={pincode}
-                            required
+
                         />
+                        {error && pincode.length <= 0 ? <span style={{ color: "red" }}>pincode Filed Is Empty</span> : ""}
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputArea1" class="form-label">
@@ -157,8 +173,9 @@ function Address(props) {
                             aria-describedby="exampleInputArea1"
                             onChange={(e) => SetArea(e.target.value)}
                             value={area}
-                            required
+
                         />
+                        {error && area.length <= 0 ? <span style={{ color: "red" }}>area Filed Is Empty</span> : ""}
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputAddress1" class="form-label">
@@ -171,8 +188,24 @@ function Address(props) {
                             aria-describedby="exampleInputAddress1"
                             onChange={(e) => SetAddress(e.target.value)}
                             value={address}
-                            required
+
                         />
+                        {error && address.length <= 0 ? <span style={{ color: "red" }}>address Filed Is Empty</span> : ""}
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputAddress1" class="form-label">
+                            Date
+                        </label>
+                        <input
+                            type="date"
+                            class="form-control"
+                            id="exampleInputAddress1"
+                            aria-describedby="exampleInputAddress1"
+                            onChange={(e) => SetDate(e.target.value)}
+                            value={dates}
+
+                        />
+                        {error && dates.length <= 0 ? <span style={{ color: "red" }}>Dates Filed Is Empty</span> : ""}
                     </div>
                     <div class="mb-3 form-check">
                         <input
@@ -184,7 +217,7 @@ function Address(props) {
                             Check me out
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primarys mb-5">
                         Submit
                     </button>
                 </form>

@@ -1,4 +1,4 @@
-@use '../../../../scss/abstract/' as *;
+@use "../../../../scss/abstract/" as *;
 
 .main-sliders {
     width: 100%;
@@ -9,85 +9,63 @@
         padding-top: 20px;
         padding-bottom: 50px;
         .cardt {
-            // border: 3px solid blue;
-            // background-color: #00cba9;
-            background-color: orangered;
-            display: flex;
+            // background-color: orangered;
+            background-color: white;
             gap: 30px;
-            width: 94%;
-            height: 200px;
-            align-items: center;
+            width: 98%;
+            padding: 2%;
             border-radius: 20px;
-            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-            padding: 10px;
+            // box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, red 0px 2px 6px 2px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, orangered 0px 18px 36px -18px inset;
+            @include xsBreakPoint {
+                height: 450px;
+                width: 98%;
+            }
+            @include smBreakPoint {
+                height: 500px;
+                width: 98%;
+            }
+            @include mdBreakPoint {
+                height: 500px;
+                width: 98%;
+            }
             .split_box {
-                display: flex;
                 gap: 30px;
-                .left-box1 {
-                    width: 50%;
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    justify-content: c;
-                    .empty-box {
-                        width: 120px;
-                        height: 120px;
-                        border-radius: 50%;
-                        // background-color: ;
-                        position: relative;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-                        background: linear-gradient(
-                            180deg,
-                            rgba(186, 255, 247, 0.84) 0%,
-                            rgba(186, 255, 247, 0.6384) 100%
-                        );
-                    }
-                    .mb_sizes {
-                        width: 80px;
-                        height: 80px;
-                        transform: rotate(10deg);
-                        position: absolute;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        transition: 2s;
-                        animation: zooms 2s ease-in-out infinite;
-                        border-radius: 30px;
-                    }
-                    @keyframes zooms {
-                        0%,
-                        100% {
-                            transform: scale(0);
-                            transition: 2s;
-                            transform: rotate(-20deg);
-                        }
-                        30% {
-                            transform: scale(0.6);
-                            transition: 2s;
-                        }
-                        60% {
-                            transform: scale(0.9);
-                            transition: 1s;
-                        }
-                        90% {
-                            transform: scale(0.8);
-                            transition: 1s;
-                        }
-                        100% {
-                            transform: scale(1.1);
-                            transition: 2s;
-                        }
-                    }
-                }
-                .right_box {
-                    width: 50%;
-                    text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto;
+                cursor: pointer;
+                .mb_sizes {
+                    width: 60vw;
+                    border-radius: 30px;
+                    height: 300px;
                     align-items: center;
                     justify-content: center;
                     display: flex;
+                    margin: 0 auto;
+                    @include xsBreakPoint {
+                        width: 60vw;
+                        height: 200px;
+                    }
+                    @include mdBreakPoint {
+                        width: 60vw;
+                        height: 200px;
+                    }
+                }
+                .hekalai {
+                    color: orangered;
+                    font-weight: bold;
+                    font-size: 1.4rem;
+                }
+                .list-carousels {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 10px;
+                    font-weight: bold;
+                    color: rgb(0, 7, 61);
                 }
             }
         }

@@ -179,7 +179,6 @@ function SlideBar({ dark, setdark, children, }) {
                     <motion.div className='d-block d-lg-none'>
                         <motion.div className='d-block d-lg-block '>
 
-
                             <div className='main-sidebar-nav'>
                                 <div className='sidebar-mobile'>
                                     <motion.main>
@@ -194,28 +193,28 @@ function SlideBar({ dark, setdark, children, }) {
 
                                     <nav class="mobile-bottom-nav">
                                         <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
-                                            <div class="mobile-bottom-nav__item-content" onClick={()=>history.push("/")}>
+                                            <div class="mobile-bottom-nav__item-content" onClick={() => history.push("/")}>
                                                 <i class="fa-solid fa-house-heart"></i>
                                                 Home
 
                                             </div>
                                         </div>
                                         <div class="mobile-bottom-nav__item">
-                                            <div class="mobile-bottom-nav__item-content" onClick={()=>history.push("/skills")}>
+                                            <div class="mobile-bottom-nav__item-content" onClick={() => history.push("/skills")}>
                                                 <i class="fa-solid fa-book-open-cover"></i>
                                                 Skill
 
                                             </div>
                                         </div>
                                         <div class="mobile-bottom-nav__item">
-                                            <div class="mobile-bottom-nav__item-content" onClick={() => history.push("/adduser")}>
+                                            <div class="mobile-bottom-nav__item-content" onClick={() => history.push("/addsomething")}>
                                                 <i class="fa-solid fa-user-plus"></i>
                                                 Adduser
 
                                             </div>
                                         </div>
 
-                                        <div class="mobile-bottom-nav__item">
+                                        <div class="mobile-bottom-nav__item" onClick={() => history.push("/projects")}>
                                             <div class="mobile-bottom-nav__item-content">
                                                 <i class="fa-solid fa-book-bookmark"></i>
                                                 Projects
