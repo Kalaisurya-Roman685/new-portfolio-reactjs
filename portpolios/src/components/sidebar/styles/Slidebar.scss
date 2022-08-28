@@ -274,7 +274,7 @@
     overflow: hidden;
     z-index: 90000000000000000000000000000000000000;
     @include xsBreakPoint {
-        // height: auto;
+        border: 5px solid orange;
     }
     border: 2px solid red;
     .sidebar-mobile {
@@ -284,7 +284,7 @@
         overflow: hidden;
         overflow-y: auto;
         @include xsBreakPoint {
-            height: 90%;
+            height: auto;
             border: 3px solid blue;
         }
     }
