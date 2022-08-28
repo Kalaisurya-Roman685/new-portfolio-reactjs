@@ -271,12 +271,15 @@
 .main-sidebar-nav {
     width: 100vw;
     height: 100vh;
+    overflow-y: hidden;
     overflow: hidden;
     z-index: 90000000000000000000000000000000000000;
     @include xsBreakPoint {
-        border: 5px solid orange;
+        // border: 5px solid blue;
+        overflow: hidden;
+        // height: 70vh;
     }
-    border: 2px solid red;
+    // border: 2px solid red;
     .sidebar-mobile {
         width: 100%;
         height: 90% !important;
@@ -285,7 +288,7 @@
         overflow-y: auto;
         @include xsBreakPoint {
             height: auto;
-            border: 3px solid blue;
+            // border: 3px solid blue;
         }
     }
     .side-bottom-section {
@@ -302,7 +305,7 @@
         z-index: 9000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
         @include xsBreakPoint {
             height: 10%;
-            border: 3px solid green;
+            // border: 3px solid green;
         }
         @include mdBreakPoint {
             width: 100%;

@@ -228,5 +228,28 @@
             color: orangered;
             font-weight: bold;
         }
+        .orderss {
+            padding: 5px;
+            border: 2px solid orange;
+            display: flex;
+            justify-content: center;
+            float: right;
+            width: 30%;
+            border-radius: 20px;
+            background-color: transparent;
+            background-color: orangered;
+            color: white;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            margin-right: 20px;
+            @include xsBreakPoint {
+                width: 100%;
+            }
+            @include smBreakPoint {
+                width: 30%;
+            }
+        }
     }
 }

@@ -103,8 +103,8 @@ function Login() {
                             <input type="password" class="form-control" id="exampleInputPassword1" onChange={(e) => SetPassword(e.target.value)} name="password" value={password} />
                             {error && password.length <= 0 ? <div id="emailHelp" class="form-text" style={{ color: "red" }}>password Field is empty</div> : ""}
                         </div>
-                        <div onClick={() => usehistory.push("/signup")}>
-                            New Registor
+                        <div onClick={() => usehistory.push("/signup")} style={{cursor:"pointer"}}>
+                            New User Register? <span style={{color:"blue"}}>Signup</span>
                         </div>
 
                         <button type="submit" class="btns" onClick={submits}>Submit</button>

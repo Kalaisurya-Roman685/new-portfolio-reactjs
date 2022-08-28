@@ -5,9 +5,7 @@
     overflow: hidden;
     @include xsBreakPoint {
         padding-top: 20%;
-
         height: auto;
-        // background-color: blue;
     }
     @include smBreakPoint {
         padding-top: 10%;

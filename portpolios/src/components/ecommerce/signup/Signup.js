@@ -101,7 +101,7 @@ function Signup() {
                             {error && password.length <= 0 ? <div id="emailHelp" class="form-text" style={{ color: "red" }}>password Field is empty</div> : ""}
                         </div>
 
-                        <button type="submit" class="btns" onClick={submits}>Submit</button>
+                        <button type="submit" class="btns mb-5" onClick={submits}>Submit</button>
                     </form>
                 </div>
             </div>

@@ -23,7 +23,7 @@
             @include xsBreakPoint {
                 width: 100%;
                 height: 100%;
-                padding-left: 0% !important;
+                padding-left: 8% !important;
             }
 
             .recent {
@@ -169,7 +169,7 @@
                 justify-content: center;
 
                 @include xsBreakPoint {
-                    left: -5rem;
+                    left: -4rem;
                 }
                 @include lgBreakPoint {
                     left: -5rem;
@@ -210,7 +210,7 @@
 
                 // display: none;
                 @include xsBreakPoint {
-                    left: 14.5rem;
+                    left: 14rem;
                     top: -5rem;
                 }
                 @include lgBreakPoint {

@@ -171,6 +171,17 @@ function Cart(props) {
                                                 )
                                             }>+</button>
                                     </div>
+                                    <div className="mt-2 mb-2">
+                                    <button
+                                            className="orderss"
+                                            onClick={() => {
+                                                removeItem(items.id);
+                                                toast("deleted Item Success");
+                                            }}
+                                        >
+                                            Remove
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         )
