@@ -5,13 +5,13 @@
     height: 100vh;
     overflow: hidden;
     overflow-y: auto;
-    @include xsBreakPoint
-    {
-    // height: 90vh;
+    @include xsBreakPoint {
+        // height: 90vh;
+        height: auto;
     }
     .kalai-formss {
         width: 100%;
-    
+
         align-items: center;
         // justify-content: center;
         display: flex;

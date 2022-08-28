@@ -37,7 +37,7 @@ function Home({ color }) {
 
             <h1 className="kalainame" style={{ color: color }}>Hy! I Am <br />
 
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;kalaisurya kalainew thala roman
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;kalaisurya
             </h1>
             <div className='typesection mb-2 mt-3'>
               <Typewriter

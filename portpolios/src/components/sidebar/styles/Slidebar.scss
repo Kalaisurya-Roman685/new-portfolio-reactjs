@@ -270,14 +270,23 @@
 
 .main-sidebar-nav {
     width: 100vw;
+    height: 100vh;
     overflow: hidden;
     z-index: 90000000000000000000000000000000000000;
+    @include xsBreakPoint {
+        // height: auto;
+    }
+    border: 2px solid red;
     .sidebar-mobile {
         width: 100%;
         height: 90% !important;
         z-index: -10 !important;
         overflow: hidden;
         overflow-y: auto;
+        @include xsBreakPoint {
+            height: 90%;
+            border: 3px solid blue;
+        }
     }
     .side-bottom-section {
         position: absolute;
@@ -292,7 +301,8 @@
         border-top-right-radius: 30px;
         z-index: 9000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
         @include xsBreakPoint {
-            width: 100%;
+            height: 10%;
+            border: 3px solid green;
         }
         @include mdBreakPoint {
             width: 100%;
