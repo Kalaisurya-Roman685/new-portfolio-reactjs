@@ -3,6 +3,10 @@ import { useHistory } from 'react-router-dom';
 import './styles/AdduserMians.scss';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { db } from '../../firebasefiles';
+
+
+import { collection, getDocs, addDoc, deleteDoc, doc } from 'firebase/firestore';
 
 
 const gets = () => {
@@ -28,10 +32,12 @@ function AdduserMain() {
     const [serach, SetSearch] = useState("");
     const [store, SetStores] = useState(gets());
     const [error, SetError] = useState(false);
-    useEffect(() => {
-        localStorage.setItem("amma", JSON.stringify(store));
-    }, [store]);
-    const handleadd = (e) => {
+
+    const [news, setNew] = useState([]);
+    const usercollectionRef = collection(db, "users");
+
+
+    const handleadd = async (e) => {
         e.preventDefault();
 
         if (name.length == 0 || email.length == 0 || image.length == 0 || location.length == 0 | comments.length == 0) {
@@ -39,45 +45,75 @@ function AdduserMain() {
         }
         if (name && email && image && location && comments) {
             toast.success("Successfully Add User...😁");
-
             SetNames("");
             SetEmail("");
             SetImage("");
             SetLocation("");
             SetComments("");
-            let datas = {
-                name, email, image, location, comments
-            }
-            SetStores([...store, datas]);
-
+            await addDoc(usercollectionRef, { name: name, email: email, image: image, location: location, comments: comments });
         }
 
     }
 
+    useEffect(() => {
+        localStorage.setItem("amma", JSON.stringify(store));
+
+        const getUsers = async () => {
+            const data = await getDocs(usercollectionRef);
+            setNew(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+        }
+        getUsers();
+
+    }, [news]);
+    // const handleadd = async () => {
+    // e.preventDefault();
+
+    // if (name.length == 0 || email.length == 0 || image.length == 0 || location.length == 0 | comments.length == 0) {
+    //     SetError(true);
+    // }
+    // if (name && email && image && location && comments) {
+    //     toast.success("Successfully Add User...😁");
+
+    // SetNames("");
+    // SetEmail("");
+    // SetImage("");
+    // SetLocation("");
+    // SetComments("");
+    // let datas = {
+    //     name, email, image, location, comments
+    // }
+    // SetStores([...store, datas]);
+
+    // await addDoc(usercollectionRef, { name: name, email: email, image: image, location: location, comments: comments });
+    // }
+    //
+    // }
+
     const deleted = (id) => {
+
+
         if (window.confirm("Are You Sure Delete Data...🤔")) {
-            const removes = store.filter((e, index) => {
-                return index + 1 !== id
-            })
-            SetStores(removes);
+            const userDatadelete = doc(db, "users", id)
+
+            let remeovesdata = deleteDoc(userDatadelete);
+            SetStores(remeovesdata);
             toast.error("Delete User Successfully...😉")
         }
 
         console.log(id);
     }
 
-    // const allclear = () => {
-    //     if (window.confirm("Are You Sure Delete Data All")) {
-    //         SetStores([]);
-    //         localStorage.removeItem("amma");
-    //     }
-    // }
+
+    console.log('====================================');
+    console.log(news, "kalai");
+    console.log('====================================');
+
     return (
         <div className='maintodo'>
             <ToastContainer />
             <h5 className='text-center mt-2'>Add User Somethink</h5>
             <div className='kalai-formss mt-5'>
-                <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {/* <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                     <input type="text" name="name" value={name} onChange={(e) => SetNames(e.target.value)} placeholder="name" />
                     {error && name.length <= 0 ? <span style={{ color: "red" }}>Name Filed Is Empty</span> : ""}
                 </div>
@@ -86,7 +122,7 @@ function AdduserMain() {
                     {error && email.length <= 0 ? <span style={{ color: "red" }}>Email Filed Is Empty</span> : ""}
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6 " style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                    <input type="text" name="image" value={image} onChange={(e) => SetImage(e.target.value)} placeholder="image copy url past" />
+                    <input type="file" name="image" onChange={(e) => SetImage(e.target.files[0])} placeholder="image copy url past" />
                     {error && image.length <= 0 ? <span style={{ color: "red" }}>Image Filed Is Empty</span> : ""}
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -96,11 +132,26 @@ function AdduserMain() {
                 <div className="col-lg-6 col-md-6 col-sm-6 " style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                     <input type="text" name="comments" value={comments} onChange={(e) => SetComments(e.target.value)} placeholder="Comments" />
                     {error && comments.length <= 0 ? <span style={{ color: "red" }}>comments Filed Is Empty</span> : ""}
-                </div>
+                </div> */}
+                <input type="text" onChange={(e) => SetNames(e.target.value)} placeholder="name" />
+                {error && name.length <= 0 ? <span style={{ color: "red" }}>Name Filed Is Empty</span> : ""}
 
+                <input type="email" onChange={(e) => SetEmail(e.target.value)} placeholder="email" />
+                {error && email.length <= 0 ? <span style={{ color: "red" }}>Email Filed Is Empty</span> : ""}
+
+                <input type="text" onChange={(e) => SetImage(e.target.value)} placeholder="image copy url past" />
+                {error && image.length <= 0 ? <span style={{ color: "red" }}>Image Filed Is Empty</span> : ""}
+                <input type="text" onChange={(e) => SetLocation(e.target.value)} placeholder="location" />
+                {error && location.length <= 0 ? <span style={{ color: "red" }}>Location Filed Is Empty</span> : ""}
+                <input type="text" onChange={(e) => SetComments(e.target.value)} placeholder="Comments" />
+                {error && comments.length <= 0 ? <span style={{ color: "red" }}>comments Filed Is Empty</span> : ""}
 
                 <button onClick={handleadd} className="adds mt-4">Add+</button>
 
+            </div>
+
+            <div>
+                kalai
             </div>
 
 
@@ -116,9 +167,9 @@ function AdduserMain() {
                         className="col-md-6 col-sm-6 mt-4 mb-2"
                     />
                 </div>
-                {store.length === 0 && <div>No Data Found....</div>}
+                {news.length === 0 && <div>No Data Found....</div>}
                 <div className='row justify-content-center gap-4 mb-4'>
-                    {store.filter((itemsed) =>
+                    {news.filter((itemsed) =>
                         itemsed.name.toLowerCase().includes(serach)
                     )
                         .map((item, index) => {
@@ -128,7 +179,7 @@ function AdduserMain() {
                                     <h5 className='names mt-3'>{item.name}</h5>
                                     <h4 className='email mt-2'>{item.email}</h4>
                                     <h4 className='email mt-2'>{item.location}</h4>
-                                    <button className='delete mt-3 mb-3' onClick={() => deleted(index + 1)}>Delete</button>
+                                    <button className='delete mt-3 mb-3' onClick={() => deleted(item.id)}>Delete</button>
                                 </div>
                             )
                         })}

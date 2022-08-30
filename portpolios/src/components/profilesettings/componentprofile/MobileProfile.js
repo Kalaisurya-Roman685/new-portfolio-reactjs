@@ -18,7 +18,11 @@ import {
 } from 'next-share';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { db } from '../../../firebasefiles';
+import { collection, getDocs, addDoc, deleteDoc, doc } from 'firebase/firestore';
 function MobileProfile() {
+
+
 
     const [dataget, SetDataGet] = useState([]);
 
@@ -27,12 +31,20 @@ function MobileProfile() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const usercollectionRef = collection(db, "users");
+
 
 
 
     useEffect(() => {
-        const datas = localStorage.getItem("amma");
-        SetDataGet(JSON.parse(datas));
+        
+        // const datas = localStorage.getItem("amma");
+        // SetDataGet(JSON.parse(datas));
+        const getUsers = async () => {
+            const data = await getDocs(usercollectionRef);
+            SetDataGet(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+        }
+        getUsers();
 
     }, [])
 

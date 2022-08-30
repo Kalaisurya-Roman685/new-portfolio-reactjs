@@ -20,6 +20,8 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Heart from "react-animated-heart";
 import MobileProfile from './componentprofile/MobileProfile';
+import { collection, getDocs, addDoc, deleteDoc, doc } from 'firebase/firestore';
+import { db } from '../../firebasefiles';
 function ProfileSettings() {
 
   const [dataget, SetDataGet] = useState([]);
@@ -28,26 +30,34 @@ function ProfileSettings() {
 
   const [show, SetShow] = useState(false);
   const [isClick, setClick] = useState(false);
+  const usercollectionRef = collection(db, "users");
   useEffect(() => {
-    const datas = localStorage.getItem("amma");
-    SetDataGet(JSON.parse(datas));
+    // const datas = localStorage.getItem("amma");
+    
+    // SetDataGet(JSON.parse(datas));
+    
+    const getUsers = async () => {
+      const data = await getDocs(usercollectionRef);
+      SetDataGet(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+  }
+  getUsers();
 
   }, [])
 
   const history = useHistory();
 
-  let idlike = localStorage.getItem("likeid");
+  // let idlike = localStorage.getItem("likeid");
 
 
-  const likesdata = (id) => {
-    dataget.forEach((e, index) => {
-      if (index + 1 === id) {
-        setClick(!isClick);
-        setDataLink(id);
-        localStorage.setItem("likeid", id)
-      }
-    })
-  }
+  // const likesdata = (id) => {
+  //   dataget.forEach((e, index) => {
+  //     if (index + 1 === id) {
+  //       setClick(!isClick);
+  //       setDataLink(id);
+  //       localStorage.setItem("likeid", id)
+  //     }
+  //   })
+  // }
 
   return (
     <>
@@ -78,7 +88,7 @@ function ProfileSettings() {
                 <span className="text-follow"> Following</span>
               </div>
               <div className='following' data-bs-toggle="modal" data-bs-target="#exampleModal685555555555555">
-                <h3>{dataget.length}</h3>
+                {/* <h3>{dataget.length}</h3> */}
                 <span className="text-follow"> Followers</span>
               </div>
 
@@ -110,7 +120,7 @@ function ProfileSettings() {
                       </div>
                       <div>
                         <h4>{item?.name}</h4>
-                        <h6>{item?.date}</h6>
+               
                       </div>
                       <div>
 
@@ -130,8 +140,8 @@ function ProfileSettings() {
                         onClick={() => likesdata(index + 1)}
                         className="change-heart"
                       /> */}
-                        <i class={`fa-solid fa-heart ${dataslick == idlike ? "red" : "grey"}`} onClick={() => likesdata(index + 1)}></i>
-                        {dataslick == idlike ? <div className='red'> Like</div> : <div> Like</div>}
+                        <i class={`fa-solid fa-heart`}></i>
+                     
                       </div>
                       <div className='middle-shres'>
                         <i class="fa-solid fa-message-lines"></i> Comment

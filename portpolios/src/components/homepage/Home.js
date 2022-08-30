@@ -132,6 +132,8 @@ function Home({ color }) {
         </div>
       </div>
 
+      
+
       <div className="d-block d-lg-block ">
         <Mobilesection1 />
       </div>
