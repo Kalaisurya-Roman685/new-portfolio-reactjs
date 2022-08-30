@@ -26,6 +26,7 @@ import HomeMobilesection1 from "./mobilecomponents/section1/HomeMobilesection1";
 import MobileProfileSection from "./mobilecomponents/mobileprofilesewction/MobileProfileSection";
 import MobileScreenOne from "./mobilecomponents/mobilewelcomescreen/MobileScreenOne";
 import BottomNavbar from "./mobilecomponents/bottomnavbar/BottomNavbar";
+import Followers from "./components/followerslist/Followers";
 
 
 function App() {
@@ -130,6 +131,7 @@ function App() {
                             <Route path="/orderdetails" component={OrderDEtails} />
                             <Route path="/success" component={OrderSuccess} />
                             <Route path="/forgetpassword" component={ForgetPassword} />
+                            <Route path="/followers" component={Followers} />
                         </Sidebar>
 
                         <Route path="/mobilescreenone" component={MobileScreenOne} />

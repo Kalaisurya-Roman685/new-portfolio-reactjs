@@ -54,6 +54,8 @@ function AdduserMain() {
 
             await addDoc(usercollectionRef, { name: name, email: email, image: image, location: location, comments: comments, date: date });
 
+
+            history.push("/followers")
         }
 
     }
@@ -103,18 +105,18 @@ function AdduserMain() {
             toast.error("Delete User Successfully...😉")
         }
 
-        console.log(id);
+    
     }
 
 
-    console.log('====================================');
-    console.log(news, "kalai");
-    console.log('====================================');
+  
+
+
 
     return (
         <div className='maintodo'>
             <ToastContainer />
-            <h5 className='text-center mt-2'>Add User Somethink</h5>
+           
             <div className='kalai-formss mt-5'>
                 {/* <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                     <input type="text" name="name" value={name} onChange={(e) => SetNames(e.target.value)} placeholder="name" />
@@ -159,7 +161,7 @@ function AdduserMain() {
                 </div>
 
 
-                <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-10" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
 
                     <input type="date" onChange={(e) => SetDate(e.target.value)} placeholder="Date" />
                     {error && date.length <= 0 ? <span style={{ color: "red" }}>Date Filed Is Empty</span> : ""}
@@ -177,9 +179,7 @@ function AdduserMain() {
 
             </div>
 
-            <div>
-                kalai
-            </div>
+           
 
 
             <div className='mt-3 ms-3'>
@@ -202,12 +202,19 @@ function AdduserMain() {
                         .map((item, index) => {
                             return (
                                 <div key={index} className="card col-lg-5 col-xl-4 col-md-5 col-xs-2 col-sm-8 mt-5 mb-3">
-                                    {item.image.length > 10 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/05/07/972998-dhonis.jpg" style={{ width: 140, height: 140, borderRadius: "50%" }} />}
+
+                                    {item.image.length > 10 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvCk_0UJJULy376B-CcSYZFSDW1plHP-LzGg&usqp=CAU" style={{ width: 140, height: 140, borderRadius: "50%" }} />}
+                                    {/* {item.image.length === 3 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThXESI9cZ4AFUQuPGQWuDVF2Mr-EMUfMAebw&usqp=CAU" style={{ width: 140, height: 140, borderRadius: "50%" }} />}
+                                    {item.image.length === 5 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL5ay7xDg3E8Gww-ez3AWPG4u-8Xx6nZUATw&usqp=CAU" style={{ width: 140, height: 140, borderRadius: "50%" }} />}
+                                    {item.image.length === 7 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/05/07/972998-dhonis.jpg" style={{ width: 140, height: 140, borderRadius: "50%" }} />}
+                                    {item.image.length === 8 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/05/07/972998-dhonis.jpg" style={{ width: 140, height: 140, borderRadius: "50%" }} />}
+                                    {item.image.length === 10 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/05/07/972998-dhonis.jpg" style={{ width: 140, height: 140, borderRadius: "50%" }} />}
+                                    {item.image.length === 13 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/05/07/972998-dhonis.jpg" style={{ width: 140, height: 140, borderRadius: "50%" }} />} */}
                                     <h5 className='names mt-3'>{item.name}</h5>
                                     <h4 className='email mt-2'>{item.email}</h4>
                                     <h4 className='email mt-2'>{item.location}</h4>
                                     <h4 className='email mt-2'>{item.date}</h4>
-                                    <button className='delete mt-3 mb-3' onClick={() => deleted(item.id)}>Delete</button>
+                                    {/* <button className='delete mt-3 mb-3' onClick={() => deleted(item.id)}>Delete</button> */}
                                 </div>
                             )
                         })}

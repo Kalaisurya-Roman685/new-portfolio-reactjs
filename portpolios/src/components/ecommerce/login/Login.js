@@ -81,8 +81,6 @@ function Login() {
 
     };
     return (
-
-
         <div className="login-screeen">
             <ToastContainer />
             <div className="login-inside">
@@ -103,11 +101,11 @@ function Login() {
                             <input type="password" class="form-control" id="exampleInputPassword1" onChange={(e) => SetPassword(e.target.value)} name="password" value={password} />
                             {error && password.length <= 0 ? <div id="emailHelp" class="form-text" style={{ color: "red" }}>password Field is empty</div> : ""}
                         </div>
-                        <div onClick={() => usehistory.push("/signup")} style={{cursor:"pointer"}}>
-                            New User Register? <span style={{color:"blue"}}>Signup</span>
+                        <div onClick={() => usehistory.push("/signup")} style={{ cursor: "pointer" }}>
+                            New User Register? <span style={{ color: "blue" }}>Signup</span>
                         </div>
 
-                        <button type="submit" class="btns" onClick={submits}>Submit</button>
+                        <button type="submit" class="btns mb-5" onClick={submits}>Submit</button>
                     </form>
                 </div>
             </div>

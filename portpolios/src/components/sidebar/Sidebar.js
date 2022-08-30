@@ -24,8 +24,8 @@ function SlideBar({ dark, setdark, children, }) {
         SetToggles1(!toggles1);
     }
 
-   
-  const [datas, SetDataGet] = useState([]);
+
+    const [datas, SetDataGet] = useState([]);
 
     const history = useHistory();
 
@@ -34,7 +34,7 @@ function SlideBar({ dark, setdark, children, }) {
 
 
     useEffect(() => {
-        
+
         const getUsers = async () => {
             const data = await getDocs(usercollectionRef);
             SetDataGet(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
@@ -109,7 +109,7 @@ function SlideBar({ dark, setdark, children, }) {
                         <motion.div animate={{ width: toggles ? "200px" : "45px" }} className="slidebar">
                             <div className='bars'>
                                 {toggles && <div onClick={() => history.push("/profile")}>
-                                    <span className='kalai'><img src={kalaiimage} className="kalai-image" /></span>
+                                    <span className='kalai' style={{ cursor: "pointer" }}><img src={kalaiimage} className="kalai-image" /></span>
                                 </div>}
                                 <span onClick={tests}><i class="fa-solid fa-bars"></i></span>
                             </div>
@@ -118,8 +118,8 @@ function SlideBar({ dark, setdark, children, }) {
                                     <h4 className='count'>20</h4>
                                     <h5 className='flo'>Following</h5>
                                 </div>
-                                <div className='second-follow'>
-                                    <div onClick={() => history.push("/addsomething")}>
+                                <div className='second-follow' style={{ cursor: "pointer" }}>
+                                    <div onClick={() => history.push("/followers")}>
                                         <h4 className='count'>{datas.length}</h4>
                                         <h5 className='flo'>Followers</h5>
                                     </div>

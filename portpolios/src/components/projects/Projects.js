@@ -42,7 +42,7 @@ function Projects() {
             {
                 breakpoint: 1440,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 2,
                     slidesToScroll: 2,
                     infinite: true,
                     dots: true

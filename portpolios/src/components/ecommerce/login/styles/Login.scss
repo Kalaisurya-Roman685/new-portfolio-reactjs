@@ -11,6 +11,10 @@
         padding-top: 10%;
         height: auto;
     }
+    @include mdBreakPoint {
+        // padding-top: 10%;
+        height: auto;
+    }
 
     .login-inside {
         width: 100%;
