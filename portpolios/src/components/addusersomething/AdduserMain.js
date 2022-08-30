@@ -29,6 +29,7 @@ function AdduserMain() {
     const [image, SetImage] = useState("");
     const [location, SetLocation] = useState("");
     const [comments, SetComments] = useState("");
+    const [date, SetDate] = useState("");
     const [serach, SetSearch] = useState("");
     const [store, SetStores] = useState(gets());
     const [error, SetError] = useState(false);
@@ -40,17 +41,19 @@ function AdduserMain() {
     const handleadd = async (e) => {
         e.preventDefault();
 
-        if (name.length == 0 || email.length == 0 || image.length == 0 || location.length == 0 | comments.length == 0) {
+        if (name.length == 0 || email.length == 0 || image.length == 0 || location.length == 0 || comments.length == 0 || date.length == 0) {
             SetError(true);
         }
         if (name && email && image && location && comments) {
-            toast.success("Successfully Add User...😁");
             SetNames("");
             SetEmail("");
             SetImage("");
             SetLocation("");
             SetComments("");
-            await addDoc(usercollectionRef, { name: name, email: email, image: image, location: location, comments: comments });
+            toast.success("Successfully Add User...😁");
+
+            await addDoc(usercollectionRef, { name: name, email: email, image: image, location: location, comments: comments, date: date });
+
         }
 
     }
@@ -133,18 +136,42 @@ function AdduserMain() {
                     <input type="text" name="comments" value={comments} onChange={(e) => SetComments(e.target.value)} placeholder="Comments" />
                     {error && comments.length <= 0 ? <span style={{ color: "red" }}>comments Filed Is Empty</span> : ""}
                 </div> */}
-                <input type="text" onChange={(e) => SetNames(e.target.value)} placeholder="name" />
-                {error && name.length <= 0 ? <span style={{ color: "red" }}>Name Filed Is Empty</span> : ""}
+                <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                    <input type="text" onChange={(e) => SetNames(e.target.value)} placeholder="name" />
+                    {error && name.length <= 0 ? <span style={{ color: "red" }}>Name Filed Is Empty</span> : ""}
+                </div>
 
-                <input type="email" onChange={(e) => SetEmail(e.target.value)} placeholder="email" />
-                {error && email.length <= 0 ? <span style={{ color: "red" }}>Email Filed Is Empty</span> : ""}
+                <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                    <input type="email" onChange={(e) => SetEmail(e.target.value)} placeholder="email" />
+                    {error && email.length <= 0 ? <span style={{ color: "red" }}>Email Filed Is Empty</span> : ""}
+                </div>
 
-                <input type="text" onChange={(e) => SetImage(e.target.value)} placeholder="image copy url past" />
-                {error && image.length <= 0 ? <span style={{ color: "red" }}>Image Filed Is Empty</span> : ""}
-                <input type="text" onChange={(e) => SetLocation(e.target.value)} placeholder="location" />
-                {error && location.length <= 0 ? <span style={{ color: "red" }}>Location Filed Is Empty</span> : ""}
-                <input type="text" onChange={(e) => SetComments(e.target.value)} placeholder="Comments" />
-                {error && comments.length <= 0 ? <span style={{ color: "red" }}>comments Filed Is Empty</span> : ""}
+
+                <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                    <input type="text" onChange={(e) => SetImage(e.target.value)} placeholder="image copy url past" />
+                    {error && image.length <= 0 ? <span style={{ color: "red" }}>Image Filed Is Empty</span> : ""}
+                </div>
+
+
+                <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                    <input type="text" onChange={(e) => SetLocation(e.target.value)} placeholder="location" />
+                    {error && location.length <= 0 ? <span style={{ color: "red" }}>Location Filed Is Empty</span> : ""}
+                </div>
+
+
+                <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+
+                    <input type="date" onChange={(e) => SetDate(e.target.value)} placeholder="Date" />
+                    {error && date.length <= 0 ? <span style={{ color: "red" }}>Date Filed Is Empty</span> : ""}
+                </div>
+
+
+                <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                    <input type="text" onChange={(e) => SetComments(e.target.value)} placeholder="Comments" />
+                    {error && comments.length <= 0 ? <span style={{ color: "red" }}>comments Filed Is Empty</span> : ""}
+                </div>
+
+
 
                 <button onClick={handleadd} className="adds mt-4">Add+</button>
 
@@ -179,6 +206,7 @@ function AdduserMain() {
                                     <h5 className='names mt-3'>{item.name}</h5>
                                     <h4 className='email mt-2'>{item.email}</h4>
                                     <h4 className='email mt-2'>{item.location}</h4>
+                                    <h4 className='email mt-2'>{item.date}</h4>
                                     <button className='delete mt-3 mb-3' onClick={() => deleted(item.id)}>Delete</button>
                                 </div>
                             )
@@ -188,10 +216,8 @@ function AdduserMain() {
 
 
 
-
-
         </div>
     )
 }
 
-export default AdduserMain
+export default AdduserMain;

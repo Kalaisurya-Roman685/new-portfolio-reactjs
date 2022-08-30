@@ -33,14 +33,14 @@ function ProfileSettings() {
   const usercollectionRef = collection(db, "users");
   useEffect(() => {
     // const datas = localStorage.getItem("amma");
-    
+
     // SetDataGet(JSON.parse(datas));
-    
+
     const getUsers = async () => {
       const data = await getDocs(usercollectionRef);
       SetDataGet(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-  }
-  getUsers();
+    }
+    getUsers();
 
   }, [])
 
@@ -88,7 +88,7 @@ function ProfileSettings() {
                 <span className="text-follow"> Following</span>
               </div>
               <div className='following' data-bs-toggle="modal" data-bs-target="#exampleModal685555555555555">
-                {/* <h3>{dataget.length}</h3> */}
+                <h3>{dataget.length}</h3>
                 <span className="text-follow"> Followers</span>
               </div>
 
@@ -107,7 +107,7 @@ function ProfileSettings() {
 
           <div className='carousels-sections'>
             <div className='left-carousel-section'>
-              kala
+              kalai
             </div>
             <div className='middle-carousel-section'>
               {dataget.map((item, index) => {
@@ -120,7 +120,7 @@ function ProfileSettings() {
                       </div>
                       <div>
                         <h4>{item?.name}</h4>
-               
+                        <h5>{item?.date}</h5>
                       </div>
                       <div>
 
@@ -131,7 +131,7 @@ function ProfileSettings() {
                     </div>
                     <div className='cards-right'>
 
-                      <h5 className='email mt-2 mb-3'>{item.comments}</h5>
+                      <h5 className='email mt-3 mb-4'>{item.comments}</h5>
                     </div>
                     <div className='share-cuttons'>
                       <div className='left-shres'>
@@ -140,8 +140,9 @@ function ProfileSettings() {
                         onClick={() => likesdata(index + 1)}
                         className="change-heart"
                       /> */}
-                        <i class={`fa-solid fa-heart`}></i>
-                     
+
+                        <i class={`fa-solid fa-heart`}></i>           Like
+
                       </div>
                       <div className='middle-shres'>
                         <i class="fa-solid fa-message-lines"></i> Comment

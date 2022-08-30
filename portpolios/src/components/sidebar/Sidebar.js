@@ -7,18 +7,10 @@ import kalaiimage from '../../assests/whatsappkalai.jpeg';
 import BottomNavbar from '../../mobilecomponents/bottomnavbar/BottomNavbar';
 
 
+import { collection, getDocs, addDoc, deleteDoc, doc } from 'firebase/firestore';
+import { db } from '../../firebasefiles';
 
-const gets = () => {
-    let data = localStorage.getItem("amma");
 
-    if (data) {
-        return JSON.parse(data);
-
-    }
-    else {
-        return [];
-    }
-}
 function SlideBar({ dark, setdark, children, }) {
 
     const [toggles, SetToggles] = useState(false);
@@ -32,14 +24,22 @@ function SlideBar({ dark, setdark, children, }) {
         SetToggles1(!toggles1);
     }
 
-    const [datas, SetDatas] = useState(gets());
+   
+  const [datas, SetDataGet] = useState([]);
 
     const history = useHistory();
 
+    const usercollectionRef = collection(db, "users");
 
 
 
     useEffect(() => {
+        
+        const getUsers = async () => {
+            const data = await getDocs(usercollectionRef);
+            SetDataGet(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+        }
+        getUsers();
         var navItems = document.querySelectorAll(".mobile-bottom-nav__item");
         navItems.forEach(function (e, i) {
             e.addEventListener("click", function (e) {
