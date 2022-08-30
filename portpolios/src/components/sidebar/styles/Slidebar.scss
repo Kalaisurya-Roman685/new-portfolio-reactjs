@@ -7,9 +7,11 @@
     margin-bottom: 3rem;
     @include xlBreakPoint {
         width: 100%;
+        height: auto;
     }
     @include xsBreakPoint {
         width: 100%;
+        height: auto;
     }
     .inside-slide {
         width: 100%;
