@@ -70,32 +70,8 @@ function AdduserMain() {
         getUsers();
 
     }, [news]);
-    // const handleadd = async () => {
-    // e.preventDefault();
-
-    // if (name.length == 0 || email.length == 0 || image.length == 0 || location.length == 0 | comments.length == 0) {
-    //     SetError(true);
-    // }
-    // if (name && email && image && location && comments) {
-    //     toast.success("Successfully Add User...😁");
-
-    // SetNames("");
-    // SetEmail("");
-    // SetImage("");
-    // SetLocation("");
-    // SetComments("");
-    // let datas = {
-    //     name, email, image, location, comments
-    // }
-    // SetStores([...store, datas]);
-
-    // await addDoc(usercollectionRef, { name: name, email: email, image: image, location: location, comments: comments });
-    // }
-    //
-    // }
-
+  
     const deleted = (id) => {
-
 
         if (window.confirm("Are You Sure Delete Data...🤔")) {
             const userDatadelete = doc(db, "users", id)
@@ -108,36 +84,10 @@ function AdduserMain() {
     
     }
 
-
-  
-
-
-
     return (
         <div className='maintodo'>
             <ToastContainer />
-           
             <div className='kalai-formss mt-5'>
-                {/* <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                    <input type="text" name="name" value={name} onChange={(e) => SetNames(e.target.value)} placeholder="name" />
-                    {error && name.length <= 0 ? <span style={{ color: "red" }}>Name Filed Is Empty</span> : ""}
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                    <input type="email" name="email" value={email} onChange={(e) => SetEmail(e.target.value)} placeholder="email" />
-                    {error && email.length <= 0 ? <span style={{ color: "red" }}>Email Filed Is Empty</span> : ""}
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-6 " style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                    <input type="file" name="image" onChange={(e) => SetImage(e.target.files[0])} placeholder="image copy url past" />
-                    {error && image.length <= 0 ? <span style={{ color: "red" }}>Image Filed Is Empty</span> : ""}
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                    <input type="text" name="location" value={location} onChange={(e) => SetLocation(e.target.value)} placeholder="location" />
-                    {error && location.length <= 0 ? <span style={{ color: "red" }}>Location Filed Is Empty</span> : ""}
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-6 " style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                    <input type="text" name="comments" value={comments} onChange={(e) => SetComments(e.target.value)} placeholder="Comments" />
-                    {error && comments.length <= 0 ? <span style={{ color: "red" }}>comments Filed Is Empty</span> : ""}
-                </div> */}
                 <div className="col-lg-6 col-md-6 col-sm-6" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                     <input type="text" onChange={(e) => SetNames(e.target.value)} placeholder="name" />
                     {error && name.length <= 0 ? <span style={{ color: "red" }}>Name Filed Is Empty</span> : ""}

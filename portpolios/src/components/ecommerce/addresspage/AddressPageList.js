@@ -2,43 +2,40 @@ import React, { useEffect, useState, useRef } from "react";
 import { Modal } from "bootstrap";
 import "./styles/Address.scss";
 import { toast } from "react-toastify";
-function AddressPageList(props) {
+function AddressPageList() {
     const [addresslist, SetAddresslist] = useState([]);
-    const useref = useRef(null);
+
     const [OneData, SetOneDataModel] = useState([]);
 
-    const showModal = () => {
-        const modalEle = useref.current;
-        const bsModal = new Modal(modalEle, {
-            backdrop: "static",
-            keyboard: false,
-        });
-        bsModal.show();
-    };
+    // const showModal = () => {
+    //     const modalEle = useref.current;
+    //     const bsModal = new Modal(modalEle, {
+    //         backdrop: "static",
+    //         keyboard: false,
+    //     });
+    //     bsModal.show();
+    // };
 
-    const hideModal = () => {
-        const modalEle = useref.current;
-        const bsModal = Modal.getInstance(modalEle);
-        bsModal.hide();
-    };
+    // const hideModal = () => {
+    //     const modalEle = useref.current;
+    //     const bsModal = Modal.getInstance(modalEle);
+    //     bsModal.hide();
+    // };
 
-    const edit = (id) => {
-        console.log(id);
-        let datas = addresslist;
-        datas.forEach((elemets, index) => {
-            if (elemets.name == id) {
-                toast("Success Updates");
-                SetOneDataModel(elemets);
-                console.log(elemets, "local data");
-            }
-        });
-        showModal();
-    };
+
+    useEffect(() => {
+        let y = localStorage.getItem("address");
+        console.log('====================================');
+        console.log(y, "kaliay");
+        console.log('====================================');
+        SetAddresslist(JSON.parse(y));
+    }, [])
+
 
     const removeHandler = (name) => {
         console.log(name);
-        const filteredExpense = addresslist.filter((e) => {
-            return e.name !== name;
+        const filteredExpense = addresslist.filter((e, index) => {
+            return index + 1 !== name;
         });
 
         SetAddresslist(filteredExpense);
@@ -69,13 +66,13 @@ function AddressPageList(props) {
                                             <td>{items.city}</td>
                                             <td>{items.street}</td>
                                             <td
-                                                onClick={() => edit(items.name)}
+
                                             >
                                                 <ion-icon name="create-outline"></ion-icon>
                                             </td>
                                             <td
                                                 onClick={() =>
-                                                    removeHandler(items.name)
+                                                    removeHandler(index + 1)
                                                 }
                                             >
                                                 <ion-icon name="trash-outline"></ion-icon>

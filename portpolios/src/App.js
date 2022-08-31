@@ -27,6 +27,7 @@ import MobileProfileSection from "./mobilecomponents/mobileprofilesewction/Mobil
 import MobileScreenOne from "./mobilecomponents/mobilewelcomescreen/MobileScreenOne";
 import BottomNavbar from "./mobilecomponents/bottomnavbar/BottomNavbar";
 import Followers from "./components/followerslist/Followers";
+import AddressPageList from "./components/ecommerce/addresspage/AddressPageList";
 
 
 function App() {
@@ -132,6 +133,8 @@ function App() {
                             <Route path="/success" component={OrderSuccess} />
                             <Route path="/forgetpassword" component={ForgetPassword} />
                             <Route path="/followers" component={Followers} />
+                            {/* <Route path="/conformaddress" component={AddUsers} /> */}
+                            <Route path="/conformaddress" component={AddressPageList} />
                         </Sidebar>
 
                         <Route path="/mobilescreenone" component={MobileScreenOne} />

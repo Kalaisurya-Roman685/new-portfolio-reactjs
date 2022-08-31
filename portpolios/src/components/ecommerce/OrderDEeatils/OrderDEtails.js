@@ -73,7 +73,7 @@ function OrderDEtails(props) {
                                     <span>
                                         {" "}
                                         <img
-                                            src={it.thumbnail}
+                                            src={it.images[2]}
                                             alt={it.title}
                                             className="order-images"
                                         />

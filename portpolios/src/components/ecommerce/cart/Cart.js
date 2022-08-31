@@ -52,7 +52,7 @@ function Cart(props) {
                                 <div className="left-cart">
                                     <div className="image1">
                                         <img
-                                            src={items.thumbnail}
+                                            src={items.images[2]}
                                             class="card-img-tops"
                                             alt="..."
                                         />

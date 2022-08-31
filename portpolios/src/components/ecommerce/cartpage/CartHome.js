@@ -26,7 +26,7 @@ function CartHome() {
         ProductApi().then((res) => {
             console.log('====================================');
             console.log(res.data);
-            SetStores(res.data.products,"no data")
+            SetStores(res.data,"no data")
             console.log('====================================');
         }).catch((err) => {
             console.log('====================================');
@@ -67,7 +67,7 @@ function CartHome() {
                                         title={itemst.title}
                                         price={itemst.price}
                                         discount={itemst.discount}
-                                        image={itemst.thumbnail}
+                                        image={itemst.images[2]}
                                         item={itemst}
                                         key={index}
                                     />

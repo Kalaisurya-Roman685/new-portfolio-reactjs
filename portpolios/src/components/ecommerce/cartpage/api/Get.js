@@ -1,7 +1,6 @@
 import axios from "axios";
 
 
-export function ProductApi()
-{
-    return axios.get(`https://dummyjson.com/products`);
+export function ProductApi() {
+    return axios.get(`https://api.escuelajs.co/api/v1/products`);
 }
