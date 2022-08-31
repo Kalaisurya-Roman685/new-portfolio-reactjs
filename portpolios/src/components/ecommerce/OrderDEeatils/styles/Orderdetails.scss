@@ -5,19 +5,27 @@
     height: 100vh;
     overflow: hidden;
     overflow-y: auto;
+    @include xsBreakPoint {
+        height: auto;
+    }
+    @include smBreakPoint {
+        height: auto;
+    }
+    @include mdBreakPoint {
+        height: auto;
+    }
 }
-.back
-{
+.back {
     width: 40px;
     height: 40px;
     border-radius: 20px;
-   background-color: orange;
-   align-items: center;
-   justify-content: center;
-   display: flex;
-   border: none;
-   outline: none;
-//    color: white;
+    background-color: orange;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: none;
+    outline: none;
+    //    color: white;
 }
 
 .orders-success {

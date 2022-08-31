@@ -37,12 +37,23 @@ function Cart(props) {
         SetLocalGetData(JSON.parse(GetLocal));
         console.log("received data LocalSorage", JSON.parse(GetLocal));
     };
+
+    const moves = () => {
+        toast("Wait Address Page View...🛣️")
+        setTimeout(() => {
+            usehistory.push("/address")
+        }, 2000);
+    }
     return (
         <>
             <div className="carts-main">
+                <ToastContainer />
+                <div className="mt-3">
+                <button className="back" onClick={() => usehistory.goBack()}><ion-icon name="arrow-back-outline"></ion-icon></button>
+            </div>
                 <div>
-                    <h1 className="text-center mt-5 mb-5">
-                        Toatl Items:{totalItems}
+                    <h1 className="text-center mt-5 mb-5 totals">
+                        Toatl Items:<span style={{ color: "orangered" }}>{totalItems}</span>
                     </h1>
                 </div>
                 <div className="d-none d-lg-block">
@@ -139,13 +150,11 @@ function Cart(props) {
                         return (
                             <div className="kalai-image-split mt-2 mb-4">
                                 <div className="left-kalai-image">
-                                    <img src={items.thumbnail} alt={items.title} className="img-kalai-width" />
+                                    <img src={items.images[2]} alt={items.title} className="img-kalai-width" />
                                 </div>
-
                                 <div className="right-kalai-image">
                                     <div>
                                         <h6 className="kalai-title mt-2">{items.title}</h6>
-
                                     </div>
                                     <div className="prices">
                                         <span >Price: </span><span>${items.price}</span>
@@ -172,7 +181,7 @@ function Cart(props) {
                                             }>+</button>
                                     </div>
                                     <div className="mt-2 mb-2">
-                                    <button
+                                        <button
                                             className="orderss"
                                             onClick={() => {
                                                 removeItem(items.id);
@@ -194,7 +203,7 @@ function Cart(props) {
                     <div className="orders mb-5">
                         <button
                             className="orderss"
-                            onClick={() => usehistory.push("/address")}
+                            onClick={moves}
                         >
                             Order
                         </button>

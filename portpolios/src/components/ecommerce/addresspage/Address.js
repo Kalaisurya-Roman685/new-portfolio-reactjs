@@ -111,7 +111,7 @@ function Address(props) {
         toast("Order Address Confirm 🚚...😀...🏠")
         setTimeout(() => {
             usehistory.push("/orderdetails")
-        }, 3500);
+        }, 3000);
     }
 
     return (

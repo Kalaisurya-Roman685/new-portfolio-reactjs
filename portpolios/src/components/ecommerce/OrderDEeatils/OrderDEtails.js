@@ -33,8 +33,11 @@ function OrderDEtails(props) {
     console.log(images);
 
     const success = () => {
-        history.push("/success");
         toast("Order Successfully!..");
+        setTimeout(() => {
+            history.push("/success");
+        }, 1500);
+
     };
 
     return (
@@ -89,15 +92,13 @@ function OrderDEtails(props) {
                                     </span>
                                     <p className="name-field">{it.itemtotal}</p>
                                 </div>
-
-                                {/* <button onClick={()=>removes()}>Remove</button> */}
                             </>
                         );
                     })}
                 </div>
             )}
             <div className="boxs mb-5 mt-5 text-center">
-                <h1>Toatal Amount:{cartTotal}</h1>
+                <h1><span style={{ color: "rgb(0, 7, 61)", fontWeight: "bold" }}>Toatal Amount : </span><span style={{ color: "orangered", fontWeight: "bold" }}>{cartTotal}</span></h1>
             </div>
             <div className="buttons-splits mt-5 mb-4">
                 <button

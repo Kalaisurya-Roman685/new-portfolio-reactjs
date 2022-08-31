@@ -20,16 +20,15 @@ function Navbar(props) {
         emptyCart,
         cartTotal,
     } = useCart();
-    
+
 
     return (
         <div className="navss">
-            <h2>Food Order</h2>
-            <ToastContainer/>
-            
+            <h2 className="orders-details">Orders</h2>
+            <ToastContainer />
             <div className="right_box">
                 <p onClick={() => usehistory.push("/cartde")}>
-                <i class="fa-solid fa-cart-shopping-fast"></i>
+                    <i class="fa-solid fa-cart-shopping-fast"></i>
                     <span className="numbers">{totalItems}</span>
                 </p>
             </div>
@@ -38,17 +37,17 @@ function Navbar(props) {
             </div>
             <div>
                 <button className="logouts"
-                 onClick={() => {
-                    toast("Logout SuccessFully");
-                    auth.signOut();
-                    setTimeout(() => {
-                        usehistory.push("/login");
-                    }, 2000);
-                    let GetLocal =
-                        localStorage.removeItem("token new users");
+                    onClick={() => {
+                        toast("Logout SuccessFully");
+                        auth.signOut();
+                        setTimeout(() => {
+                            usehistory.push("/login");
+                        }, 2000);
+                        let GetLocal =
+                            localStorage.removeItem("token new users");
 
-                    console.log("received logout", JSON.parse(GetLocal));
-                }}
+                        console.log("received logout", JSON.parse(GetLocal));
+                    }}
                 >LogOut</button>
             </div>
         </div>
