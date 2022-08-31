@@ -107,169 +107,14 @@ function Address(props) {
         bsModal.hide();
     };
 
+    const movepush = () => {
+        toast("Order Address Confirm 🚚...😀...🏠")
+        setTimeout(() => {
+            usehistory.push("/orderdetails")
+        }, 3500);
+    }
+
     return (
-        // <div className="containes">
-        //     <div className="col-lg-2 col-md-10 col-sm-10 col-xs-10 mt-5 kalais">
-
-        //         <form onSubmit={handlesubmit} className="mt-5">
-        //             <div class="mb-3 col-lg-12">
-        //                 <label for="exampleInputName1" class="form-label">
-        //                     Name
-        //                 </label>
-        //                 <input
-        //                     type="name"
-        //                     class="form-control col-lg-2"
-        //                     id="exampleInputName1"
-        //                     aria-describedby="exampleInputName"
-        //                     onChange={(e) => SetName(e.target.value)}
-        //                     value={name}
-
-        //                 />
-        //                 {error && name.length <= 0 ? <span style={{ color: "red" }}>Name Filed Is Empty</span> : ""}
-        //             </div>
-        //             <div class="mb-3">
-        //                 <label for="exampleInputCity1" class="form-label">
-        //                     City
-        //                 </label>
-        //                 <input
-        //                     type="city"
-        //                     class="form-control"
-        //                     id="exampleInputCity1"
-        //                     onChange={(e) => SetCity(e.target.value)}
-        //                     value={city}
-
-        //                 />
-        //                 {error && city.length <= 0 ? <span style={{ color: "red" }}>city Filed Is Empty</span> : ""}
-        //             </div>
-        //             <div class="mb-3">
-        //                 <label for="exampleInputStreet1" class="form-label">
-        //                     Street
-        //                 </label>
-        //                 <input
-        //                     type="street"
-        //                     class="form-control"
-        //                     id="exampleInputStreet1"
-        //                     aria-describedby="exampleInputStreet1"
-        //                     onChange={(e) => SetStreet(e.target.value)}
-        //                     value={street}
-
-        //                 />
-        //                 {error && street.length <= 0 ? <span style={{ color: "red" }}>street Filed Is Empty</span> : ""}
-        //             </div>
-        //             <div class="mb-3">
-        //                 <label for="exampleInputPincode1" class="form-label">
-        //                     Pin Code
-        //                 </label>
-        //                 <input
-        //                     type="number"
-        //                     class="form-control"
-        //                     id="exampleInputPincode1"
-        //                     aria-describedby="exampleInputPincode1"
-        //                     onChange={(e) => SetPincode(e.target.value)}
-        //                     value={pincode}
-
-        //                 />
-        //                 {error && pincode.length <= 0 ? <span style={{ color: "red" }}>pincode Filed Is Empty</span> : ""}
-        //             </div>
-        //             <div class="mb-3">
-        //                 <label for="exampleInputArea1" class="form-label">
-        //                     Area
-        //                 </label>
-        //                 <input
-        //                     type="text"
-        //                     class="form-control"
-        //                     id="exampleInputArea1"
-        //                     aria-describedby="exampleInputArea1"
-        //                     onChange={(e) => SetArea(e.target.value)}
-        //                     value={area}
-
-        //                 />
-        //                 {error && area.length <= 0 ? <span style={{ color: "red" }}>area Filed Is Empty</span> : ""}
-        //             </div>
-        //             <div class="mb-3">
-        //                 <label for="exampleInputAddress1" class="form-label">
-        //                     Address
-        //                 </label>
-        //                 <input
-        //                     type="text"
-        //                     class="form-control"
-        //                     id="exampleInputAddress1"
-        //                     aria-describedby="exampleInputAddress1"
-        //                     onChange={(e) => SetAddress(e.target.value)}
-        //                     value={address}
-
-        //                 />
-        //                 {error && address.length <= 0 ? <span style={{ color: "red" }}>address Filed Is Empty</span> : ""}
-        //             </div>
-        //             <div class="mb-3">
-        //                 <label for="exampleInputAddress1" class="form-label">
-        //                     Date
-        //                 </label>
-        //                 <input
-        //                     type="date"
-        //                     class="form-control"
-        //                     id="exampleInputAddress1"
-        //                     aria-describedby="exampleInputAddress1"
-        //                     onChange={(e) => SetDate(e.target.value)}
-        //                     value={dates}
-
-        //                 />
-        //                 {error && dates.length <= 0 ? <span style={{ color: "red" }}>Dates Filed Is Empty</span> : ""}
-        //             </div>
-        //             <div class="mb-3 form-check">
-        //                 <input
-        //                     type="checkbox"
-        //                     class="form-check-input"
-        //                     id="exampleCheck1"
-        //                 />
-        //                 <label class="form-check-label" for="exampleCheck1">
-        //                     Check me out
-        //                 </label>
-        //             </div>
-        //             <button type="submit" class="btn btn-primarys mb-5">
-        //                 Submit
-        //             </button>
-        //         </form>
-        //         <div className="mt-5">
-        //             <table class="table table-sm">
-        //                 <thead>
-        //                     <tr>
-        //                         <th>Id</th>
-        //                         <th>Name</th>
-        //                         <th>City</th>
-        //                         <th>street</th>
-        //                         <th>Edit</th>
-        //                         <th>Delete</th>
-        //                     </tr>
-        //                 </thead>
-        //                 <tbody>
-        //                     {stored.map((items, index) => {
-        //                         return (
-        //                             <tr>
-        //                                 <td>{index + 1}</td>
-        //                                 <td>{items.name}</td>
-        //                                 <td>{items.city}</td>
-        //                                 <td>{items.street}</td>
-        //                                 <td onClick={() => edit(items.name)}>
-        //                                     <ion-icon name="create-outline"></ion-icon>
-        //                                 </td>
-        //                                 <td
-        //                                     onClick={() =>
-        //                                         removeHandler(items.name)
-        //                                     }
-        //                                 >
-        //                                     <ion-icon name="trash-outline"></ion-icon>
-        //                                 </td>
-        //                             </tr>
-        //                         );
-        //                     })}
-        //                 </tbody>
-        //             </table>
-        //             {stored.length < 1 && <div>No records Data</div>}
-        //         </div>
-        //     </div>
-
-        // </div>
         <div className="address-page">
             <ToastContainer />
             <div className="inside-address">
@@ -415,36 +260,34 @@ function Address(props) {
                     {stored.map((items, index) => {
                         return (
 
-                            <div className="list-address">
+                            <div className="list-address mb-5">
                                 <div className="names">
-                                <div>
-                                    {index + 1}
-                                </div>
-                                <div>
-                                    Name:{items.name}
-                                </div>
-                                <div>
-                                    City:{items.city}
-                                </div>
-                                <div>
-                                    Street:{items.street}
-                                </div>
-                                <div>
-                                    Address:{items.address}
-                                </div>
-                                <div>
-                                    Area:{items.area}
-                                </div>
-                                <div>
-                                    Date:{items.dates}
-                                </div>
-                                <div>
-                                    Pincode:{items.pincode}
-                                </div>
-                                <button className="cancels mt-2" onClick={() =>
-                                    removeHandler(index + 1)
-                                }>cancel</button>
-                                 <button className="confirms mt-2 mb-4" onClick={() => usehistory.push("/orderdetails")}>Confirm</button>
+
+                                    <div className="mt-2">
+                                        <span className="span-name">Name:</span><span className="span-names">{items.name}</span>
+                                    </div>
+                                    <div className="mt-2">
+                                        <span className="span-name">City:</span><span className="span-names">{items.city}</span>
+                                    </div>
+                                    <div className="mt-2">
+                                        <span className="span-name">Street:</span><span className="span-names">{items.street}</span>
+                                    </div>
+                                    <div className="mt-2">
+                                        <span className="span-name">Address:</span><span className="span-names">{items.address}</span>
+                                    </div>
+                                    <div className="mt-2">
+                                        <span className="span-name">Area:</span><span className="span-names">{items.area}</span>
+                                    </div>
+                                    <div className="mt-2">
+                                        <span className="span-name">Date:</span><span className="span-names">{items.dates}</span>
+                                    </div>
+                                    <div className="mt-2">
+                                        <span className="span-name">Pincode:</span><span className="span-names">{items.pincode}</span>
+                                    </div>
+                                    <button className="cancels mt-4" onClick={() =>
+                                        removeHandler(index + 1)
+                                    }>cancel</button>
+                                    <button className="confirms mt-3 mb-4" onClick={movepush}>Confirm</button>
                                 </div>
                             </div>
 

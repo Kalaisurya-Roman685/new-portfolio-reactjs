@@ -36,8 +36,12 @@ function OrderDEtails(props) {
         history.push("/success");
         toast("Order Successfully!..");
     };
+
     return (
         <div className="order-scroll-mains">
+            <div className="mt-3">
+                <button className="back" onClick={() => history.goBack()}><ion-icon name="arrow-back-outline"></ion-icon></button>
+            </div>
             <h1 className="text-center mt-3 mb-3 name-field"> Order details</h1>
             <ToastContainer />
             {local.length === 0 && <div>No Data Found!!</div>}

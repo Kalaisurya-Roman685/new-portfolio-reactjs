@@ -107,7 +107,6 @@ function ProfileSettings() {
 
           <div className='carousels-sections'>
             <div className='left-carousel-section'>
-              kalai
             </div>
             <div className='middle-carousel-section'>
               {dataget.map((item, index) => {
@@ -141,7 +140,7 @@ function ProfileSettings() {
                         className="change-heart"
                       /> */}
 
-                        <i class={`fa-solid fa-heart`}></i>           Like
+                        <i class={`fa-solid fa-heart`}></i>Like
 
                       </div>
                       <div className='middle-shres'>

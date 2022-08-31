@@ -1,74 +1,5 @@
 @use "../../../../scss/abstract/" as *;
 
-// .containes {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     height: 100vh;
-//     width: 100%;
-//     // border: 2px solid red;
-//     flex: 1;
-//     overflow-y: auto;
-//     .inside-container {
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         flex: 1;
-//         width: 100%;
-//         border: 2px solid white;
-//         margin: auto 0;
-//         margin-top: 20px;
-//     }
-//     input {
-//         border: 2px solid orangered;
-//         color: orange;
-//         // width: 100%;
-//         background-color: white;
-//     }
-//     .btn-primarys
-//     {
-//         width: 45%;
-//         border: none;
-//         outline: none;
-//         padding: 10px;
-//         border-radius: 10px;
-//         background-color: orange;
-//         color: white;
-//         cursor: pointer;
-//         font-weight: bold;
-//         @include xsBreakPoint
-//         {
-//             width: 50%;
-//         }
-//         @include smBreakPoint
-//         {
-//             width: 50%;
-//         }
-//         @include mdBreakPoint
-//         {
-//             width: 50%;
-//         }
-//     }
-//     .btn-primarys:hover
-//     {
-//         color: white;
-//         background-color: orange;
-//     }
-//     .kalais
-//     {
-//         margin-top: 5%;
-
-//     }
-//     .adds
-//     {
-//         color: orangered;
-//         font-weight: bold;
-//         text-align: center;
-//         padding-top: 2%;
-//         padding-bottom: 4%;
-//     }
-// }
-
 .address-page {
     width: 100%;
     height: 100vh;
@@ -207,6 +138,15 @@
     color: white;
     font-weight: bold;
     width: 30%;
+    @include xsBreakPoint {
+        width: 40%;
+    }
+    @include smBreakPoint {
+        width: 40%;
+    }
+    @include mdBreakPoint {
+        width: 40%;
+    }
 }
 .confirms {
     background-color: orange;
@@ -218,20 +158,55 @@
     border: none;
     outline: none;
     width: 30%;
+    @include xsBreakPoint {
+        width: 40%;
+    }
+    @include smBreakPoint {
+        width: 40%;
+    }
+    @include mdBreakPoint {
+        width: 40%;
+    }
 }
 .list-address {
     width: 60%;
     // align-items: center;
     display: flex;
     flex-direction: column;
-    border: 2px solid red;
+    border: 2px solid cyan;
     margin: 0 auto;
     border-radius: 10px;
     padding: 10px;
+    @include xsBreakPoint {
+        width: 80%;
+    }
+    @include smBreakPoint {
+        width: 80%;
+    }
+    @include mdBreakPoint {
+        width: 80%;
+    }
     .names {
         padding-left: 30%;
-
         display: flex;
         flex-direction: column;
+        @include xsBreakPoint {
+            padding-left: 10%;
+        }
+        @include smBreakPoint {
+            padding-left: 35%;
+        }
+        @include mdBreakPoint {
+            padding-left: 35%;
+        }
+    }
+    .span-name {
+        color: blueviolet;
+        font-weight: bold;
+    }
+    .span-names {
+        color: rgb(0, 7, 61);
+        font-weight: bold;
+        padding-left: 2%;
     }
 }
