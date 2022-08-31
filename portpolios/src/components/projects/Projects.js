@@ -100,6 +100,13 @@ function Projects() {
                                             <div className='coursename'>
                                                 {item.coursename}
                                             </div>
+                                            <div className='mt-2 mb-2'>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
                                             <div className='description'>
                                                 {item.description}
                                             </div>

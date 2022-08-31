@@ -1,26 +1,26 @@
 
 import React from 'react'
 import './styles/Section1.scss';
-import data from '../../../../assests/video animation/1.gif'
+import data from '../../../../assests/101.png'
 
 function Section1() {
 
     return (
-        <div className='main-section4'>
-            <div className='inside-section4'>
-                <div className='left-section4'>
+        <div className='mca-section'>
+            <div className='inside-mca-section'>
+                <div className='left-mca-section4'>
                     <div>
-                        <img src={data} />
+                        <img src={data} className="img-fluid" />
                     </div>
 
                 </div>
-                <div className='right-section4'>
+                <div className='right-mca-section4'>
                     <div className='inside-text-section4'>
                         <div className='our' style={{color:"orangered"}}>
                             MCA (Master of Computer Application)
                         </div>
                         <div className='mt-4'>
-                            <h3>Karpagam Academy Of Higher Education</h3>
+                            <h5>Karpagam Academy Of Higher Education</h5>
                         </div>
                         <div className='complet'>
                             <span>

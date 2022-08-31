@@ -35,9 +35,11 @@ function MobileProfile() {
 
 
 
+    // https://kalai-portpolio-408b4.web.app/  old port folio kalaisurya reactjs
+
 
     useEffect(() => {
-        
+
         // const datas = localStorage.getItem("amma");
         // SetDataGet(JSON.parse(datas));
         const getUsers = async () => {
@@ -130,27 +132,27 @@ function MobileProfile() {
                                         <Modal.Body>
                                             <div class="modal-bodys" style={{ display: "flex", alignItems: "center", gap: "20px", paddingTop: "30px", paddingBottom: "30px", paddingLeft: "20px" }}>
                                                 <FacebookShareButton
-                                                    url={'https://kalai-portpolio-408b4.web.app/'} >
+                                                    url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
                                                     <FacebookIcon size={32} round />
                                                 </FacebookShareButton>
                                                 <PinterestShareButton
 
-                                                    url={'https://kalai-portpolio-408b4.web.app/'} >
+                                                    url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
                                                     <PinterestIcon size={32} round />
                                                 </PinterestShareButton>
                                                 <RedditShareButton
 
-                                                    url={'https://kalai-portpolio-408b4.web.app/'} >
+                                                    url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
                                                     <RedditIcon size={32} round />
                                                 </RedditShareButton>
                                                 <WhatsappShareButton
 
-                                                    url={'https://kalai-portpolio-408b4.web.app/'} >
+                                                    url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
                                                     <WhatsappIcon size={32} round />
                                                 </WhatsappShareButton>
                                                 <LinkedinShareButton
 
-                                                    url={'https://kalai-portpolio-408b4.web.app/'} >
+                                                    url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
                                                     <LinkedinIcon size={32} round />
                                                 </LinkedinShareButton>
                                             </div>

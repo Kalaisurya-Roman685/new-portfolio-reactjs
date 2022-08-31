@@ -28,6 +28,7 @@ import MobileScreenOne from "./mobilecomponents/mobilewelcomescreen/MobileScreen
 import BottomNavbar from "./mobilecomponents/bottomnavbar/BottomNavbar";
 import Followers from "./components/followerslist/Followers";
 import AddressPageList from "./components/ecommerce/addresspage/AddressPageList";
+import PageNotFound from "./components/404page/PageNotFound";
 
 
 function App() {
@@ -135,9 +136,11 @@ function App() {
                             <Route path="/followers" component={Followers} />
                             {/* <Route path="/conformaddress" component={AddUsers} /> */}
                             <Route path="/conformaddress" component={AddressPageList} />
+                            <Route path="/*" component={PageNotFound} />
                         </Sidebar>
 
-                        <Route path="/mobilescreenone" component={MobileScreenOne} />
+                        <Route path="/*" component={PageNotFound} />
+                        {/* <Route path="/mobilescreenone" component={MobileScreenOne} /> */}
 
                     </Switch>
                 </Router>

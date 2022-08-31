@@ -1,20 +1,20 @@
 import React from 'react'
-import './styles/Section4.scss';
-import data from '../../../../assests/video animation/4.gif';
+
+import data from '../../../../assests/105.png';
 
 
 function Section4() {
     return (
-        <div className='main-section2'>
-            <div className='inside-section2'>
-                <div className='left-section2'>
+        <div className='mca-section2'>
+            <div className='inside-mca-section2'>
+                <div className='left-mca-section2'>
 
                     <div className='inside-section2-left'>
                         <div className='our'>
                             SSLC (Secondary School Leaving Certificate)
                         </div>
                         <div className='mt-4'>
-                            <h3>Government Higher Secondary School</h3>
+                            <h5>Government Higher Secondary School</h5>
                         </div>
                         <div className='complet'>
                             <span>
@@ -22,13 +22,13 @@ function Section4() {
                             </span>
                         </div>
                         <div className='butns'>
-                            <button className='gets'>Get Started</button>
+                            <button className='gets mb-5'>Get Started</button>
                         </div>
                     </div>
                 </div>
-                <div className='right-section2'>
+                <div className='right-mca-section2'>
 
-                    <img src={data} />
+                    <img src={data} className="img-fluid" />
                 </div>
             </div>
         </div>

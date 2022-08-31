@@ -27,7 +27,7 @@ function Followers() {
                     return (
                         <div className='kalai-follow card col-lg-4 col-sm-8 col-xs-4 col-md-8'>
                             <div className='left-kalai'>
-                                {items.image > 10 ? <img src={items.image} alt={items.name} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA9AVwJdMPCUza77yeUH9zC6MJf_B5ahia1Q&usqp=CAU" alt={items.name} style={{ width: 140, height: 140, borderRadius: "50%" }} />}
+                                {items.image.length > 10 ? <img src={items.image} alt={items.namet} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <span style={{ width: 120, height: 120, borderRadius: "50%",backgroundColor:"orange",alignItems:"center",justifyContent:"center",textAlign:"center",fontSize:"2rem",paddingTop:"12%",fontWeight:"bold" }}>{items?.name?.slice(0, 1).toUpperCase()}</span>}
                             </div>
                             <div className='right-kalai'>
                                 <h6 className='names'>{items.name}</h6>

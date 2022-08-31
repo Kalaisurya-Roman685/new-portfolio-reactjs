@@ -1,0 +1,68 @@
+@use "../../../scss/abstract/" as *;
+
+.pagenot {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @include xsBreakPoint {
+        height: auto;
+    }
+    @include smBreakPoint {
+        height: auto;
+    }
+    @include mdBreakPoint {
+        height: auto;
+    }
+    @include lgBreakPoint {
+        height: auto;
+    }
+    .pages {
+        width: 38%;
+        @include xsBreakPoint {
+            width: 90%;
+            padding-top: 30%;
+        }
+        @include smBreakPoint {
+            width: 80%;
+            padding-top: 10%;
+        }
+        @include mdBreakPoint {
+            width: 60%;
+            padding-top: 5%;
+        }
+        @include lgBreakPoint {
+            width: 60%;
+        }
+        @include xlBreakPoint {
+            width: 60%;
+        }
+        @include xxlBreakPoint {
+            width: 44%;
+        }
+    }
+    .backto {
+        width: 20%;
+        border: none;
+        outline: none;
+        background-color: orange;
+        border-radius: 20px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 10px;
+        @include xsBreakPoint {
+            width: 50%;
+        }
+        @include smBreakPoint {
+            width: 30%;
+        }
+        @include mdBreakPoint {
+            width: 28%;
+        }
+    }
+}
