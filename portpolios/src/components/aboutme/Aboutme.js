@@ -9,7 +9,7 @@ import './styles/Aboutme.scss';
 
 function Aboutme() {
     return (
-        <div className='mains'>
+        <div className='mains' id="about">
 
             <div className='inside'>
                 <Section1 />

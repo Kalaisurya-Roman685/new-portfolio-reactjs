@@ -1,12 +1,29 @@
 @use "../../../../scss/abstract/" as *;
 
+.odrer-success {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+    @include xsBreakPoint {
+        height: auto;
+    }
+    @include smBreakPoint {
+        height: auto;
+    }
+    @include mdBreakPoint {
+        height: auto;
+    }
+}
 .backtologin {
     width: 15%;
     padding: 10px;
     border: none;
-    background-color: aquamarine;
+    background-color: orangered;
     border-radius: 20px;
-    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,11 +44,14 @@
         cursor: pointer;
     }
     @include mdBreakPoint {
-        width: 30%;
-        font-size: 1.6rem;
+        width: 23%;
+        font-size: 1.3rem;
         background-color: orangered;
         color: white;
         cursor: pointer;
+    }
+    @include lgBreakPoint {
+        width: 20%;
     }
 }
 .img-order-split {
@@ -43,6 +63,7 @@
 .success-btn {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .gifyts {

@@ -12,7 +12,7 @@ function OrderSuccess(props) {
 
     return (
         <>
-            <div>
+            <div className="odrer-success">
                 <ToastContainer />
                 <h1 className="text-center mt-5 mb-5 succs">Order SuccessFully...</h1>
                 <div className="thnks">
@@ -24,12 +24,13 @@ function OrderSuccess(props) {
                     </div>
 
                 </div>
+                <div className="success-btn mb-4">
+                    <button onClick={() => movelogin()} className="backtologin">
+                        Back to Login
+                    </button>
+                </div>
             </div>
-            <div className="success-btn mb-4">
-                <button onClick={() => movelogin()} className="backtologin">
-                    Back to Login
-                </button>
-            </div>
+
         </>
     );
 }
