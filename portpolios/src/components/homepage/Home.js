@@ -25,16 +25,18 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Typewriter from 'typewriter-effect';
 import Mobilesection1 from "./components/mobilesection1/Mobilesection1";
+import resume from '../../assests/kalairesume.pdf';
 function Home({ color }) {
   const history = useHistory();
 
-  const ContactTest = () => toast(`ContactMe:8778377119`);
+  const ContactTest = () => toast(`ContactMe:8778377119 😁..🙃..😉`);
+  const notification = () => toast("Resume Dowload Successfully...😁!");
   return (
     <>
       <div className="home-section d-none d-lg-block">
         <div className="inside-section1">
           <div className="left-section1">
-
+            <ToastContainer />
             <h1 className="kalainame" style={{ color: color }}>Hy! I Am <br />
 
               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;kalaisurya
@@ -62,7 +64,22 @@ function Home({ color }) {
               <span><ion-icon name="logo-twitter"></ion-icon></span>
             </div>
             <div className='butns'>
-              <button className='gets'>Contact Me</button>
+              <button className='gets' onClick={ContactTest}>Contact Me</button>
+              <button
+                className="gets"
+              >
+                <a
+                  href={resume}
+                  download="kalaiportfolio"
+                  onClick={notification}
+                  style={{
+                    color: "black",
+                    textDecoration: "none",
+                  }}
+                >
+                  Download CV
+                </a>
+              </button>
             </div>
           </div>
           <div className="right-section1">
@@ -132,7 +149,7 @@ function Home({ color }) {
         </div>
       </div>
 
-      
+
 
       <div className="d-block d-lg-block ">
         <Mobilesection1 />

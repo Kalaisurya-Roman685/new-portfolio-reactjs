@@ -98,8 +98,21 @@ function ProfileSettings() {
                 <img src="https://img.freepik.com/free-vector/ecommerce-web-page-concept-illustration_114360-8204.jpg?w=2000" className='img-fluid e-commerces' />
                 <h5>E-Commerce</h5>
               </div>
-              <div className='card-section1'>
-                right
+              <div className='card-section2'>
+                <FacebookShareButton
+                  url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
+                  <FacebookIcon size={42} round />
+                </FacebookShareButton>
+                <WhatsappShareButton
+
+                  url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
+                  <WhatsappIcon size={42} round />
+                </WhatsappShareButton>
+                <LinkedinShareButton
+                  url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
+                  <LinkedinIcon size={42} round />
+                </LinkedinShareButton>
+
               </div>
             </div>
 
@@ -164,7 +177,6 @@ function ProfileSettings() {
                                 <FacebookIcon size={32} round />
                               </FacebookShareButton>
                               <PinterestShareButton
-
                                 url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
                                 <PinterestIcon size={32} round />
                               </PinterestShareButton>

@@ -14,7 +14,7 @@ import { CartProvider } from "react-use-cart";
 
 ReactDOM.render(
     <CartProvider>
-    <App />
+        <App />
     </CartProvider>,
 
     document.getElementById("root")

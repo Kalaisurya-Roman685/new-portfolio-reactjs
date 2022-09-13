@@ -4,8 +4,7 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    @include xsBreakPoint
-    {
+    @include xsBreakPoint {
         width: 100%;
     }
     .inside-section1 {
@@ -64,6 +63,8 @@
             }
             .butns {
                 padding-top: 2rem;
+                display: flex;
+                gap: 20px;
                 .gets {
                     width: 25%;
                     border: none;
@@ -88,6 +89,9 @@
                         font-size: 0.978rem;
                     }
                 }
+            }
+            a {
+                color: white !important;
             }
         }
         .right-section1 {

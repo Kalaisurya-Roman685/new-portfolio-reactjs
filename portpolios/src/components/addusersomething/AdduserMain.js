@@ -32,8 +32,9 @@ function AdduserMain() {
     const [date, SetDate] = useState("");
     const [serach, SetSearch] = useState("");
     const [store, SetStores] = useState(gets());
+    const [numbersset, setNumberData] = useState("");
     const [error, SetError] = useState(false);
-
+    const [errors, SetErrors] = useState(false);
     const [news, setNew] = useState([]);
     const usercollectionRef = collection(db, "users");
 
@@ -70,7 +71,17 @@ function AdduserMain() {
         getUsers();
 
     }, [news]);
-  
+
+    const numberssets = () => {
+
+        if (numbersset == 0) {
+            SetErrors(true);
+        }
+        if (numbersset) {
+            setNumberData("");
+        }
+    }
+
     const deleted = (id) => {
 
         if (window.confirm("Are You Sure Delete Data...🤔")) {
@@ -81,7 +92,7 @@ function AdduserMain() {
             toast.error("Delete User Successfully...😉")
         }
 
-    
+
     }
 
     return (
@@ -123,52 +134,64 @@ function AdduserMain() {
                     {error && comments.length <= 0 ? <span style={{ color: "red" }}>comments Filed Is Empty</span> : ""}
                 </div>
 
-
-
                 <button onClick={handleadd} className="adds mt-4">Add+</button>
 
             </div>
 
-           
+
 
 
             <div className='mt-3 ms-3'>
                 <h6 style={{ color: "orangered", fontWeight: "600" }}>Add User Something Message...</h6>
 
-                <div className='serach-input '>
-                    <input
-                        placeholder="Serach"
-                        type="text"
-                        value={serach}
-                        onChange={(e) => SetSearch(e.target.value)}
-                        className="col-md-6 col-sm-6 mt-4 mb-2"
-                    />
-                </div>
-                {news.length === 0 && <div>No Data Found....</div>}
-                <div className='row justify-content-center gap-4 mb-4'>
-                    {news.filter((itemsed) =>
-                        itemsed.name.toLowerCase().includes(serach)
-                    )
-                        .map((item, index) => {
-                            return (
-                                <div key={index} className="card col-lg-5 col-xl-4 col-md-5 col-xs-2 col-sm-8 mt-5 mb-3">
 
-                                    {item.image.length > 10 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <span style={{ width: 120, height: 120, borderRadius: "50%",backgroundColor:"orange",alignItems:"center",justifyContent:"center",textAlign:"center",fontSize:"2rem",paddingTop:"8%",fontWeight:"bold" }}>{item?.name?.slice(0, 1).toUpperCase()}</span>}
-                                    {/* {item.image.length === 3 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThXESI9cZ4AFUQuPGQWuDVF2Mr-EMUfMAebw&usqp=CAU" style={{ width: 140, height: 140, borderRadius: "50%" }} />}
+                <div className='forms-flexs'>
+                    <h4>50+120</h4>
+                    <input type='number' placeholder='Enter total number' name="" onChange={(e) => setNumberData(e.target.value)} className="works" />
+                    <button onClick={numberssets} className="add-numbers">Show Data</button>
+                    {errors && numbersset.length <= 0 ? <span style={{ color: "red" }}>number Filed Is Empty</span> : ""}
+                </div>
+
+
+                {numbersset == 170 ? <div>
+                    <div className='serach-input '>
+                        <input
+                            placeholder="Serach"
+                            type="text"
+                            value={serach}
+                            onChange={(e) => SetSearch(e.target.value)}
+                            className="col-md-6 col-sm-6 mt-4 mb-2"
+                        />
+                    </div>
+                    {news.length === 0 && <div>No Data Found....</div>}
+                    <div className='row justify-content-center gap-4 mb-4'>
+                        {news.filter((itemsed) =>
+                            itemsed.name.toLowerCase().includes(serach)
+                        )
+                            .map((item, index) => {
+                                return (
+                                    <div key={index} className="card col-lg-5 col-xl-4 col-md-5 col-xs-2 col-sm-8 mt-5 mb-3">
+
+                                        {item.image.length > 10 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <span style={{ width: 120, height: 120, borderRadius: "50%", backgroundColor: "orange", alignItems: "center", justifyContent: "center", textAlign: "center", fontSize: "2rem", paddingTop: "8%", fontWeight: "bold" }}>{item?.name?.slice(0, 1).toUpperCase()}</span>}
+                                        {/* {item.image.length === 3 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThXESI9cZ4AFUQuPGQWuDVF2Mr-EMUfMAebw&usqp=CAU" style={{ width: 140, height: 140, borderRadius: "50%" }} />}
                                     {item.image.length === 5 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL5ay7xDg3E8Gww-ez3AWPG4u-8Xx6nZUATw&usqp=CAU" style={{ width: 140, height: 140, borderRadius: "50%" }} />}
                                     {item.image.length === 7 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/05/07/972998-dhonis.jpg" style={{ width: 140, height: 140, borderRadius: "50%" }} />}
                                     {item.image.length === 8 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/05/07/972998-dhonis.jpg" style={{ width: 140, height: 140, borderRadius: "50%" }} />}
                                     {item.image.length === 10 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/05/07/972998-dhonis.jpg" style={{ width: 140, height: 140, borderRadius: "50%" }} />}
                                     {item.image.length === 13 ? <img src={item.image} style={{ width: 140, height: 140, borderRadius: "50%" }} /> : <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/05/07/972998-dhonis.jpg" style={{ width: 140, height: 140, borderRadius: "50%" }} />} */}
-                                    <h5 className='names mt-3'>{item.name}</h5>
-                                    <h4 className='email mt-2'>{item.email}</h4>
-                                    <h4 className='email mt-2'>{item.location}</h4>
-                                    <h4 className='email mt-2'>{item.date}</h4>
-                                    {/* <button className='delete mt-3 mb-3' onClick={() => deleted(item.id)}>Delete</button> */}
-                                </div>
-                            )
-                        })}
-                </div>
+                                        <h5 className='names mt-3'>{item.name}</h5>
+                                        <h4 className='email mt-2'>{item.email}</h4>
+                                        <h4 className='email mt-2'>{item.location}</h4>
+                                        <h4 className='email mt-2'>{item.date}</h4>
+                                        <button className='delete mt-3 mb-3' onClick={() => deleted(item.id)}>Delete</button>
+                                    </div>
+                                )
+                            })}
+                    </div>
+                </div> : <div style={{ paddingTop: 20, paddingBottom: 30 }}>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIys2J0bSqhkuCMDN2ER1Llv636yr2grBInA&usqp=CAU" alt="pls correct add number enter" />
+                </div>}
+
             </div>
 
 

@@ -115,4 +115,41 @@
             border: 1px solid orangered;
         }
     }
+    .forms-flexs {
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        .works {
+            width: 40%;
+            border: none;
+            background-color: white;
+            color: orangered;
+            border: 1px solid orangered;
+            border-radius: 8px;
+            padding: 5px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        }
+        .add-numbers {
+            width: 30%;
+            padding: 6px;
+            background-color: orangered;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            color: white;
+            border-radius: 10px;
+            @include lgBreakPoint {
+                width: 44%;
+            }
+            @include xlBreakPoint {
+                width: 44%;
+            }
+            @include xxlBreakPoint {
+                width: 44%;
+            }
+        }
+    }
 }
