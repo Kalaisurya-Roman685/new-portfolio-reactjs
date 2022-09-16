@@ -42,7 +42,7 @@ function OrderDEtails(props) {
 
     return (
         <div className="order-scroll-mains">
-            <div className="mt-3">
+            <div className="mt-4 mb-3 ms-4">
                 <button className="back" onClick={() => history.goBack()}><ion-icon name="arrow-back-outline"></ion-icon></button>
             </div>
             <h1 className="text-center mt-3 mb-3 name-field"> Order details</h1>
@@ -86,8 +86,8 @@ function OrderDEtails(props) {
                                         />
                                         <div className="text-center mt-4">
                                             <h5 className="name-w">{it.title}</h5>
-                                            <p className="name-field">Price:{it.price}</p>
-                                            <p className="name-field">Quantity:{it.quantity}</p>
+                                            <p className="name-fields">Price:{it.price}</p>
+                                            <p className="name-fields">Quantity:{it.quantity}</p>
                                         </div>
                                     </span>
                                     <p className="name-field">{it.itemtotal}</p>
@@ -98,7 +98,7 @@ function OrderDEtails(props) {
                 </div>
             )}
             <div className="boxs mb-5 mt-5 text-center">
-                <h1><span style={{ color: "rgb(0, 7, 61)", fontWeight: "bold" }}>Toatal Amount : </span><span style={{ color: "orangered", fontWeight: "bold" }}>{cartTotal}</span></h1>
+                <h1><span className="name-fields">Toatal Amount : </span><span style={{ color: "orangered", fontWeight: "bold" }}>{cartTotal}</span></h1>
             </div>
             <div className="buttons-splits mt-5 mb-4">
                 <button

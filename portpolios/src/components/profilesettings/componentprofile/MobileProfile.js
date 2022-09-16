@@ -81,7 +81,20 @@ function MobileProfile() {
                         <h6>E-Commerce</h6>
                     </div>
                     <div className='follow-right1'>
-                        Shares
+                        <FacebookShareButton
+                            url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
+                            <FacebookIcon size={25} round />
+                        </FacebookShareButton>
+                        <WhatsappShareButton
+
+                            url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
+                            <WhatsappIcon size={25} round />
+                        </WhatsappShareButton>
+                        <LinkedinShareButton
+                            url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
+                            <LinkedinIcon size={25} round />
+                        </LinkedinShareButton>
+
                     </div>
                 </div>
 
@@ -92,9 +105,9 @@ function MobileProfile() {
                                 <div>
                                     <div className='d-flex gap-2 kalaigap mt-2 mb-3 ms-2'>
                                         {items.image.length > 10 ? <img src={items.image} style={{ width: 40, height: 40, borderRadius: "50%" }} /> : <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/05/07/972998-dhonis.jpg" style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover" }} />}
-                                        <div className='kalaies mt-2'>
-                                            <h6>{items?.name}</h6>
-                                            <h6 className='mt-2'>{items?.date}</h6>
+                                        <div className='kalaies'>
+                                            <h6 className='name'>{items?.name}</h6>
+                                            <h6 className='mt-2 date'>{items?.date}</h6>
                                         </div>
                                     </div>
 

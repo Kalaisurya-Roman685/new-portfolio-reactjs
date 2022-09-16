@@ -273,61 +273,73 @@
 .main-sidebar-nav {
     width: 100vw;
     height: 100vh;
-    overflow-y: hidden;
-    overflow: hidden;
-    z-index: 90000000000000000000000000000000000000;
+    position: relative;
     @include xsBreakPoint {
-        // border: 5px solid blue;
-        overflow: hidden;
-        // height: 70vh;
+        // overflow-y: auto;
     }
-    // border: 2px solid red;
-    .sidebar-mobile {
-        width: 100%;
-        height: 90% !important;
-        z-index: -10 !important;
-        overflow: hidden;
-        overflow-y: auto;
-        @include xsBreakPoint {
-            height: auto;
-            // border: 3px solid blue;
-        }
-    }
-    .side-bottom-section {
-        position: absolute;
-        width: 100%;
-        height: 10%;
-        background-color: rgb(0, 7, 61);
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        border-top-left-radius: 30px;
-        border-top-right-radius: 30px;
-        z-index: 9000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
-        @include xsBreakPoint {
-            height: 10%;
-            // border: 3px solid green;
-        }
-        @include mdBreakPoint {
-            width: 100%;
-        }
-        .inside-phone {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            justify-content: space-around;
 
-            .icons-section {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+    .mobile-inside-section {
+        width: 100%;
+        height: 100%;
+     
+
+        .sidebar-mobile {
+            width: 100%;
+            height: 90%;
+            z-index: -10 !important;
+            @include xsBreakPoint {
+                // border: 4px solid red;
+                height: 90% !important;
             }
-            .kalai-circle {
-                width: 58px;
-                height: 58px;
-                border-radius: 50%;
-                border: 2px solid green;
+            @include smBreakPoint {
+                // border: 4px solid red;
+                height: 90% !important;
+            }
+            @include mdBreakPoint {
+                // border: 4px solid red;
+                height: 90% !important;
+            }
+        }
+        .side-bottom-section {
+            position: absolute;
+            width: 100%;
+            background-color: rgb(0, 7, 61);
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            z-index: 90000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+            @include xsBreakPoint {
+                // height: 40%;
+                height: 10%;
+                // border: 3px solid green;
+            }
+            @include smBreakPoint {
+                // height: 40%;
+                height: 10%;
+                // border: 3px solid green;
+            }
+            @include mdBreakPoint {
+                height: 10%;
+            }
+            .inside-phone {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: space-around;
+
+                .icons-section {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .kalai-circle {
+                    width: 58px;
+                    height: 58px;
+                    border-radius: 50%;
+                    border: 2px solid green;
+                }
             }
         }
     }
@@ -356,40 +368,5 @@
         height: 50px;
         border-radius: 50%;
         border: 3px solid orange;
-       
     }
 }
-
-// .mobile-bottom-nav {
-//     position: fixed;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-//     z-index: 1000;
-
-//     //give nav it's own compsite layer
-//     will-change: transform;
-//     transform: translateZ(0);
-
-//     display: flex;
-
-//     height: 50px;
-
-//     box-shadow: 0 -2px 5px -2px #333;
-//     background-color: #fff;
-
-//     &__item {
-//         flex-grow: 1;
-//         text-align: center;
-//         font-size: 12px;
-
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//     }
-
-//     &__item-content {
-//         display: flex;
-//         flex-direction: column;
-//     }
-// }

@@ -6,16 +6,13 @@
     overflow: hidden;
     overflow-y: auto;
     @include xsBreakPoint {
-        // height: 90vh;
-        height: auto;
+        padding-bottom: 20%;
     }
     @include smBreakPoint {
-        // height: 90vh;
-        height: auto;
+        padding-bottom: 20%;
     }
     @include mdBreakPoint {
-        // height: 90vh;
-        height: auto;
+        padding-bottom: 20%;
     }
     .kalai-formss {
         width: 100%;
@@ -116,11 +113,21 @@
         }
     }
     .forms-flexs {
-    
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 20px;
+        @include xsBreakPoint {
+            flex-direction: column;
+        }
+        .numbers {
+            @include xsBreakPoint {
+                padding-top: 2%;
+                font-size: 2rem;
+                transform: rotate(-12deg);
+                font-weight: bold;
+            }
+        }
         .works {
             width: 40%;
             border: none;
@@ -130,6 +137,9 @@
             border-radius: 8px;
             padding: 5px;
             box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+            @include xsBreakPoint {
+                width: 80%;
+            }
         }
         .add-numbers {
             width: 30%;
@@ -141,6 +151,9 @@
             outline: none;
             color: white;
             border-radius: 10px;
+            @include xsBreakPoint {
+                width: 50%;
+            }
             @include lgBreakPoint {
                 width: 44%;
             }

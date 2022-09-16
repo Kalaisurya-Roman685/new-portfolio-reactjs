@@ -146,7 +146,7 @@ function AdduserMain() {
 
 
                 <div className='forms-flexs'>
-                    <h4>50+120</h4>
+                    <h4 className='numbers'>50+120</h4>
                     <input type='number' placeholder='Enter total number' name="" onChange={(e) => setNumberData(e.target.value)} className="works" />
                     <button onClick={numberssets} className="add-numbers">Show Data</button>
                     {errors && numbersset.length <= 0 ? <span style={{ color: "red" }}>number Filed Is Empty</span> : ""}
@@ -160,7 +160,7 @@ function AdduserMain() {
                             type="text"
                             value={serach}
                             onChange={(e) => SetSearch(e.target.value)}
-                            className="col-md-6 col-sm-6 mt-4 mb-2"
+                            className="col-md-8 col-sm-8 mt-4 mb-2 cols"
                         />
                     </div>
                     {news.length === 0 && <div>No Data Found....</div>}
@@ -188,8 +188,8 @@ function AdduserMain() {
                                 )
                             })}
                     </div>
-                </div> : <div style={{ paddingTop: 20, paddingBottom: 30 }}>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIys2J0bSqhkuCMDN2ER1Llv636yr2grBInA&usqp=CAU" alt="pls correct add number enter" />
+                </div> : <div style={{ paddingTop: 20, paddingBottom: 30, display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "30px", paddingTop: "3%" }}>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIys2J0bSqhkuCMDN2ER1Llv636yr2grBInA&usqp=CAU" alt="pls correct add number enter" style={{ borderRadius: "30px" }} />
                 </div>}
 
             </div>

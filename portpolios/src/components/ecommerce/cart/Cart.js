@@ -48,12 +48,12 @@ function Cart(props) {
         <>
             <div className="carts-main">
                 <ToastContainer />
-                <div className="mt-3">
-                <button className="back" onClick={() => usehistory.goBack()}><ion-icon name="arrow-back-outline"></ion-icon></button>
-            </div>
+                <div className="mt-3 ms-3">
+                    <button className="back" onClick={() => usehistory.goBack()}><ion-icon name="arrow-back-outline"></ion-icon></button>
+                </div>
                 <div>
                     <h1 className="text-center mt-5 mb-5 totals">
-                        Toatl Items:<span style={{ color: "orangered" }}>{totalItems}</span>
+                        Toatl Items :<span style={{ color: "orangered" }}> {totalItems}</span>
                     </h1>
                 </div>
                 <div className="d-none d-lg-block">
@@ -198,7 +198,7 @@ function Cart(props) {
                 </div>
                 <div className="split-box-orders">
                     <div className="boxs">
-                        <p>Toatal Amount:$<span style={{ color: "red" }}>{cartTotal}</span></p>
+                        <p>Toatal Amount : $ <span style={{ color: "red" }}>{cartTotal}</span></p>
                     </div>
                     <div className="orders mb-5">
                         <button

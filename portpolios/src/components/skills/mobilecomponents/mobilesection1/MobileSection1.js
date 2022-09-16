@@ -8,8 +8,8 @@ function MobileSection1() {
 
     
     return (
-        <div className='mobile-section11'>
-            <div className='inside-mobile-section row justify-content-center'>
+        <div className='mobile-section11 mb-1'>
+            <div className='inside-mobile-section row justify-content-center mb-5'>
                 {DataProviders.skillData.map((items, index) => {
                     return (
                         <div className='cardss1 col-xs-6 col-sm-6 col-md-8 mt-3 mb-4'>

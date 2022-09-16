@@ -102,29 +102,29 @@ function SlideBar({ dark, setdark, children, }) {
 
 
     return (
-        <div className='main-slidebar'>
-            <div className='inside-slide'>
-                <div className='bottom-slide'>
-                    <div className='slides d-none d-lg-block'>
+        <motion.div className='main-slidebar'>
+            <motion.div className='inside-slide'>
+                <motion.div className='bottom-slide'>
+                    <motion.div className='slides d-none d-lg-block'>
                         <motion.div animate={{ width: toggles ? "200px" : "45px" }} className="slidebar">
-                            <div className='bars'>
-                                {toggles && <div onClick={() => history.push("/profile")}>
+                            <motion.div className='bars'>
+                                {toggles && <motion.div onClick={() => history.push("/profile")}>
                                     <span className='kalai' style={{ cursor: "pointer" }}><img src={kalaiimage} className="kalai-image" /></span>
-                                </div>}
+                                </motion.div>}
                                 <span onClick={tests}><i class="fa-solid fa-bars"></i></span>
-                            </div>
-                            {toggles && <div className='followers'>
-                                <div className='first-follow'>
+                            </motion.div>
+                            {toggles && <motion.div className='followers'>
+                                <motion.div className='first-follow'>
                                     <h4 className='count'>20</h4>
                                     <h5 className='flo'>Following</h5>
-                                </div>
-                                <div className='second-follow' style={{ cursor: "pointer" }}>
-                                    <div onClick={() => history.push("/followers")}>
+                                </motion.div>
+                                <motion.div className='second-follow' style={{ cursor: "pointer" }}>
+                                    <motion.div onClick={() => history.push("/followers")}>
                                         <h4 className='count'>{datas.length}</h4>
                                         <h5 className='flo'>Followers</h5>
-                                    </div>
-                                </div>
-                            </div>}
+                                    </motion.div>
+                                </motion.div>
+                            </motion.div>}
                             <section>
                                 <motion.div className='flexs'>
                                     {routes.map((items) => (
@@ -168,7 +168,7 @@ function SlideBar({ dark, setdark, children, }) {
                                 </motion.div>
                             </section>
                         </motion.div>
-                    </div>
+                    </motion.div>
 
 
                     <motion.div className='childes d-none d-lg-block ' animate={{ width: toggles1 ? "100%" : "100%" }}>
@@ -179,26 +179,23 @@ function SlideBar({ dark, setdark, children, }) {
                     <motion.div className='d-block d-lg-none'>
                         <motion.div className='d-block d-lg-block '>
 
-                            <div className='main-sidebar-nav'>
-                                <div className='sidebar-mobile'>
+                            <motion.div className='main-sidebar-nav'>
+                                <motion.div className='mobile-inside-section'>
+                                <motion.div className='sidebar-mobile'>
                                     <motion.main>
                                         {children}
                                     </motion.main>
-                                </div>
+                                </motion.div>
 
-                                <div className='side-bottom-section'>
-                                    {/* <div className="mobile-bottom-nav__item--actives" onClick={() => history.push("/success")}>
-                                        kalakal
-                                    </div> */}
-
-                                    <nav class="mobile-bottom-nav">
-                                        <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
-                                            <div class="mobile-bottom-nav__item-content" onClick={() => history.push("/")}>
+                                <motion.div className='side-bottom-section'>
+                                    <motion.nav class="mobile-bottom-nav">
+                                        <motion.div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+                                            <motion.div class="mobile-bottom-nav__item-content" onClick={() => history.push("/")}>
                                                 <i class="fa-solid fa-house-heart"></i>
                                                 Home
 
-                                            </div>
-                                        </div>
+                                            </motion.div>
+                                        </motion.div>
                                         <div class="mobile-bottom-nav__item">
                                             <div class="mobile-bottom-nav__item-content" onClick={() => history.push("/skills")}>
                                                 <i class="fa-solid fa-book-open-cover"></i>
@@ -206,43 +203,44 @@ function SlideBar({ dark, setdark, children, }) {
 
                                             </div>
                                         </div>
-                                        <div class="mobile-bottom-nav__item">
-                                            <div class="mobile-bottom-nav__item-content" onClick={() => history.push("/addsomething")}>
+                                        <motion.div class="mobile-bottom-nav__item">
+                                            <motion.div class="mobile-bottom-nav__item-content" onClick={() => history.push("/addsomething")}>
                                                 <i class="fa-solid fa-user-plus"></i>
                                                 Adduser
 
-                                            </div>
-                                        </div>
+                                            </motion.div>
+                                        </motion.div>
 
-                                        <div class="mobile-bottom-nav__item" onClick={() => history.push("/projects")}>
-                                            <div class="mobile-bottom-nav__item-content">
+                                        <motion.div class="mobile-bottom-nav__item" onClick={() => history.push("/projects")}>
+                                            <motion.div class="mobile-bottom-nav__item-content">
                                                 <i class="fa-solid fa-book-bookmark"></i>
                                                 Projects
-                                            </div>
-                                        </div>
+                                            </motion.div>
+                                        </motion.div>
 
-                                        <div class="mobile-bottom-nav__item">
-                                            <div class="mobile-bottom-nav__item-content">
+                                        <motion.div class="mobile-bottom-nav__item">
+                                            <motion.div class="mobile-bottom-nav__item-content">
                                                 <span onClick={() => history.push("/profile")} >
                                                     <img src={kalaiimage} className="kalai-circle" />
                                                 </span>
-                                            </div>
-                                        </div>
+                                            </motion.div>
+                                        </motion.div>
 
-                                    </nav>
+                                    </motion.nav>
 
-                                </div>
-                            </div>
+                                </motion.div>
+                                </motion.div>
+                            </motion.div>
 
 
                         </motion.div>
 
                     </motion.div>
-                </div>
+                </motion.div>
 
 
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     )
 }
 

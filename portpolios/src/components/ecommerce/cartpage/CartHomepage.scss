@@ -5,16 +5,7 @@
     height: 100vh;
     overflow: hidden;
     overflow-y: auto;
-    @include xsBreakPoint
-    {
-        height: auto;
-    }
-    @include lgBreakPoint
-    {
-        width: 100%;
-        height: auto;
-        overflow-y: auto;
-    }
+
     .inputs {
         display: flex;
         align-items: center;

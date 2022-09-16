@@ -7,7 +7,18 @@
     overflow-y: auto;
     @include xsBreakPoint {
         width: 100%;
-        height: auto;
+        // height: auto;
+        padding-bottom: 22%;
+    }
+    @include smBreakPoint {
+        width: 100%;
+        // height: auto;
+        padding-bottom: 22%;
+    }
+    @include mdBreakPoint {
+        width: 100%;
+        // height: auto;
+        padding-bottom: 22%;
     }
     .inside-mobile-profile {
         width: 100%;
@@ -41,6 +52,7 @@
                 border: 1px solid orange;
                 padding: 10px;
                 border-radius: 10px;
+                width: 60%;
                 .e-commerces {
                     width: 140px;
                 }
@@ -49,6 +61,13 @@
                 cursor: pointer;
                 opacity: 0.4;
             }
+        }
+        .follow-right1 {
+            width: 50%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            gap: 10px;
         }
 
         .counts {
@@ -64,24 +83,19 @@
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, orangered 0px 30px 60px -30px,
             orange 0px -2px 6px 0px inset;
         background-color: white;
+        color: rgb(0, 7, 61);
+        font-weight: 600;
 
         .mobile-image-picture {
             width: 250px;
             border-radius: 10px;
             height: 200px;
+
             .kalaigap {
                 display: flex;
                 gap: 10px;
                 align-content: center;
                 justify-content: center;
-            }
-            .kalaies {
-                display: flex;
-                gap: 10px;
-                align-content: center;
-                width: 100%;
-                justify-content: center;
-                border: 2px solid blue;
             }
         }
         .likes-sections {

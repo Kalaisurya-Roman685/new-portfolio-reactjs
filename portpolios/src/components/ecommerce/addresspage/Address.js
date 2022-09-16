@@ -254,14 +254,14 @@ function Address(props) {
                     </div>
                 </div>
 
-                <div className="mt-5">
-
+                <div className="mt-1 mb-5">
+                {stored.length < 1 && <div>No records Data</div>}
 
                     {stored.map((items, index) => {
                         return (
 
                             <div className="list-address mb-5">
-                                <div className="names">
+                                <div className="names mb-5">
 
                                     <div className="mt-2">
                                         <span className="span-name">Name:</span><span className="span-names">{items.name}</span>
@@ -294,7 +294,7 @@ function Address(props) {
                         );
                     })}
 
-                    {stored.length < 1 && <div>No records Data</div>}
+                   
                 </div>
             </div>
         </div>

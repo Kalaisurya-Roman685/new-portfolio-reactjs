@@ -109,7 +109,10 @@ function Skills() {
         <Section16Skill />
       </div>
       <div className=' classmobile d-block d-lg-block'>
-        <MobileSection1 />
+      
+      <div>
+      <MobileSection1 />
+      </div>
 
       </div>
     </div>

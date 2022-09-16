@@ -5,15 +5,7 @@
     height: 100vh;
     overflow: hidden;
     overflow-y: auto;
-    @include xsBreakPoint {
-        height: auto;
-    }
-    @include smBreakPoint {
-        height: auto;
-    }
-    @include mdBreakPoint {
-        height: auto;
-    }
+
     .inside-address {
         width: 100%;
         height: 100%;
@@ -126,87 +118,86 @@
             }
         }
     }
-}
-
-.cancels {
-    background-color: red;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    padding: 5px;
-    cursor: pointer;
-    color: white;
-    font-weight: bold;
-    width: 30%;
-    @include xsBreakPoint {
-        width: 40%;
-    }
-    @include smBreakPoint {
-        width: 40%;
-    }
-    @include mdBreakPoint {
-        width: 40%;
-    }
-}
-.confirms {
-    background-color: orange;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 5px;
-    border: none;
-    outline: none;
-    width: 30%;
-    @include xsBreakPoint {
-        width: 40%;
-    }
-    @include smBreakPoint {
-        width: 40%;
-    }
-    @include mdBreakPoint {
-        width: 40%;
-    }
-}
-.list-address {
-    width: 60%;
-    // align-items: center;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid cyan;
-    margin: 0 auto;
-    border-radius: 10px;
-    padding: 10px;
-    @include xsBreakPoint {
-        width: 80%;
-    }
-    @include smBreakPoint {
-        width: 80%;
-    }
-    @include mdBreakPoint {
-        width: 80%;
-    }
-    .names {
-        padding-left: 30%;
-        display: flex;
-        flex-direction: column;
+    .cancels {
+        background-color: red;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        padding: 5px;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        width: 30%;
         @include xsBreakPoint {
-            padding-left: 10%;
+            width: 40%;
         }
         @include smBreakPoint {
-            padding-left: 35%;
+            width: 40%;
         }
         @include mdBreakPoint {
-            padding-left: 35%;
+            width: 40%;
         }
     }
-    .span-name {
-        color: blueviolet;
+    .confirms {
+        background-color: orange;
+        color: white;
         font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 5px;
+        border: none;
+        outline: none;
+        width: 30%;
+        @include xsBreakPoint {
+            width: 40%;
+        }
+        @include smBreakPoint {
+            width: 40%;
+        }
+        @include mdBreakPoint {
+            width: 40%;
+        }
     }
-    .span-names {
-        color: rgb(0, 7, 61);
-        font-weight: bold;
-        padding-left: 2%;
+    .list-address {
+        width: 60%;
+        // align-items: center;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid cyan;
+        margin: 0 auto;
+        border-radius: 10px;
+        padding: 10px;
+        @include xsBreakPoint {
+            width: 80%;
+        }
+        @include smBreakPoint {
+            width: 80%;
+        }
+        @include mdBreakPoint {
+            width: 80%;
+        }
+        .names {
+            padding-left: 30%;
+            display: flex;
+            flex-direction: column;
+            @include xsBreakPoint {
+                padding-left: 10%;
+            }
+            @include smBreakPoint {
+                padding-left: 35%;
+            }
+            @include mdBreakPoint {
+                padding-left: 35%;
+            }
+        }
+        .span-name {
+            color: blueviolet;
+            font-weight: bold;
+        }
+        .span-names {
+            color: orange !important;
+            font-weight: bold;
+            padding-left: 2%;
+        }
     }
 }

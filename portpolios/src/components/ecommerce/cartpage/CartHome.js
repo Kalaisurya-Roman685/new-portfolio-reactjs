@@ -24,14 +24,10 @@ function CartHome() {
 
     const getsData = () => {
         ProductApi().then((res) => {
-            console.log('====================================');
-            console.log(res.data);
-            SetStores(res.data,"no data")
-            console.log('====================================');
+            SetStores(res.data, "no data")
         }).catch((err) => {
-            console.log('====================================');
             console.log(err);
-            console.log('====================================');
+
         })
     }
     return (

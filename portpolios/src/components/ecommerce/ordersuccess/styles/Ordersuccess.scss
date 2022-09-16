@@ -6,13 +6,13 @@
     overflow: hidden;
     overflow-y: auto;
     @include xsBreakPoint {
-        height: auto;
+        padding-bottom: 20%;
     }
     @include smBreakPoint {
-        height: auto;
+        padding-bottom: 20%;
     }
     @include mdBreakPoint {
-        height: auto;
+        padding-bottom: 10%;
     }
 }
 .backtologin {
@@ -67,16 +67,34 @@
 }
 
 .gifyts {
+    border-radius: 50px;
     @include xsBreakPoint {
-        width: 100%;
-        padding-top: 10%;
+        width: 90%;
+
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        background-color: transparent;
     }
     @include smBreakPoint {
         width: 80%;
-        padding-top: 12%;
+
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
     }
     @include mdBreakPoint {
         width: 80%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        background-color: transparent;
     }
 }
 
@@ -87,6 +105,7 @@
 
 .thnks {
     text-align: center;
-    color: rgb(0, 7, 61);
+    color: orange !important;
     font-weight: bold;
+   
 }

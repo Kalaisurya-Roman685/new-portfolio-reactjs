@@ -19,24 +19,38 @@ import Typewriter from 'typewriter-effect';
 
 import kalais from '../../../../assests/whatsappkalai.jpeg';
 
+import {
+    FacebookShareButton,
+    FacebookIcon,
+    PinterestShareButton,
+    PinterestIcon,
+    RedditShareButton,
+    RedditIcon,
+    WhatsappShareButton,
+    WhatsappIcon,
+    LinkedinShareButton,
+    LinkedinIcon,
+} from 'next-share';
+import resume from '../../../../assests/kalairesume.pdf';
+
 function Mobilesection1({ color, dark, setdark }) {
-    const ContactList = () => {
-        toast("ContactMe:8778377119");
-    };
+
+    const ContactTest = () => toast(`ContactMe:8778377119 😁..🙃..😉`);
+    const notification = () => toast("Resume Dowload Successfully...😁!");
     return (
         <div className="section1mobile d-block d-lg-none" id="homes">
 
-            <div className="off-can-navbar">
+            {/* <div className="off-can-navbar">
                 <div className="names">
                     <span style={{ display: "flex", flexDirection: "row", gap: "10px" }}><img src={kalais} style={{ width: "40px", height: "40px", borderRadius: "50%", }} />kalai</span>
                 </div>
-            </div>
+            </div> */}
             <div className="inside-mobile">
                 <ToastContainer />
                 <div className="left-mobile">
 
                     <div className="image1 mt-5 mb-3">
-
+                        <img src={kalais} style={{ width: "120px", height: "120px", borderRadius: "50%", }} />
                     </div>
                     <h1 className="hy mb-1">
                         Hy! <span style={{ color: color }}>I Am</span>
@@ -71,22 +85,55 @@ function Mobilesection1({ color, dark, setdark }) {
                         <span style={{ color: color }}>challenging.</span>
                     </span>
                     <div className='socialicons mt-4'>
-                        <span><ion-icon name="logo-facebook"></ion-icon></span>
+                        {/* <span><ion-icon name="logo-facebook"></ion-icon></span>
                         <span><ion-icon name="logo-google"></ion-icon></span>
                         <span><ion-icon name="logo-instagram"></ion-icon></span>
                         <span><ion-icon name="logo-linkedin"></ion-icon></span>
-                        <span><ion-icon name="logo-twitter"></ion-icon></span>
+                        <span><ion-icon name="logo-twitter"></ion-icon></span> */}
+
+                        <FacebookShareButton
+                            url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
+                            <FacebookIcon size={32} round />
+                        </FacebookShareButton>
+                        <PinterestShareButton
+                            url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
+                            <PinterestIcon size={32} round />
+                        </PinterestShareButton>
+                        <RedditShareButton
+
+                            url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
+                            <RedditIcon size={32} round />
+                        </RedditShareButton>
+                        <WhatsappShareButton
+
+                            url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
+                            <WhatsappIcon size={32} round />
+                        </WhatsappShareButton>
+                        <LinkedinShareButton
+
+                            url={'https://kalai-reactjsdeveloper-7c7ed.web.app/'} >
+                            <LinkedinIcon size={32} round />
+                        </LinkedinShareButton>
                     </div>
 
-                    <button
-                        className="hire mt-4 mb-3"
-                        onClick={() => ContactList()}
-                    >
-                        Contact{" "}
-                        <span style={{ color: color }} className="ms-2">
-                            Me
-                        </span>
-                    </button>
+                    <div className='butns'>
+                        <button className='gets' onClick={ContactTest}>Contact Me</button>
+                        <button
+                            className="gets"
+                        >
+                            <a
+                                href={resume}
+                                download="kalaiportfolio"
+                                onClick={notification}
+                                style={{
+                                    color: "black",
+                                    textDecoration: "none",
+                                }}
+                            >
+                                Download CV
+                            </a>
+                        </button>
+                    </div>
                 </div>
                 <div className="right-mobile mt-5">
 

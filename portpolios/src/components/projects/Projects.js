@@ -62,7 +62,8 @@ function Projects() {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    initialSlide: 1
+                    initialSlide: 1,
+                    dots:true
                 }
             },
             {
@@ -73,7 +74,7 @@ function Projects() {
                     dots: true
                 }
             },
-           
+
         ]
     };
     return (
@@ -92,7 +93,7 @@ function Projects() {
                         <Slider {...settings}>
                             {carousel.carouseData.map((item, index) => {
                                 return (
-                                    <div className='reds'>
+                                    <div className='reds '>
                                         <div className='redss'>
                                             <div>
                                                 <img src={item.Image} alt="no image" className='img-section5' />
@@ -101,19 +102,19 @@ function Projects() {
                                                 {item.coursename}
                                             </div>
                                             <div className='mt-2 mb-2'>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
                                             <div className='description'>
                                                 {item.description}
                                             </div>
                                             <div className='btns'>
-                                               <a href={item.link}>
-                                               <button className='buttons'>{item.button}</button>
-                                               </a>
+                                                <a href={item.link}>
+                                                    <button className='buttons'>{item.button}</button>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

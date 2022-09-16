@@ -1,5 +1,3 @@
-
-
 @use "../../../../scss/abstract/" as *;
 .carts-main {
     width: 100%;
@@ -7,14 +5,18 @@
     height: 100vh;
     overflow: hidden;
     overflow-y: auto;
-    @include xsBreakPoint
-    {
-        height: auto;
+    @include xsBreakPoint {
+        padding-bottom: 20%;
+    }
+    @include smBreakPoint {
+        padding-bottom: 20%;
+    }
+    @include mdBreakPoint {
+        padding-bottom: 20%;
     }
 }
-.totals
-{
-    color:rgb(0, 7, 61);
+.totals {
+    color: orange !important;
     font-weight: bold;
 }
 .split-cardbody {
@@ -204,7 +206,7 @@
             border: none;
             outline: none;
             cursor: pointer;
-            margin-right: 20px; 
+            margin-right: 20px;
             @include xsBreakPoint {
                 width: 100%;
                 margin: 0 auto;

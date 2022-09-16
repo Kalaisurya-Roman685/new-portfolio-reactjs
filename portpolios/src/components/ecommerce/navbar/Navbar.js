@@ -26,7 +26,7 @@ function Navbar(props) {
         <div className="navss">
             <h2 className="orders-details">Orders</h2>
             <ToastContainer />
-            <div className="right_box">
+            <div className="right_box" onClick={() => usehistory.push("/cartde")}>
                 <p onClick={() => usehistory.push("/cartde")}>
                     <i class="fa-solid fa-cart-shopping-fast"></i>
                     <span className="numbers">{totalItems}</span>

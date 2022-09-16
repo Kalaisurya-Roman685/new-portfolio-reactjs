@@ -6,13 +6,13 @@
     overflow: hidden;
     overflow-y: auto;
     @include xsBreakPoint {
-        height: auto;
+        padding-bottom: 20%;
     }
     @include smBreakPoint {
-        height: auto;
+        padding-bottom: 20%;
     }
     @include mdBreakPoint {
-        height: auto;
+        padding-bottom: 20%;
     }
 }
 .back {
@@ -195,7 +195,7 @@
     font-weight: bold;
 }
 
-.name-field {
-    color: rgb(0, 7, 61);
+.name-fields {
     font-weight: bold;
+    color: orange !important;
 }
