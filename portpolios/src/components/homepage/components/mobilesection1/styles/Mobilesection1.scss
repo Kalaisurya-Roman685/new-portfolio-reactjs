@@ -5,15 +5,7 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
-    @include xsBreakPoint {
-        padding-bottom: 20%;
-    }
-    @include smBreakPoint {
-        padding-bottom: 20%;
-    }
-    @include mdBreakPoint {
-        padding-bottom: 20%;
-    }
+   
     .off-can-navbar {
         width: 100%;
         display: flex;

@@ -274,9 +274,6 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-    @include xsBreakPoint {
-        // overflow-y: auto;
-    }
 
     .mobile-inside-section {
         width: 100%;
@@ -287,15 +284,15 @@
             height: 90%;
             z-index: -10 !important;
             @include xsBreakPoint {
-                // border: 4px solid red;
+                overflow-y: auto;
                 height: 90% !important;
             }
             @include smBreakPoint {
-                // border: 4px solid red;
+                overflow-y: auto;
                 height: 90% !important;
             }
             @include mdBreakPoint {
-                // border: 4px solid red;
+                overflow-y: auto;
                 height: 90% !important;
             }
         }

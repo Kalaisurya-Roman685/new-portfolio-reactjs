@@ -47,10 +47,9 @@ function Mobilesection1({ color, dark, setdark }) {
             </div> */}
             <div className="inside-mobile">
                 <ToastContainer />
-                <div className="left-mobile mb-5">
-
-                    <div className="image1  mb-3">
-                        <img src={kalais} style={{ width: "120px", height: "120px", borderRadius: "50%", }} />
+                <div className="left-mobile">
+                    <div className="image1 mt-3 mb-3">
+                        <img src={kalais} style={{ width: "120px", height: "120px", borderRadius: "50%", border: "5px solid orange" }} />
                     </div>
                     <h1 className="hy mb-1">
                         Hy! <span style={{ color: color }}>I Am</span>

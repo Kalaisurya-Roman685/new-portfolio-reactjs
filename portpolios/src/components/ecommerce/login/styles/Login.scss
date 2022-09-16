@@ -5,9 +5,15 @@
     overflow: hidden;
     @include xsBreakPoint {
         padding-top: 20%;
+        overflow-y: auto;
     }
     @include smBreakPoint {
         padding-top: 10%;
+        overflow-y: auto;
+    }
+    @include mdBreakPoint {
+        padding-top: 10%;
+        overflow-y: auto;
     }
 
     .login-inside {
