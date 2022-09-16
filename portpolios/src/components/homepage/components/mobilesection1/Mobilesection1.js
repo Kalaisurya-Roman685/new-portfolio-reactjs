@@ -47,9 +47,9 @@ function Mobilesection1({ color, dark, setdark }) {
             </div> */}
             <div className="inside-mobile">
                 <ToastContainer />
-                <div className="left-mobile">
+                <div className="left-mobile mb-5">
 
-                    <div className="image1 mt-5 mb-3">
+                    <div className="image1  mb-3">
                         <img src={kalais} style={{ width: "120px", height: "120px", borderRadius: "50%", }} />
                     </div>
                     <h1 className="hy mb-1">
