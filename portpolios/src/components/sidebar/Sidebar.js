@@ -181,54 +181,54 @@ function SlideBar({ dark, setdark, children, }) {
 
                             <motion.div className='main-sidebar-nav'>
                                 <motion.div className='mobile-inside-section'>
-                                <motion.div className='sidebar-mobile'>
-                                    <motion.main>
-                                        {children}
-                                    </motion.main>
-                                </motion.div>
+                                    <motion.div className='sidebar-mobile'>
+                                        <motion.main>
+                                            {children}
+                                        </motion.main>
+                                    </motion.div>
 
-                                <motion.div className='side-bottom-section'>
-                                    <motion.nav class="mobile-bottom-nav">
-                                        <motion.div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
-                                            <motion.div class="mobile-bottom-nav__item-content" onClick={() => history.push("/")}>
-                                                <i class="fa-solid fa-house-heart"></i>
-                                                Home
+                                    <motion.div className='side-bottom-section'>
+                                        <motion.nav class="mobile-bottom-nav">
+                                            <motion.div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+                                                <motion.div class="mobile-bottom-nav__item-content" onClick={() => history.push("/")}>
+                                                    <i class="fa-solid fa-house-heart"></i>
+                                                    Home
 
+                                                </motion.div>
                                             </motion.div>
-                                        </motion.div>
-                                        <div class="mobile-bottom-nav__item">
-                                            <div class="mobile-bottom-nav__item-content" onClick={() => history.push("/skills")}>
-                                                <i class="fa-solid fa-book-open-cover"></i>
-                                                Skill
+                                            <div class="mobile-bottom-nav__item">
+                                                <div class="mobile-bottom-nav__item-content" onClick={() => history.push("/skills")}>
+                                                    <i class="fa-solid fa-book-open-cover"></i>
+                                                    Skill
 
+                                                </div>
                                             </div>
-                                        </div>
-                                        <motion.div class="mobile-bottom-nav__item">
-                                            <motion.div class="mobile-bottom-nav__item-content" onClick={() => history.push("/addsomething")}>
-                                                <i class="fa-solid fa-user-plus"></i>
-                                                Adduser
+                                            <motion.div class="mobile-bottom-nav__item">
+                                                <motion.div class="mobile-bottom-nav__item-content" onClick={() => history.push("/addsomething")}>
+                                                    <i class="fa-solid fa-user-plus"></i>
+                                                    Adduser
 
+                                                </motion.div>
                                             </motion.div>
-                                        </motion.div>
 
-                                        <motion.div class="mobile-bottom-nav__item" onClick={() => history.push("/projects")}>
-                                            <motion.div class="mobile-bottom-nav__item-content">
-                                                <i class="fa-solid fa-book-bookmark"></i>
-                                                Projects
+                                            <motion.div class="mobile-bottom-nav__item" onClick={() => history.push("/projects")}>
+                                                <motion.div class="mobile-bottom-nav__item-content">
+                                                    <i class="fa-solid fa-book-bookmark"></i>
+                                                    Projects
+                                                </motion.div>
                                             </motion.div>
-                                        </motion.div>
 
-                                        <motion.div class="mobile-bottom-nav__item">
-                                            <motion.div class="mobile-bottom-nav__item-content">
-                                                <span onClick={() => history.push("/profile")} >
-                                                    <img src={kalaiimage} className="kalai-circle" />
-                                                </span>
+                                            <motion.div class="mobile-bottom-nav__item">
+                                                <motion.div class="mobile-bottom-nav__item-content">
+                                                    <span onClick={() => history.push("/profile")} >
+                                                        <img src={kalaiimage} className="kalai-circle" />
+                                                    </span>
+                                                </motion.div>
                                             </motion.div>
-                                        </motion.div>
 
-                                    </motion.nav>
+                                        </motion.nav>
 
-                                </motion.div>
+                                    </motion.div>
                                 </motion.div>
                             </motion.div>
 

@@ -116,7 +116,7 @@ function Mobilesection1({ color, dark, setdark }) {
                         </LinkedinShareButton>
                     </div>
 
-                    <div className='butns'>
+                    <div className='butns mb-5'>
                         <button className='gets' onClick={ContactTest}>Contact Me</button>
                         <button
                             className="gets"
