@@ -29,10 +29,31 @@ import BottomNavbar from "./mobilecomponents/bottomnavbar/BottomNavbar";
 import Followers from "./components/followerslist/Followers";
 import AddressPageList from "./components/ecommerce/addresspage/AddressPageList";
 import PageNotFound from "./components/404page/PageNotFound";
+import axios from "axios";
 
 
 function App() {
     const [cartditems, SetProduct] = useState([]);
+
+
+    const [ip, setIP] = useState('');
+
+    //creating function to load ip address from the API
+    const getData = async () => {
+        const res = await axios.get('https://geolocation-db.com/json/')
+        console.log(res.data);
+        setIP(res.data.IPv4)
+    }
+
+    useEffect(() => {
+        //passing getData method to the lifecycle method
+        getData()
+
+    }, [])
+
+
+
+
 
     const HandleAdd = (product) => {
         console.log(product);
@@ -107,9 +128,11 @@ function App() {
         <div className={dark ? "theme--dark" : "theme--light"}>
             <div className="port-polio">
 
+                <h2>Your IP Address is</h2>
+                <h4>{ip}</h4>
+
                 <Router>
                     <Switch>
-
                         <Sidebar dark={dark} setdark={SetDark} color={same} >
 
                             <Route exact path="/" render={() => {

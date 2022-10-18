@@ -99,8 +99,6 @@ function SlideBar({ dark, setdark, children, }) {
 
     ]
 
-
-
     return (
         <motion.div className='main-slidebar'>
             <motion.div className='inside-slide'>
