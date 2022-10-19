@@ -54,6 +54,7 @@ function App() {
 
     fetch('https://api.ipify.org').then(response => response.text()).then(data => {
         const userIP = data;
+        setIP(data);
         console.log(userIP, "kalai ip address");
     });
 
@@ -64,9 +65,7 @@ function App() {
 
     const HandleAdd = (product) => {
         console.log(product);
-
         const productaddcart = cartditems.find((item) => item.id === product.id);
-
         if (productaddcart) {
             SetProduct(cartditems.map((item) => item.id === product.id ? { ...productaddcart, quantity: productaddcart.quantity + 1 } : item))
         }
@@ -136,7 +135,9 @@ function App() {
             <div className="port-polio">
 
 
-
+                <div>
+                    <h1>{ip}</h1>
+                </div>
                 <Router>
                     <Switch>
                         <Sidebar dark={dark} setdark={SetDark} color={same} >
