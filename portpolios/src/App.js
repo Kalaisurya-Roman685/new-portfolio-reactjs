@@ -52,6 +52,13 @@ function App() {
     // }, [])
 
 
+    fetch('https://api.ipify.org').then(response => response.text()).then(data => {
+        const userIP = data;
+        console.log(userIP, "kalai ip address");
+    });
+
+
+
 
 
 
