@@ -158,7 +158,7 @@ function App() {
                 </div> */}
 
 
-                < Router >
+                <Router >
                     <Switch>
                         <Sidebar dark={dark} setdark={SetDark} color={same} >
 
@@ -193,7 +193,7 @@ function App() {
                         {/* <Route path="/mobilescreenone" component={MobileScreenOne} /> */}
 
                     </Switch>
-                </ >
+                </Router >
             </div >
         </div >
     );
