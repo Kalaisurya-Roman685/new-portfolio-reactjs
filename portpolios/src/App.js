@@ -142,7 +142,7 @@ function App() {
     return (
         <div className={dark ? "theme--dark" : "theme--light"}>
             <div className="port-polio">
-                <h1>Ip Address  :  {ip}</h1><br />
+                {/* <h1>Ip Address  :  {ip}</h1><br />
                 <h1>Location:{test}</h1><br /><br />
                 <div>
                     {browsername.map((item, index) => {
@@ -150,15 +150,15 @@ function App() {
                             <div>
                                 <h1>Browser Name:{item.name}</h1><br />
                                 <h1>Window Os:{item.os}</h1><br />
-                                {/* <h1>{item.type}</h1><br /> */}
+                                <h1>{item.type}</h1><br />
                                 <h1>{item.version}</h1>
                             </div>
                         )
                     })}
-                </div>
+                </div> */}
 
 
-                <Router >
+                < Router >
                     <Switch>
                         <Sidebar dark={dark} setdark={SetDark} color={same} >
 
@@ -193,8 +193,8 @@ function App() {
                         {/* <Route path="/mobilescreenone" component={MobileScreenOne} /> */}
 
                     </Switch>
-                </Router>
-            </div>
+                </ >
+            </div >
         </div >
     );
 }
