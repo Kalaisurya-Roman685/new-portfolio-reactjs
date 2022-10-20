@@ -35,22 +35,35 @@ import axios from "axios";
 function App() {
     const [cartditems, SetProduct] = useState([]);
 
-
-    const [ip, setIP] = useState('');
-
-    //creating function to load ip address from the API
-    // const getData = async () => {
-    //     const res = await axios.get('https://geolocation-db.com/json/')
-    //     console.log(res.data);
-    //     setIP(res.data.IPv4)
-    // }
-
-    // useEffect(() => {
-    //     //passing getData method to the lifecycle method
-    //     getData()
-
-    // }, [])
-
+    const [ip, setIp] = useState([]);
+    const [test, setTest] = useState([]);
+    const [data, setData] = useState([]);
+    const browsername = [];
+    const { detect } = require('detect-browser');
+    const browser = detect();
+    browsername.push(browser);
+    console.log(browsername);
+    useEffect(() => {
+        fetch('https://api.ipify.org').then(response => response.text()).then(data => {
+            const userIP = data;
+            console.log(userIP);
+            setIp(data);
+        });
+        const getData = async () => {
+            const res = await axios.get('https://geolocation-db.com/json/')
+            console.log(res.data);
+            setTest(res.data.country_name)
+        }
+        getData();
+    }, [])
+    const localstoarges = (e) => {
+        console.log(e);
+        if (e == "box1") {
+            let t = e + 1;
+            setData([{ ...data, t }])
+            localStorage.setItem("box1", data);
+        }
+    }
 
 
 
@@ -129,10 +142,23 @@ function App() {
     return (
         <div className={dark ? "theme--dark" : "theme--light"}>
             <div className="port-polio">
+                <h1>Ip Address  :  {ip}</h1><br />
+                <h1>Location:{test}</h1><br /><br />
+                <div>
+                    {browsername.map((item, index) => {
+                        return (
+                            <div>
+                                <h1>Browser Name:{item.name}</h1><br />
+                                <h1>Window Os:{item.os}</h1><br />
+                                {/* <h1>{item.type}</h1><br /> */}
+                                <h1>{item.version}</h1>
+                            </div>
+                        )
+                    })}
+                </div>
 
 
-
-                <Router>
+                <Router >
                     <Switch>
                         <Sidebar dark={dark} setdark={SetDark} color={same} >
 
@@ -169,7 +195,7 @@ function App() {
                     </Switch>
                 </Router>
             </div>
-        </div>
+        </div >
     );
 }
 
